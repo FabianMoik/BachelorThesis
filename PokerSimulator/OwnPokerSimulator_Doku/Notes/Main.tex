@@ -1,0 +1,318 @@
+% **************************************************************************************************
+% ** SPSC Report and Thesis Template
+% **************************************************************************************************
+%
+% ***** Authors *****
+% Daniel Arnitz, Paul Meissner, Stefan Petrik
+% Signal Processing and Speech Communication Laboratory (SPSC)
+% Graz University of Technology (TU Graz), Austria
+%
+% ***** Changelog *****
+% 0.1   2010-01-25   extracted from report template by Daniel Arnitz (not ready yet)
+% 0.2   2010-02-08   added thesis titlepage and modified layout (not ready yet)
+% 0.3   2010-02-18   added TUG logo and statutory declaration
+% 0.4   2010-02-18   moved the information fields below \input{./base/packages} (encoding...)
+% 0.5   2010-03-02   added \ShortTitle to fix problems with long thesis titles
+%                    added \ThesisType (makes the template suitable for MSc, BSc, PhD, ... Thesis)
+% 0.6   2010-06-05   added pagestyle and pagenumbering after frontmatter, packages has now type
+% 0.7   2010-09      \Advisors -> \Assessors, inserted frontmatter for thesis
+% 0.8   2010-11      added examples
+% 0.9   2011-04      \Twosided now {true,false}, scrbook for thesis (\front-, \main-, \backmatter)
+%                    added \SpecialNote for titlepage (funding, etc.), added type "homework"
+% 0.10  2011-10-18   fixed two typos in \bibliographystyle{} (bug reported by Michael Tauch)
+% 0.11  2011-11-09   fixed/modified preamble (bug reported by Michael Tauch)
+% 0.12  2012-07-20   added ./base/opt_macros to deal with optional macros
+% 0.13  2012-07-27   added \PaperSize
+%
+% ***** Todo *****
+% - Introduction/Usage
+% - explain/show preamble (with \thispagestyle, etc)
+% - why doesn't \pagestyle work in preamble while \thispagestyle does? (reported by Markus Fr�hle)
+% **************************************************************************************************
+
+% **************************************************************************************************
+% basic setup
+
+\newcommand{\DocumentType}{homework} % "thesis" / "report" / "homework"
+\newcommand{\DocumentLanguage}{de} % "en" / "de"
+\newcommand{\PaperSize}{a4paper} % "a4paper" / "letterpaper"
+\newcommand{\Twosided}{false} % "true" / "false"
+
+% **************************************************************************************************
+% template setup -- do not change these unless you know what you are doing!
+\input{./base/packages_\DocumentType}
+\input{./base/layout_\DocumentType}
+\input{./base/macros}
+% \graphicspath{{./drawings/}{./plots/}{./images/}}
+% **************************************************************************************************
+% ATTENTION: There is a stylesheet provided for makeindex; set makeindex to -s "./base/index.sty"
+% **************************************************************************************************
+
+% uncomment to get watermarks:
+% \usepackage[first,bottom,light,draft]{draftcopy}
+% \draftcopyName{ENTWURF}{160}
+
+
+% **************************************************************************************************
+% information fields
+
+% general
+\newcommand{\DocumentTitle}{General Information}
+\newcommand{\DocumentSubtitle}{}
+\newcommand{\ShortTitle}{Study Material} % used in headers (keep short!)
+\newcommand{\DocumentAuthor}{Fabian Moik}
+\newcommand{\DocumentDate}{Graz, \today}
+%    for thesis only (will be ignored for reports)
+\newcommand{\ThesisType}{Bachelor Thesis}
+%\newcommand{\Organizations}{Signal Processing and Speech Communications Laboratory \\ Graz University of Technology, Austria \\[1cm] in co-operation with \\ A Nice Company \\ Cartagena, Spain} % SPSC \\ TUG \\[1cm] in cooperation with \\ A Nice Company
+%\newcommand{\Supervisors}{Assoc.Prof. Dipl.-Ing. Dr. Klaus Witrisal \\ Dipl.-Ing. Paul Meissner} % Supervisor 1 \\ Supervisor 2 \\ ...
+%\newcommand{\Assessors}{Univ.-Prof. Dipl.-Ing. Dr.techn. Gernot Kubin \\ Assoc.Prof. Dipl.-Ing. Dr. James J. Tobe Defined}
+%\newcommand{\SpecialNote}{This work was funded by the Austrian Research Promotion Agency (FFG) under grant 123456.}
+%   for report only: revision number
+\newcommand{\RevPrefix}{alpha~}
+\newcommand{\RevLarge}{1}
+\newcommand{\RevSmall}{0}
+
+% confidential? (can of course also be used for other messages/notes)
+\newcommand{\ConfidNote}{\today}
+
+
+% **************************************************************************************************
+% miscellaneous
+
+% correct bad hyphenation
+\hyphenation{}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{blindtext, graphicx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{chngcntr}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%\lstset{language=[Objective]C, breakindent=40pt, breaklines}
+
+\lstset{ %
+  language=C++,                  % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+% switches
+\newboolean{OptDraftMode}
+\newboolean{DisplayContentBoxes}
+% \setboolean{OptDraftMode}{true} % optional draft mode for pixel graphics (speed up generation; add \OptDraft to options)
+% \setboolean{DisplayContentBoxes}{true} % optional boxes with contents (\ContentBox{Content}{NumPages} can be used as "sticky note" with planned contents)
+%   load
+\input{./base/opt_macros}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\newcommand*{\xchapter}{\setcounter{section}{0}\addchap}
+% **************************************************************************************************
+% **************************************************************************************************
+%
+ %**************************************************************************************************
+\begin{document}
+%%%%%%%%% begin snippet
+%% You need to add the package "tabularx".
+%% Place the snippet right after \begin{document}
+
+% need tabularx
+%\usepackage{tabularx}
+
+\begin{titlepage}
+       \begin{center}
+             \begin{huge}
+				   %% Update assignment number here
+                   \textbf{Bachelor Thesis - Poker Simulator}
+             \end{huge}
+       \end{center}
+       \begin{center}
+             \begin{large}
+		Study Material
+             \end{large}
+       \end{center}
+       \begin{center}
+             \begin{large}
+                 \textbf{Fabian Moik}
+             \end{large}
+       \end{center}
+\end{titlepage}
+
+%%%%%%%%% end snippet
+% **************************************************************************************************
+% titlepage
+%\input{./base/titlepage_\DocumentType}\emptydoublepage
+
+% for thesis: switch to frontmatter
+%\ifthenelse{\equal{\DocumentType}{thesis}}{\pagestyle{empty}\pagenumbering{roman}}{}
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+% user-defined part
+
+% FOR THESIS: ADD THE PREAMBLE (ABSTRACT, KURZFASSUNG, ...) HERE (also add an \emptydoublepage in between), e.g.:
+%    \input{my-abstract}
+%    \emptydoublepage
+%    \input{my-kurzfassung}
+%    \emptydoublepage
+%    ...
+% FEEL FREE TO USE \emptypage AND \emptydoublepage TO ADJUST THE LAYOUT
+% USE \thispagestyle{empty} for abstract, etc.
+
+% for thesis: statutory declaration
+\ifthenelse{\equal{\DocumentType}{thesis}}{\input{./base/declaration}}{}
+
+% TOC
+%\emptydoublepage
+\tableofcontents
+
+% for thesis: make sure we switch back to standard pagestyles/numbering
+\ifthenelse{\equal{\DocumentType}{thesis}}{\emptydoublepage\pagestyle{scrheadings}\pagenumbering{arabic}\mainmatter}
+
+% FOR THESIS: YOU CAN SET THE PAGECOUNTER HERE TO MAKE IT IDENTICAL TO THE PDF PAGE NUMBER
+\ifthenelse{\equal{\DocumentType}{thesis}}{\setcounter{page}{7}}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% **************************************************************************************************
+% mainmatter
+\newpage
+% %%%%%%%%%%%%%%%%%%%%% 	1	 %%%%%%%%%%%%%%%%%%%%%%%%%
+%    \emptydoublepage %FOR THESIS: ALWAYS START CHAPTERS AT RIGHT SIDE
+\counterwithin{figure}{section}
+\counterwithin{section}{chapter}
+
+%%%%%%%%%%%%%%%%%% What I want to write %%%%%%%%%%%%%%%%%%%%
+\chapter{Poker Simulator}
+\section{Basic Structure}
+\subsection{Currently working on}
+\begin{itemize}
+\item lets players make moves and check when a betting round has finished
+\subitem TODO: think of all scenarios where different people are the last raiser (bigblind, small blind, no one, did some go all-in? etc...)
+\item next check for action to be valid
+\item the \textbf{Action} class should check if the action is valid -> see rules for raising
+\subitem \textbf{test the isValidAction} method for all scenarios 
+\item create an \textbf{Information class} which holds all the information that is accessible to an AI.
+\item reseating players if needed, to balance game
+\item make a concept of what you need for your neural network and how the training is done.
+\subitem the training is purely done by evolving the weights and features there for no backprop algorithm or gradient calculation is needed
+\end{itemize}
+%%%%%%%%%%%%%%
+\subsection{Ideas and Implementation Hierarchy}
+\begin{itemize}
+\item A \textbf{game} is run simultaneously  on \textbf{x tables}
+\subitem each \textbf{table} holds \textbf{y players}, a \textbf{deck of cards} and a \textbf{dealer (observer)}
+\item the \textbf{dealer} deals the cards, and holds informations about the game state
+\item the \textbf{statsKeeper} class keeps track of the opponent models
+\item Information class, that holds all the information of the tables but also for each player
+\end{itemize}
+Preferably each table runs on it's own thread, a coordinator makes sure that tables wait if reseating has to be done.
+\subsection{Open Bugs and Fixes}
+\begin{itemize}
+\item is Raise action for > stack a valid allInAction? -> \textbf{for now it is}
+\item allInAction for less than a real raise should be treated like \textbf{call + extra}, meaning, the lastRaiseAmount stays the same but a new Raise has to be twice the lastRaiseAmount + extra
+\item if on flop two all in and two active players, and the first active player folds -> second active player shouldn't have the opportunity to doTurn
+\item change the way and all-in action is treaded (for now a raise of > stack size is not treated as all-in, it has to be exactly the same)
+\end{itemize}
+
+\subsection{Things To Implement}
+\begin{itemize}
+\item A UnitTest likle in oopoker\_master which tests importent functions for correctness
+\item porting the neural network from python to c++ (using tensorflow api or write own neural network?)
+\item \textbf{Neural Network:} how to normalize input values if distribution is unknown???\\\\
+\textbf{Answer:}\\\\
+Additional feature (totalchips in game as BB), and other chip features also in bb
+Additionally normalize all chip features with the totalchips feature in bb and normalize other features to 0...1. 
+\item Last layer is a softmax activation function so it gets a classification characteristic
+\item \textbf{Evolutionary Algorithm:} How to evolve our agents?
+\item how to order agents by places when multiple agents bust within one hand?
+\subitem \textbf{Answer:} guy with less chips has worst position...
+\item \textbf{Effective Hand Strength} as feature -> see how it is calculated and then try to do it with pokereval.h and pokereval2.h
+\subitem https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm
+\subitem \textbf{github for EHS calculation algo: https://github.com/Pip3r4o/Bluffasaurus}
+\item interesting read on EHS for multiple opponents and general implementation strategies.. 
+http://poker-ai.org/archive/www.pokerai.org/pf3/viewtopicfdcf.html?f=3\&t=444\&st=0\&sk=t\&sd=a\&start=40
+\end{itemize}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Game Play Plan}
+\textbf{Pregame}
+\begin{itemize}
+\item get number of players
+\item calculate number of tables and cardDealers
+\item give players a buy-in and assign them to tables
+\end{itemize}
+Once all players have their buy-in and seat on a table, the game can start\\\\
+\textbf{Game Start}\\\\
+\textit{Preflop}
+\begin{itemize}
+\item \textbf{Dealer:} assign dealer button to player
+\item \textbf{Players:} post SB and BB and antes
+\item \textbf{Dealer:} shuffle deck of cards
+\item \textbf{Dealer:} deal 2 cards to each player
+\item \textbf{Dealer:} tell first player after BB to play action
+\subitem \textbf{Players:} make a move 
+\subitem \textbf{Dealer:} check if action is valid
+\subitem \textbf{Dealer:} repeat with next player 
+\item \textbf{Dealer:} after all players acted:
+\subitem calculate statistics 
+\subitem update table
+\end{itemize}
+
+\textit{Flop}
+\begin{itemize}
+\item \textbf{Dealer:} burn one card, and deal flop
+\item \textbf{Dealer:} tell first player (SB) to play action
+\subitem \textbf{Players:} make a move 
+\subitem \textbf{Dealer:} check if action is valid
+\subitem \textbf{Dealer:} repeat with next player 
+\item \textbf{Dealer:} after all players acted:
+\subitem calculate statistics 
+\subitem update table
+\end{itemize}
+%\subitem send information to game (communicate with game, i.e ask if should wait...)
+\pagebreak
+\section{Game Assets Classes}
+\subsection{Information Class}
+
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+
+% place all floats and create label on last page
+\FloatBarrier\label{end-of-document}
+\end{document}
+

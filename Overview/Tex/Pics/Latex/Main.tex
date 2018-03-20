@@ -1,0 +1,465 @@
+% **************************************************************************************************
+% ** SPSC Report and Thesis Template
+% **************************************************************************************************
+%
+% ***** Authors *****
+% Daniel Arnitz, Paul Meissner, Stefan Petrik
+% Signal Processing and Speech Communication Laboratory (SPSC)
+% Graz University of Technology (TU Graz), Austria
+%
+% ***** Changelog *****
+% 0.1   2010-01-25   extracted from report template by Daniel Arnitz (not ready yet)
+% 0.2   2010-02-08   added thesis titlepage and modified layout (not ready yet)
+% 0.3   2010-02-18   added TUG logo and statutory declaration
+% 0.4   2010-02-18   moved the information fields below \input{./base/packages} (encoding...)
+% 0.5   2010-03-02   added \ShortTitle to fix problems with long thesis titles
+%                    added \ThesisType (makes the template suitable for MSc, BSc, PhD, ... Thesis)
+% 0.6   2010-06-05   added pagestyle and pagenumbering after frontmatter, packages has now type
+% 0.7   2010-09      \Advisors -> \Assessors, inserted frontmatter for thesis
+% 0.8   2010-11      added examples
+% 0.9   2011-04      \Twosided now {true,false}, scrbook for thesis (\front-, \main-, \backmatter)
+%                    added \SpecialNote for titlepage (funding, etc.), added type "homework"
+% 0.10  2011-10-18   fixed two typos in \bibliographystyle{} (bug reported by Michael Tauch)
+% 0.11  2011-11-09   fixed/modified preamble (bug reported by Michael Tauch)
+% 0.12  2012-07-20   added ./base/opt_macros to deal with optional macros
+% 0.13  2012-07-27   added \PaperSize
+%
+% ***** Todo *****
+% - Introduction/Usage
+% - explain/show preamble (with \thispagestyle, etc)
+% - why doesn't \pagestyle work in preamble while \thispagestyle does? (reported by Markus Fr�hle)
+% **************************************************************************************************
+
+% **************************************************************************************************
+% basic setup
+
+\newcommand{\DocumentType}{homework} % "thesis" / "report" / "homework"
+\newcommand{\DocumentLanguage}{en} % "en" / "de"
+\newcommand{\PaperSize}{a4paper} % "a4paper" / "letterpaper"
+\newcommand{\Twosided}{false} % "true" / "false"
+
+% **************************************************************************************************
+% template setup -- do not change these unless you know what you are doing!
+\input{./base/packages_\DocumentType}
+\input{./base/layout_\DocumentType}
+\input{./base/macros}
+% \graphicspath{{./drawings/}{./plots/}{./images/}}
+% **************************************************************************************************
+% ATTENTION: There is a stylesheet provided for makeindex; set makeindex to -s "./base/index.sty"
+% **************************************************************************************************
+
+% uncomment to get watermarks:
+% \usepackage[first,bottom,light,draft]{draftcopy}
+% \draftcopyName{ENTWURF}{160}
+
+
+% **************************************************************************************************
+% information fields
+
+% general
+\newcommand{\DocumentTitle}{Analytical Assignment 4}
+\newcommand{\DocumentSubtitle}{}
+\newcommand{\ShortTitle}{Assignment 4} % used in headers (keep short!)
+\newcommand{\DocumentAuthor}{Markus-Philipp Gherman (1431142), Fabian Moik (1430095)}
+\newcommand{\DocumentDate}{Graz, \today}
+%    for thesis only (will be ignored for reports)
+\newcommand{\ThesisType}{PhD Thesis}
+%\newcommand{\Organizations}{Signal Processing and Speech Communications Laboratory \\ Graz University of Technology, Austria \\[1cm] in co-operation with \\ A Nice Company \\ Cartagena, Spain} % SPSC \\ TUG \\[1cm] in cooperation with \\ A Nice Company
+%\newcommand{\Supervisors}{Assoc.Prof. Dipl.-Ing. Dr. Klaus Witrisal \\ Dipl.-Ing. Paul Meissner} % Supervisor 1 \\ Supervisor 2 \\ ...
+%\newcommand{\Assessors}{Univ.-Prof. Dipl.-Ing. Dr.techn. Gernot Kubin \\ Assoc.Prof. Dipl.-Ing. Dr. James J. Tobe Defined}
+%\newcommand{\SpecialNote}{This work was funded by the Austrian Research Promotion Agency (FFG) under grant 123456.}
+%   for report only: revision number
+\newcommand{\RevPrefix}{alpha~}
+\newcommand{\RevLarge}{1}
+\newcommand{\RevSmall}{0}
+
+% confidential? (can of course also be used for other messages/notes)
+\newcommand{\ConfidNote}{\today}
+
+
+% **************************************************************************************************
+% miscellaneous
+
+% correct bad hyphenation
+\hyphenation{}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{blindtext, graphicx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{chngcntr}
+\usepackage{mathtools}
+
+% switches
+\newboolean{OptDraftMode}
+\newboolean{DisplayContentBoxes}
+% \setboolean{OptDraftMode}{true} % optional draft mode for pixel graphics (speed up generation; add \OptDraft to options)
+% \setboolean{DisplayContentBoxes}{true} % optional boxes with contents (\ContentBox{Content}{NumPages} can be used as "sticky note" with planned contents)
+%   load
+\input{./base/opt_macros}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\newcommand*{\xchapter}{\setcounter{section}{0}\addchap}
+% **************************************************************************************************
+% **************************************************************************************************
+%
+ %**************************************************************************************************
+\begin{document}
+%%%%%%%%% begin snippet
+%% You need to add the package "tabularx".
+%% Place the snippet right after \begin{document}
+
+% need tabularx
+%\usepackage{tabularx}
+
+\begin{titlepage}
+       \begin{center}
+             \begin{huge}
+				   %% Update assignment number here
+                   \textbf{Assignment 4}
+             \end{huge}
+       \end{center}
+
+       \begin{center}
+             \begin{large}
+                   Computational Intelligence, SS2017
+             \end{large}
+       \end{center}
+
+       \begin{center}
+ \begin{tabularx}{\textwidth}{|>{\hsize=.33\hsize}X|>{\hsize=.33\hsize}X|>{\hsize=.33\hsize}X|} 
+
+                   \hline
+                   \multicolumn{3}{|c|}{\textbf{Team Members}} \\
+                   \hline
+                   Last name & First name & Matriculation Number \\
+                   \hline
+                   Gherman & Markus-Philipp & 1431142 \\
+                   \hline
+                   Moik & Fabian & 1430095 \\
+                   \hline
+ \end{tabularx}
+       \end{center}
+
+\end{titlepage}
+
+%%%%%%%%% end snippet
+% **************************************************************************************************
+% titlepage
+%\input{./base/titlepage_\DocumentType}\emptydoublepage
+
+% for thesis: switch to frontmatter
+%\ifthenelse{\equal{\DocumentType}{thesis}}{\pagestyle{empty}\pagenumbering{roman}}{}
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+% user-defined part
+
+% FOR THESIS: ADD THE PREAMBLE (ABSTRACT, KURZFASSUNG, ...) HERE (also add an \emptydoublepage in between), e.g.:
+%    \input{my-abstract}
+%    \emptydoublepage
+%    \input{my-kurzfassung}
+%    \emptydoublepage
+%    ...
+% FEEL FREE TO USE \emptypage AND \emptydoublepage TO ADJUST THE LAYOUT
+% USE \thispagestyle{empty} for abstract, etc.
+
+% for thesis: statutory declaration
+\ifthenelse{\equal{\DocumentType}{thesis}}{\input{./base/declaration}}{}
+
+% TOC
+%\emptydoublepage
+\tableofcontents
+
+% for thesis: make sure we switch back to standard pagestyles/numbering
+\ifthenelse{\equal{\DocumentType}{thesis}}{\emptydoublepage\pagestyle{scrheadings}\pagenumbering{arabic}\mainmatter}
+
+% FOR THESIS: YOU CAN SET THE PAGECOUNTER HERE TO MAKE IT IDENTICAL TO THE PDF PAGE NUMBER
+\ifthenelse{\equal{\DocumentType}{thesis}}{\setcounter{page}{7}}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% **************************************************************************************************
+% mainmatter
+\newpage
+% %%%%%%%%%%%%%%%%%%%%% 	1	 %%%%%%%%%%%%%%%%%%%%%%%%%
+%    \emptydoublepage %FOR THESIS: ALWAYS START CHAPTERS AT RIGHT SIDE
+\counterwithin{figure}{section}
+
+\chapter{Maximum Likelihood Estimation}
+
+\section{Maximum Likelihood Estimation of Model Parameters}
+
+We assume that the true position - and the true distances - are known.
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{anchors_and_true_point.png}
+	\caption{Anchors and True point.}
+	\label{fig1:points}
+\end{figure}
+
+Note that we increased the anchor indices by $1$ for better understanding.
+
+\subsection{For scenario 2, find out which is the anchor with exponentially distributed measurements.}
+To find out which is the anchor with exponentially distributed measurements, we took all measurements for each anchor separately and plotted them in a distribution histogram.
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{histogram.png}
+	\caption{Distribution Histogram of measurements per anchor for scenario 2.}
+	\label{fig1:histogram}
+\end{figure}
+
+Using this histogram, we could conclude that Anchor 1 is the anchor with exponentially distributed measurements as seen in Figure ~\ref{fig1:histogram} 
+
+\subsection{Analytically derive the maximum likelihood solution for the exponential distribution.}
+
+The maximum likelihood estimator is given as 
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} = argmax \prod\limits_{i=1}^N p(r_i|\mathbf{p})
+\end{align*}
+
+and the exponential distribution is given as
+
+\begin{align*}
+\hspace*{2cm}
+p(r_i|\mathbf{p}) = \lambda_i \exp{-\lambda_i(r_i-d_i(\mathbf{p}))} \quad for \quad r_i \geq d_i(\mathbf{p}), \quad else \quad 0.
+\end{align*}
+
+The analytical derivation of the maximum likelihood solution for the exponential distribution is performed as followed:
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} &= argmax \prod\limits_{i=1}^N p(r_i|\mathbf{p})\\
+&= argmax \quad \lambda_i^N \exp{-\lambda_i \sum\limits_{i=1}^N (r_i-d_i(\mathbf{p}))}
+\end{align*}
+
+We now perform an $ln$ operation, as $ln$ is monoton rising, and therefor not changing anything for the argmax function.
+
+\begin{align*}
+\hspace*{2cm}
+ln(\mathbf{\hat{p}}_{ML}) &= argmax \quad ln(\lambda_i^N) + -\lambda_i \sum\limits_{i=1}^N (r_i-d_i(\mathbf{p}))\\
+&= argmax \quad N ln(\lambda_i) - \lambda_i \sum\limits_{i=1}^N (r_i-d_i(\mathbf{p}))
+\end{align*}
+
+To find the optimal value for $\lambda_i$, we derive $ln(\mathbf{\hat{p}}_{ML})$ for $\lambda_i$. This derivation should equal $0$, so that we get the maximum.
+
+\begin{align*}
+\hspace*{2cm}
+\dfrac{\partial ln(\mathbf{\hat{p}}_{ML})}{\partial\lambda_i} = \dfrac{N}{\lambda_i} - \sum\limits_{i=1}^N (r_i-d_i(\mathbf{p})) \stackrel{!}{=} 0
+\end{align*}
+
+From here we conclude our final solution for $\lambda_i$:
+
+\begin{align*}
+\hspace*{2cm}
+\lambda_i = \dfrac{N}{\sum\limits_{i=1}^N (r_i-d_i(\mathbf{p}))}
+\end{align*}
+
+
+
+\subsection{Estimate the parameters of the measurement models for all anchors in all 3 scenarios using the maximum likelihood method.}
+
+We estimated the parameters for all 3 scenarios and came to the following results:
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=10cm]{estimated_params.png}
+	\caption{Estimated parameters for all 3 scenarios.}
+	\label{fig1:params}
+\end{figure}
+
+\section{Least-Squares Estimation of the Position}
+\subsection{Show analytically that for scenario 1 (joint likelihood for the distances is Gaussian), the least-squares estimator of the position is equivalent to the maximum likelihood estimator}
+
+The maximum likelihood estimator is given as:
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} = argmax \prod\limits_{i=1}^N p(r_i|\mathbf{p})
+\end{align*}
+
+We further perform an $ln$ operation, as $ln$ is monoton rising, and therefor not changing anything for the argmax function.
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} &= argmax \prod\limits_{i=1}^N p(r_i|\mathbf{p})\\ 
+&= argmax \sum\limits_{i=1}^N ln(p(r_i|\mathbf{p}))\\
+&= argmax \sum\limits_{i=1}^N ln\Bigg[\dfrac{1}{\sqrt{2\pi\sigma_i^2}} \exp{-\dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}}\Bigg]\\
+\end{align*}
+
+To continue, we use the following relation: 
+$argmax f(x) = argmin - f(x)$
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} &= argmax \sum\limits_{i=1}^N ln\Bigg[\dfrac{1}{\sqrt{2\pi\sigma_i^2}} \exp{-\dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}}\Bigg]\\
+&= argmin - \sum\limits_{i=1}^N \Bigg[ln\bigg(\dfrac{1}{\sqrt{2\pi\sigma_i^2}}\bigg) + ln\bigg(\exp{-\dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}}\bigg)\Bigg]\\
+&= argmin - \sum\limits_{i=1}^N \Bigg[ln\bigg(\dfrac{1}{\sqrt{2\pi\sigma_i^2}}\bigg) - \dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}\Bigg]\\
+\end{align*}
+
+Because a constant does not change anything for the argmin function, because it is changing every argument in a linear way, we can neglect the constant:
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} &= argmin - \sum\limits_{i=1}^N \Bigg[ln\bigg(\dfrac{1}{\sqrt{2\pi\sigma_i^2}}\bigg) - \dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}\Bigg]\\
+&\approx argmin - \sum\limits_{i=1}^N \Bigg[- \dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}\Bigg]\\ 
+&\approx argmin  \sum\limits_{i=1}^N \Bigg[\dfrac{(r_i-d_i(\mathbf{p}))^2}{2\sigma_i^2}\Bigg]\\
+\end{align*}
+
+Now, the constant can be again neglected, as it is not influencing the argmin function, and we can make the final step:
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} \approx argmin \sum\limits_{i=1}^N (r_i-d_i(\mathbf{p}))^2 \approx \mathbf{\hat{p}}_{LS}\\
+\end{align*}
+
+As one can see, the least-squares estimator of the position is equivalent to the maximum likelihood estimator (for the gaussian model).
+
+\subsection{Implement the Gauss-Newton algorithm to find the least-squares estimate for the position and write a function LeastSquaresGN. You may choose suitable values for the tolerance and the maximum number of iterations on your own. The output is the estimated position.}
+
+The functionality of the written function will be verified and used in Point 2.3.
+We set max\_iter to $20$ and tol to $10^{-3}$.
+For the Jacobi Matrix, the following derivates were used:
+
+\begin{align*}
+\hspace*{2cm}
+\dfrac{\partial(r_i-d_i(\mathbf{p}))}{\partial x} = \dfrac{x_i - x}{\sqrt{(y_i - y)^2 + (x_i - x)^2}}\\
+\end{align*}
+\begin{align*}
+\hspace*{2cm}
+\dfrac{\partial(r_i-d_i(\mathbf{p}))}{\partial y} = \dfrac{y_i - y}{\sqrt{(y_i - y)^2 + (x_i - x)^2}}\\
+\end{align*}
+
+
+
+\subsection{For all three scenarios, evaluate your estimation algorithm using the provided data. For each of the N = 2000 independent measurements, choose the starting position p0 randomly according to a uniform distribution within the square spanned by the anchor points.}
+
+\subsubsection{The mean and variance of the position estimation error.}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=10cm]{mean_var_calc.png}
+	\caption{Mean and variance of the position estimation error for 4 scenarios, where the forth scenario only uses 3 gaussian anchors (exponential anchor was deleted).}
+	\label{fig1:meanvariance}
+\end{figure}
+
+\subsubsection{Scatter plots of the estimated positions. Fit a two-dimensional Gaussian distribution to the point cloud of estimated positions and draw its contour lines. Do the estimated positions look Gaussian? What can you say about the probability of large estimation errors?}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{gauss1.png}
+	\caption{Gaussian contour and point cloud for scenario 1.}
+	\label{fig1:gpc1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{cdf1.png}
+	\caption{Cumulative Distribution Function of the position estimation error for scenario 1.}
+	\label{fig1:cdf1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{gauss2.png}
+	\caption{Gaussian contour and point cloud for scenario 2.}
+	\label{fig1:gpc2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{cdf2.png}
+	\caption{Cumulative Distribution Function of the position estimation error for scenario 2.}
+	\label{fig1:cdf2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{gauss3.png}
+	\caption{Gaussian contour and point cloud for scenario 3.}
+	\label{fig1:gpc3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{cdf3.png}
+	\caption{Cumulative Distribution Function of the position estimation error for scenario 3.}
+	\label{fig1:cdf3}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{gauss4.png}
+	\caption{Gaussian contour and point cloud for scenario 4.}
+	\label{fig1:gpc4}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{cdf4.png}
+	\caption{Cumulative Distribution Function of the position estimation error for scenario 4.}
+	\label{fig1:cdf4}
+\end{figure}
+
+As one can see in the plots, the estimated points for scenario 1 and 4 look gaussian. This is because there are only gaussian anchors. The estimated points for scenario 2 and 3 do not really look gaussian, as there are a lot of points far away from the gaussian contour.\\
+
+By looking at the CDF plots, we can see, that for scenario 1 and 4 (gaussian anchors) the probability for the error being smaller than 0.8 and 1.4 respectively is nearly 100\%.
+For scenario 2 and 3 , where we have at least one exponential anchor, we can say with a high probability that our position estimation error is much greater than in the gaussian examples.\newpage
+
+The following plot shows then mean of the estimated point cloud for each scenario.
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=14cm]{estimated_points.png}
+	\caption{Mean estimated points for each scenario (magnified).}
+	\label{fig1:meanpoints}
+\end{figure}
+
+\subsection{Compare the performance of scenario 2 with scenario 4. What can you observe?}
+By looking at our plots, we conclude that we get a lower position estimation error for scenario 4 compared to scenario 2. This effect can be seen again in Figure ~\ref{fig1:meanvariance}, where scenario 4 performs better because it has a lower mean and variance of estimation errors.
+\newpage
+
+\section{Numerical Maximum-Likelihood Estimation of the Position}
+
+\subsection{For the first measurement (i.e. the first NA distance estimates), compute the joint likelihood function over a two dimensional grid with a resolution of 5 cm. Confine the evaluation to the square region that is enclosed by the anchors. Why might it be hard to find the maximum of this function with a gradient ascent algorithm using an arbitrary starting point within the evaluation region? Is the maximum at the true position?}
+
+First, we computed the joint likelihood function
+
+\begin{align*}
+\hspace*{2cm}
+\mathbf{\hat{p}}_{ML} = argmax \prod\limits_{i=1}^N \lambda_i \exp{-\lambda_i(r_i-d_i(\mathbf{p}))}
+\end{align*}
+
+and then we evaluated it for the first measurement of our given data.
+
+\begin{figure}[H]
+	\centering
+\includegraphics[width=18cm]{numerical_maximum.png}
+	\caption{Numerical maximum likelihood estimation.}
+	\label{fig1:nummax}
+\end{figure}
+
+In this Figure we can see that the numerical maximum likelihood estimator is a non-convex function and therefore a gradient ascent algorithm would get stuck in local maxima quiet easily. 
+The maximum is not at the true position (2,-4), instead it is at (2.5, -4.95).
+
+% **************************************************************************************************
+%\appendix
+% \bibliographystyle{./base/IEEEtran}
+% \bibliography{_bibliography}
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+
+% place all floats and create label on last page
+\FloatBarrier\label{end-of-document}
+\end{document}
+

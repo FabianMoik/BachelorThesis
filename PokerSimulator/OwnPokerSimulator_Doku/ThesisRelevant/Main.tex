@@ -1,0 +1,364 @@
+% **************************************************************************************************
+% ** SPSC Report and Thesis Template
+% **************************************************************************************************
+%
+% ***** Authors *****
+% Daniel Arnitz, Paul Meissner, Stefan Petrik
+% Signal Processing and Speech Communication Laboratory (SPSC)
+% Graz University of Technology (TU Graz), Austria
+%
+% ***** Changelog *****
+% 0.1   2010-01-25   extracted from report template by Daniel Arnitz (not ready yet)
+% 0.2   2010-02-08   added thesis titlepage and modified layout (not ready yet)
+% 0.3   2010-02-18   added TUG logo and statutory declaration
+% 0.4   2010-02-18   moved the information fields below \input{./base/packages} (encoding...)
+% 0.5   2010-03-02   added \ShortTitle to fix problems with long thesis titles
+%                    added \ThesisType (makes the template suitable for MSc, BSc, PhD, ... Thesis)
+% 0.6   2010-06-05   added pagestyle and pagenumbering after frontmatter, packages has now type
+% 0.7   2010-09      \Advisors -> \Assessors, inserted frontmatter for thesis
+% 0.8   2010-11      added examples
+% 0.9   2011-04      \Twosided now {true,false}, scrbook for thesis (\front-, \main-, \backmatter)
+%                    added \SpecialNote for titlepage (funding, etc.), added type "homework"
+% 0.10  2011-10-18   fixed two typos in \bibliographystyle{} (bug reported by Michael Tauch)
+% 0.11  2011-11-09   fixed/modified preamble (bug reported by Michael Tauch)
+% 0.12  2012-07-20   added ./base/opt_macros to deal with optional macros
+% 0.13  2012-07-27   added \PaperSize
+%
+% ***** Todo *****
+% - Introduction/Usage
+% - explain/show preamble (with \thispagestyle, etc)
+% - why doesn't \pagestyle work in preamble while \thispagestyle does? (reported by Markus Fr�hle)
+% **************************************************************************************************
+
+% **************************************************************************************************
+% basic setup
+
+\newcommand{\DocumentType}{homework} % "thesis" / "report" / "homework"
+\newcommand{\DocumentLanguage}{de} % "en" / "de"
+\newcommand{\PaperSize}{a4paper} % "a4paper" / "letterpaper"
+\newcommand{\Twosided}{false} % "true" / "false"
+
+% **************************************************************************************************
+% template setup -- do not change these unless you know what you are doing!
+\input{./base/packages_\DocumentType}
+\input{./base/layout_\DocumentType}
+\input{./base/macros}
+% \graphicspath{{./drawings/}{./plots/}{./images/}}
+% **************************************************************************************************
+% ATTENTION: There is a stylesheet provided for makeindex; set makeindex to -s "./base/index.sty"
+% **************************************************************************************************
+
+% uncomment to get watermarks:
+% \usepackage[first,bottom,light,draft]{draftcopy}
+% \draftcopyName{ENTWURF}{160}
+
+
+% **************************************************************************************************
+% information fields
+
+% general
+\newcommand{\DocumentTitle}{General Information}
+\newcommand{\DocumentSubtitle}{}
+\newcommand{\ShortTitle}{Study Material} % used in headers (keep short!)
+\newcommand{\DocumentAuthor}{Fabian Moik}
+\newcommand{\DocumentDate}{Graz, \today}
+%    for thesis only (will be ignored for reports)
+\newcommand{\ThesisType}{Bachelor Thesis}
+%\newcommand{\Organizations}{Signal Processing and Speech Communications Laboratory \\ Graz University of Technology, Austria \\[1cm] in co-operation with \\ A Nice Company \\ Cartagena, Spain} % SPSC \\ TUG \\[1cm] in cooperation with \\ A Nice Company
+%\newcommand{\Supervisors}{Assoc.Prof. Dipl.-Ing. Dr. Klaus Witrisal \\ Dipl.-Ing. Paul Meissner} % Supervisor 1 \\ Supervisor 2 \\ ...
+%\newcommand{\Assessors}{Univ.-Prof. Dipl.-Ing. Dr.techn. Gernot Kubin \\ Assoc.Prof. Dipl.-Ing. Dr. James J. Tobe Defined}
+%\newcommand{\SpecialNote}{This work was funded by the Austrian Research Promotion Agency (FFG) under grant 123456.}
+%   for report only: revision number
+\newcommand{\RevPrefix}{alpha~}
+\newcommand{\RevLarge}{1}
+\newcommand{\RevSmall}{0}
+
+% confidential? (can of course also be used for other messages/notes)
+\newcommand{\ConfidNote}{\today}
+
+
+% **************************************************************************************************
+% miscellaneous
+
+% correct bad hyphenation
+\hyphenation{}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{blindtext, graphicx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{chngcntr}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%\lstset{language=[Objective]C, breakindent=40pt, breaklines}
+
+\lstset{ %
+  language=C++,                  % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+% switches
+\newboolean{OptDraftMode}
+\newboolean{DisplayContentBoxes}
+% \setboolean{OptDraftMode}{true} % optional draft mode for pixel graphics (speed up generation; add \OptDraft to options)
+% \setboolean{DisplayContentBoxes}{true} % optional boxes with contents (\ContentBox{Content}{NumPages} can be used as "sticky note" with planned contents)
+%   load
+\input{./base/opt_macros}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\newcommand*{\xchapter}{\setcounter{section}{0}\addchap}
+% **************************************************************************************************
+% **************************************************************************************************
+%
+ %**************************************************************************************************
+\begin{document}
+%%%%%%%%% begin snippet
+%% You need to add the package "tabularx".
+%% Place the snippet right after \begin{document}
+
+% need tabularx
+%\usepackage{tabularx}
+
+\begin{titlepage}
+       \begin{center}
+             \begin{huge}
+				   %% Update assignment number here
+                   \textbf{Bachelor Thesis - Poker Simulator}
+             \end{huge}
+       \end{center}
+       \begin{center}
+             \begin{large}
+		Thesis Relevant Blocks
+             \end{large}
+       \end{center}
+       \begin{center}
+             \begin{large}
+                 \textbf{Fabian Moik}
+             \end{large}
+       \end{center}
+\end{titlepage}
+
+%%%%%%%%% end snippet
+% **************************************************************************************************
+% titlepage
+%\input{./base/titlepage_\DocumentType}\emptydoublepage
+
+% for thesis: switch to frontmatter
+%\ifthenelse{\equal{\DocumentType}{thesis}}{\pagestyle{empty}\pagenumbering{roman}}{}
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+% user-defined part
+
+% FOR THESIS: ADD THE PREAMBLE (ABSTRACT, KURZFASSUNG, ...) HERE (also add an \emptydoublepage in between), e.g.:
+%    \input{my-abstract}
+%    \emptydoublepage
+%    \input{my-kurzfassung}
+%    \emptydoublepage
+%    ...
+% FEEL FREE TO USE \emptypage AND \emptydoublepage TO ADJUST THE LAYOUT
+% USE \thispagestyle{empty} for abstract, etc.
+
+% for thesis: statutory declaration
+\ifthenelse{\equal{\DocumentType}{thesis}}{\input{./base/declaration}}{}
+
+% TOC
+%\emptydoublepage
+\tableofcontents
+
+% for thesis: make sure we switch back to standard pagestyles/numbering
+\ifthenelse{\equal{\DocumentType}{thesis}}{\emptydoublepage\pagestyle{scrheadings}\pagenumbering{arabic}\mainmatter}
+
+% FOR THESIS: YOU CAN SET THE PAGECOUNTER HERE TO MAKE IT IDENTICAL TO THE PDF PAGE NUMBER
+\ifthenelse{\equal{\DocumentType}{thesis}}{\setcounter{page}{7}}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% **************************************************************************************************
+% mainmatter
+\newpage
+% %%%%%%%%%%%%%%%%%%%%% 	1	 %%%%%%%%%%%%%%%%%%%%%%%%%
+%    \emptydoublepage %FOR THESIS: ALWAYS START CHAPTERS AT RIGHT SIDE
+\counterwithin{figure}{section}
+\counterwithin{section}{chapter}
+
+%%%%%%%%%%%%%%%%%% What I want to write %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% THESIS BLOCKS %%%%%%%%%%%%%%%%%%%%
+\chapter{Thesis Blocks}
+\section{Calculating Hand Strength}
+How is EHS calculated: \\
+\href{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}{\textcolor{blue}{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}} \\\\
+Interesting read on EHS implementation techniques:\\
+\href{http://poker-ai.org/archive/www.pokerai.org/pf3/viewtopicfdcf.html?f=3\&t=444\&st=0\&sk=t\&sd=a\&start=40}{\textcolor{blue}{http://poker-ai.org/archive/www.pokerai.org/pf3/viewtopicfdcf.html?f=3\&t=444\&st=0 \\ \&sk=t\&sd=a\&start=40}} \\\\
+Github of EHS implementation algo:\\
+\href{https://github.com/Pip3r4o/Bluffasaurus}{\textcolor{blue}{https://github.com/Pip3r4o/Bluffasaurus}} \\\\
+Paper on calculating the EHS: \cite{ehs_calc} \\\\
+
+A full consideration of the whole remaining deck against two opponants would take $47^6 = 7.73 \cdot 10^9$ calculations, and hence a lot of time. For that reason the solution to this calculation problem is to use the \textit{Monte Carlo Method}. It considers a small random subset of card sequences. The result though is just an approximation, but experience has shown that the error of the calculation is very small, so the Monte Carlo Method is a reliable solution. \cite{ehs_calc}\\\\
+
+To make the EHS calculation even better one need to consider a hand distribution for each player. This has the effect, that the calculation considers the players strength and observing enough hand of his opponents.\\\\
+Further improvements would be to generate an opponentn model for each opponent and also give it as input to the EHS calculation.
+
+\subsection{Hand Strength}
+Calculating the hand strength can be done by comparing hero's hand against every combination of opponent hands on a given board. 
+\textbf{pseudo-code on wiki page}. This technique can also be used to calc the probability against multiple opponents, by raising the resulting probability to the power of opponents. \cite{ehs_calc}\\\\
+
+To take into account the opponent models one could use this algorithm but instead of iterating over every possible hand one only uses the \textbf{Sklansky Groups}. \cite{ehs_calc}\\\\
+\subsection{Calculating the EHS - Preflop}
+What about the \textit{Chen Formula}? Can only be used for Preflop but it is fast for preflop! What are the \textbf{alternatives}?\\\\
+Also have a look at the oopoker project it has the malmuth/Sklansky group implemented plus the other method.\\\\
+One way is to use the so-called \textbf{all-in equities} of all distinct starting hands (169) vs \#ofOpponents. I found a table online with all the equity percentage points for 1 to 8 opponents. In this paper the process of roll-out simulation is explained. \cite{algo_poker}
+\subsection{Calculating the EHS - Flop}
+We can use the 2+2 evaluator for 5-6-7 card evaluations!!! need to implement it!!
+A really good explaination is given in \cite{opp_mod}\\
+We need a HandRanker for 5cards, 6cards and 7cards (2+2) can do that i guess...
+\subsection{Calculating the EHS - Turn}
+A really good explaination is given in \cite{opp_mod}
+\subsection{Calculating the EHS - River}
+on the river only the handstrength against opponents is needed
+\subsection{Calculating the EHS - Flop}
+How to calculate the EHS vs multiple opponents? have a read hear:\\
+\href{http://www.poker-ai.org/archive/pokerai.org/pf3/viewtopiceb2e.html?f=3&t=444&start=20&st=0&sk=t&sd=a&hilit=lut}{\textcolor{blue}{http://www.poker-ai.org/archive/pokerai.org/pf3/viewtopiceb2e}}
+
+\section{Betting Decision for Neural Network Agents}
+The neural networks output layer has three neurons representing FOLD, CALL and RAISE. Furthermore the RAISE action was later divided into 3 sub-categories namely \textit{small raise} \textit{medium raise} and \textit{large raise}. the decider of wether a raise is small, medium or large is the players own chip count. The implemtentation used the proposed betting system, which can be found here \cite{master_evo}. The normal distributions and there sigma calculation can be found at page 55 and 56 of this thesis.
+\section{Evolving the Neural Network Agents}
+To improve the fitness function from only evaluating the agents by there placing another fitness function is introduced. The combined weight of them is our new fitness function:
+\begin{equation}
+HandsWonScore = plainWeight \cdot plainRanking + HandsWonWeight \cdot HandsWonRanking
+\end{equation}
+where plain weight is the weight of the placement fitnessfunction (also called \textit{plain fitness function}).\\\\
+\textbf{\textcolor{red}{Talk in the paper about the try against random agents without hallOfFame and with only the plain fitnessfunction of average placement in tournement! -> Quickly found the strategy of always folding}}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%% OPEN QUESTIONS & THOUGHTS %%%%%%%%%%%%%%%%%%%%
+\chapter{Open Questions \& Thoughts}
+\subsection{Open Bugs and Fixes}
+\begin{itemize}
+\item is Raise action for > stack a valid allInAction? -> \textbf{for now it is}
+\item if on flop two all in and two active players, and the first active player folds -> second active player shouldn't have the opportunity to doTurn
+\item check the logic behind settleBets() and betsSettled() because if one player can decide and the rest is out or all in while in settleBets() the one player can still bet -> \textbf{but here it should stop and go to showdown}
+\subitem if there are two guys in the betting round with stack greater 0 and if one goes all in and the ai should decide now, there would only be one active player left because the other guys just went all-in. To provide input we should now say there is one opponent.
+\subitem \textbf{\textcolor{red}{there is a lot of improvement when it comes to multiway all in on different betting rounds. E.g. if there where 3 guys all in preflop and two guys are on the flop where now the one guy moves all in, the ai should rather only consider his all-in action therefor as input it should only get 1 opponent for the calculation, because the others only contribute to the sidepot}}
+\item \textbf{\textcolor{blue}{BUGS found via debugging with logfile}}
+\subitem AI: RAISE command with 0 amount?
+\subitem cardDealer: is lastRaiseAmount calculated correctly? (sb - wager: 13, raise 131 (highesW: 23 - lastRaiseAmount: 121) ... bb - wager: 23, raise 755 (highestW: 131 - lastRaiseAmount: 634))
+\subitem FOLD action should not be possible when CHECK is possible - should also not be possible when only checks in front of you! Then change FOLD to CHECK instead
+\subitem lastRaiseAmount on unopened flop should be 0 not the bigblind amount!
+\subitem two people before the last dealer busted and one guy joined to the right of the dealer and now the old dealer also is the new dealer. new guy at table was also old dealer on other table!! -> \textbf{expected result?} shouldn't it be that the new guy is on cutoff and next guy is now official dealer? (most fair!) -- also what happens is that on the table where the new player is taken from on player is overjump and the next player is dealer (e.g player 10 was dealer and gets reseated, next hand player 12 is dealer but player 11 should be)\\\\
+At a second example the seating behaviour was as expected! -> DIFFERENCE only one busted in this e.g, didn't work when 2 busted simultanously
+\subitem AI: if it wants to raise but has less then the calling chips, just change RAISE action to CALL action
+\subitem AI: implement betting system that never raises smaller than bigblind
+\subitem cardDealer: when two players left and bigblind has less then bigblind but more than small blind, then the small blind does not have to cover the bet and showdown is done... -> bet should be covered -> because now there is a but that the guy how didnt cover bet only wins double his money and not everything
+\subitem when only one guy left, one more hand is player where he plays against himself.... get rid of this extra game
+\subitem raise amount is not calculated correctly!
+\subitem cap the noise added amount so total value not greater than 1 or less than -1
+\subitem AI: how to sample from output vector? should i take the highest value or sample with distribution?
+\item AI: \textbf{\textcolor{red}{Output of AI neural network is not always normed to 1 and has always the same outputs... something is wrong here.}}
+\subitem somehow to handsWon seams not working correctly as is the neural network!!! -> Have a look!!!!
+\item check if the mean Money Won fitnessfunction makes sense
+\item \textbf{BUG} with the last raiser index! When all in action of no full size with extra at LR index there is an adress and the action stops there\\\\
+\includegraphics[width=14cm]{1.png}
+\end{itemize}
+\pagebreak
+\subsection{Things To Implement}
+\begin{itemize}
+\item \textbf{\textcolor{red}{A UnitTest like in oopoker\_master which tests importent functions for correctness}}
+\item \textbf{\textcolor{red}{Structurize the code and make it more efficient}}
+\item \textbf{approximate the execution time}
+\item \textbf{Neural Network:} how to normalize input values if distribution is unknown???\\\\
+\textbf{Answer:}\\\\
+\textcolor{blue}{Additional feature (totalchips in game as BB), and other chip features also in bb
+Additionally normalize all chip features with the totalchips feature in bb and normalize other features to 0...1. }
+\item Last layer is a softmax activation function so it gets a classification characteristic
+\item \textbf{Evolutionary Algorithm:} How to evolve our agents?
+\item how to order agents by places when multiple agents bust within one hand?
+\subitem \textbf{Answer:} guy with less chips has worst position... -> \textbf{for now not treated}
+\item \textbf{Effective Hand Strength} as feature -> see how it is calculated and then try to do it with pokereval.h and pokereval2.h
+\subitem https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm
+\subitem \textbf{github for EHS calculation algo: https://github.com/Pip3r4o/Bluffasaurus}
+\item interesting read on EHS for multiple opponents and general implementation strategies.. 
+http://poker-ai.org/archive/www.pokerai.org/pf3/viewtopicfdcf.html?f=3\&t=444\&st=0\&sk=t\&sd=a\&start=40
+\item \textbf{Change the ordering of numerating opponent hands and all possible turn and river combinations -> performance improvement?}
+\item \textbf{\textcolor{red}{Things to implement next:}}
+\subitem betting strategy
+\subitem missing input features
+\subitem checking if game logic is correct
+\item make them train vs another population aswell and only evolve 24 players the rest stays the same
+\item check if the distributions for a high bet are right
+\item HALL OF FAME
+\item increase the number of players in a tournement
+\item \textbf{Change the betting strategy} because I will never reach the case of high raise because most of the time the neural network fixes the output values to a fixed number which only varies slightly!
+\item think of a way to make a better PREFLOP decision because bot fold too many hand preflop
+\item improve the debugging to better see what the network is doing
+\item implement a different fitness function where fitness is meassured via return of money \%
+\end{itemize}
+
+\subsection{Open Problems}
+\begin{itemize}
+When agent decides to raise he will always raise until the other one folds or he is allin! There is no reevaluation after a betting round.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+\bibitem{ehs_calc}
+  Luis Filipe Teofilo,
+  \textit{Estimating the Probability of Winning for Texas Hold'em Poker Agents},
+  Departamento de Engenharia Informatica, Faculdade de Engenharia da Universidade do Porto,
+  Portugal,
+  yeart unknown.
+\bibitem{opp_mod}
+  Darse Billings, Denis Papp, Jonathan Schaeffer, Duane Szafron,
+  \textit{Opponent Modeling in Poker},
+  Department of Computing Science, University of Alberta, 
+ 1998.
+ \bibitem{algo_poker}
+  Darse Billings,
+  \textit{Algorithms and Assesment in ComputerPoker},
+  Department of Computing Science, University of Alberta, 
+ 2006.
+ \bibitem{master_evo}
+  Garret Joseph Nicolai,
+  \textit{Evolutionary Methods for Learning No-Limit Texas Hold'em Poker},
+  Department of Computing Science, University of Reginia, 
+ 2008.
+\end{thebibliography}
+% **************************************************************************************************
+% **************************************************************************************************
+
+% place all floats and create label on last page
+\FloatBarrier\label{end-of-document}
+\end{document}
+

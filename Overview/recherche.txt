@@ -1,0 +1,12 @@
+S.g. Herr Prof. Pernkopf,
+
+nach einem längeren Sommerurlaub war es mir nun endlich möglich, 
+mich intensiv mit dem Thema Poker-AI vertraut zu machen. Anbei finden Sie meine Informationsrecherche und eine 
+genaue Beschreibung meiner Vorstellungen für die Bachelorarbeit. 
+Da ich leider feststellen musste, dass das Theme sehr ausgiebig ist und ein komplett autonomer Poker-Agent den
+Rahmen der Bachelorarbeit sprengen würde, hab ich nun meinen Fokus auf die Erstellung eines Test-Environments mit dazugehörigen NN-Agents gelegt.
+Eine genauere Beschreibung dieser Idee finden Sie im angefügten Dokument. Ich stehe Ihnen für Rückfragen gerne jederzeit 
+zur Verfügung.
+
+Mfg
+Fabian Moik

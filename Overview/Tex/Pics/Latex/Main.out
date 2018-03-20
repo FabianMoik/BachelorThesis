@@ -1,0 +1,12 @@
+\BOOKMARK [0][-]{chapter.1}{Maximum Likelihood Estimation}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Maximum Likelihood Estimation of Model Parameters}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{For scenario 2, find out which is the anchor with exponentially distributed measurements.}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{Analytically derive the maximum likelihood solution for the exponential distribution.}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Estimate the parameters of the measurement models for all anchors in all 3 scenarios using the maximum likelihood method.}{section.1.1}% 5
+\BOOKMARK [1][-]{section.1.2}{Least-Squares Estimation of the Position}{chapter.1}% 6
+\BOOKMARK [2][-]{subsection.1.2.1}{Show analytically that for scenario 1 \(joint likelihood for the distances is Gaussian\), the least-squares estimator of the position is equivalent to the maximum likelihood estimator}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.2}{Implement the Gauss-Newton algorithm to find the least-squares estimate for the position and write a function LeastSquaresGN. You may choose suitable values for the tolerance and the maximum number of iterations on your own. The output is the estimated position.}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.3}{For all three scenarios, evaluate your estimation algorithm using the provided data. For each of the N = 2000 independent measurements, choose the starting position p0 randomly according to a uniform distribution within the square spanned by the anchor points.}{section.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.2.4}{Compare the performance of scenario 2 with scenario 4. What can you observe?}{section.1.2}% 10
+\BOOKMARK [1][-]{section.1.3}{Numerical Maximum-Likelihood Estimation of the Position}{chapter.1}% 11
+\BOOKMARK [2][-]{subsection.1.3.1}{For the first measurement \(i.e. the first NA distance estimates\), compute the joint likelihood function over a two dimensional grid with a resolution of 5 cm. Confine the evaluation to the square region that is enclosed by the anchors. Why might it be hard to find the maximum of this function with a gradient ascent algorithm using an arbitrary starting point within the evaluation region? Is the maximum at the true position?}{section.1.3}% 12
