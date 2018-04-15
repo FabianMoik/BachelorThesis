@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator
+CMAKE_SOURCE_DIR = /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OwnPokerSimulator.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/OwnPokerSimulator.dir/flags.make
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o: ../ai/NN_agent/NeuralNet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/NeuralNet.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/NeuralNet.cpp.o.provides.build: CMa
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o: ../ai/NN_agent/Neuron.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/NN_agent/Neuron.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/NN_agent/Neuron.cpp.o.provides.build: CMakeF
 
 CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o: ../ai/ai.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/ai.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/ai.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/ai.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/ai.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/ai.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/ai.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/ai.cpp.o.provides.build: CMakeFiles/OwnPoker
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o: ../ai/aiFolder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiFolder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiFolder.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiFolder.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiFolder.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiFolder.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiFolder.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiFolder.cpp.o.provides.build: CMakeFiles/Ow
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o: ../ai/aiCaller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiCaller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiCaller.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiCaller.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiCaller.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiCaller.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiCaller.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiCaller.cpp.o.provides.build: CMakeFiles/Ow
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o: ../ai/aiOwn.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiOwn.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiOwn.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiOwn.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiOwn.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiOwn.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiOwn.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiOwn.cpp.o.provides.build: CMakeFiles/OwnPo
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o: ../ai/aiRandom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRandom.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRandom.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRandom.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRandom.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRandom.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRandom.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiRandom.cpp.o.provides.build: CMakeFiles/Ow
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o: ../ai/aiRaiser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRaiser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRaiser.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRaiser.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRaiser.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiRaiser.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiRaiser.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiRaiser.cpp.o.provides.build: CMakeFiles/Ow
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o: ../ai/aiSmart.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiSmart.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiSmart.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiSmart.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiSmart.cpp > CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/ai/aiSmart.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/ai/aiSmart.cpp -o CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/OwnPokerSimulator.dir/ai/aiSmart.cpp.o.provides.build: CMakeFiles/Own
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o: ../game_assets/action.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/action.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/action.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/action.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/action.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/action.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/action.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/action.cpp.o.provides.build: CMakeF
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o: ../game_assets/card.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/card.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/card.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/card.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/card.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/card.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/card.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/card.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o: ../game_assets/cardDealer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/cardDealer.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/cardDealer.cpp.o.provides.build: CM
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o: ../game_assets/deck.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/deck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/deck.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/deck.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/deck.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/deck.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/deck.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/deck.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o: ../game_assets/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/game.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/game.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/game.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/game.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/game.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/game.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o: ../game_assets/information.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/information.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/information.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/information.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/information.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/information.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/information.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/information.cpp.o.provides.build: C
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o: ../game_assets/player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/player.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/player.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/player.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/player.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/player.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o.requires:
 
@@ -443,16 +443,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o.provides.build: CMakeF
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o: ../game_assets/table.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/table.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/table.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/table.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/table.cpp > CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/game_assets/table.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/game_assets/table.cpp -o CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o.requires:
 
@@ -467,16 +467,16 @@ CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o: ../hand_eval/pokereval.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o.requires:
 
@@ -491,16 +491,16 @@ CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o.provides.build: CMake
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o: ../hand_eval/pokereval2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokereval2.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o.requires:
 
@@ -515,16 +515,16 @@ CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o.provides.build: CMak
 
 CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o: ../test_cases/testSingleTableAllAgents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp > CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp > CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.requires:
 
@@ -539,16 +539,16 @@ CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.provi
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o: ../hand_eval/2+2/2P2Evaluator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/2+2/2P2Evaluator.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o.requires:
 
@@ -563,16 +563,16 @@ CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o.provides.build
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o: ../hand_eval/pokermath.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokermath.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o.requires:
 
@@ -587,16 +587,16 @@ CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o.provides.build: CMake
 
 CMakeFiles/OwnPokerSimulator.dir/random.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/random.cpp.o: ../random.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/random.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/random.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/random.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/random.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/random.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/random.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/random.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/random.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/random.cpp > CMakeFiles/OwnPokerSimulator.dir/random.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/random.cpp > CMakeFiles/OwnPokerSimulator.dir/random.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/random.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/random.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/random.cpp -o CMakeFiles/OwnPokerSimulator.dir/random.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/random.cpp -o CMakeFiles/OwnPokerSimulator.dir/random.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/random.cpp.o.requires:
 
@@ -611,16 +611,16 @@ CMakeFiles/OwnPokerSimulator.dir/random.cpp.o.provides.build: CMakeFiles/OwnPoke
 
 CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o: ../rules.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/rules.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/rules.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/rules.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/rules.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/rules.cpp > CMakeFiles/OwnPokerSimulator.dir/rules.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/rules.cpp > CMakeFiles/OwnPokerSimulator.dir/rules.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/rules.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/rules.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/rules.cpp -o CMakeFiles/OwnPokerSimulator.dir/rules.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/rules.cpp -o CMakeFiles/OwnPokerSimulator.dir/rules.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o.requires:
 
@@ -635,16 +635,16 @@ CMakeFiles/OwnPokerSimulator.dir/rules.cpp.o.provides.build: CMakeFiles/OwnPoker
 
 CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o: ../statistics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/statistics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/statistics.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/statistics.cpp > CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/statistics.cpp > CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/statistics.cpp -o CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/statistics.cpp -o CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o.requires:
 
@@ -659,16 +659,16 @@ CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.o.provides.build: CMakeFiles/Own
 
 CMakeFiles/OwnPokerSimulator.dir/util.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/util.cpp.o: ../util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/util.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/util.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/util.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/util.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/util.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/util.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/util.cpp > CMakeFiles/OwnPokerSimulator.dir/util.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/util.cpp > CMakeFiles/OwnPokerSimulator.dir/util.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/util.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/util.cpp -o CMakeFiles/OwnPokerSimulator.dir/util.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/util.cpp -o CMakeFiles/OwnPokerSimulator.dir/util.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/util.cpp.o.requires:
 
@@ -683,16 +683,16 @@ CMakeFiles/OwnPokerSimulator.dir/util.cpp.o.provides.build: CMakeFiles/OwnPokerS
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o: ../hand_eval/handEvalCalc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp > CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.i
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/handEvalCalc.cpp -o CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.s
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o.requires:
 
@@ -767,7 +767,7 @@ OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/util.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/hand_eval/handEvalCalc.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/build.make
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable OwnPokerSimulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable OwnPokerSimulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OwnPokerSimulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -810,6 +810,6 @@ CMakeFiles/OwnPokerSimulator.dir/clean:
 .PHONY : CMakeFiles/OwnPokerSimulator.dir/clean
 
 CMakeFiles/OwnPokerSimulator.dir/depend:
-	cd /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug /Users/fabian.moik/Documents/private/Uni/BachelorArbeit/Implementation/OwnSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles/OwnPokerSimulator.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles/OwnPokerSimulator.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OwnPokerSimulator.dir/depend
 

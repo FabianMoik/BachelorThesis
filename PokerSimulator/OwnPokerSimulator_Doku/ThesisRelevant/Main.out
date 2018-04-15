@@ -1,13 +1,41 @@
-\BOOKMARK [0][-]{chapter.1}{Thesis Blocks}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Calculating Hand Strength}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Hand Strength}{section.1.1}% 3
-\BOOKMARK [2][-]{subsection.1.1.2}{Calculating the EHS - Preflop}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.3}{Calculating the EHS - Flop}{section.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.1.4}{Calculating the EHS - Turn}{section.1.1}% 6
-\BOOKMARK [2][-]{subsection.1.1.5}{Calculating the EHS - River}{section.1.1}% 7
-\BOOKMARK [2][-]{subsection.1.1.6}{Calculating the EHS - Flop}{section.1.1}% 8
-\BOOKMARK [1][-]{section.1.2}{Betting Decision for Neural Network Agents}{chapter.1}% 9
-\BOOKMARK [1][-]{section.1.3}{Evolving the Neural Network Agents}{chapter.1}% 10
-\BOOKMARK [0][-]{chapter.2}{Open Questions \046 Thoughts}{}% 11
-\BOOKMARK [1][-]{subsection.2.0.1}{Open Bugs and Fixes}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.0.2}{Things To Implement}{subsection.2.0.1}% 13
+\BOOKMARK [0][-]{chapter.1}{Structure of the Thesis}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.3}{No-Limit Texas Hold'Em Poker}{}% 3
+\BOOKMARK [1][-]{section.3.1}{What is Poker}{chapter.3}% 4
+\BOOKMARK [1][-]{section.3.2}{Poker Lingua}{chapter.3}% 5
+\BOOKMARK [1][-]{section.3.3}{Basic profitable Poker Strategy}{chapter.3}% 6
+\BOOKMARK [2][-]{subsection.3.3.1}{Different Types of Poker Players}{section.3.3}% 7
+\BOOKMARK [1][-]{section.3.4}{What does this machine learning program try to learn the agent and what is the desired strategy if there is any.}{chapter.3}% 8
+\BOOKMARK [0][-]{chapter.4}{Test Environment}{}% 9
+\BOOKMARK [1][-]{section.4.1}{What it consists of}{chapter.4}% 10
+\BOOKMARK [1][-]{section.4.2}{How it was implemented}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.3}{What does it provide}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.4}{How it is used to train the agents}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.5}{What are remarkable features of the testbed compared to already existing ones}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.5.1}{Some alternative Testbeds and why they were not used}{section.4.5}% 15
+\BOOKMARK [0][-]{chapter.5}{Evolution of Neural Network Agents}{}% 16
+\BOOKMARK [1][-]{section.5.1}{Overview}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{The Neural Network Structure}{chapter.5}% 18
+\BOOKMARK [2][-]{subsection.5.2.1}{The Input \046 Hidden Layer}{section.5.2}% 19
+\BOOKMARK [2][-]{subsection.5.2.2}{The Output Layer}{section.5.2}% 20
+\BOOKMARK [1][-]{section.5.3}{Evolutionary learning}{chapter.5}% 21
+\BOOKMARK [2][-]{subsection.5.3.1}{Evolution Phase}{section.5.3}% 22
+\BOOKMARK [2][-]{subsection.5.3.2}{Evaluating the Fitness}{section.5.3}% 23
+\BOOKMARK [2][-]{subsection.5.3.3}{Pitfalls}{section.5.3}% 24
+\BOOKMARK [2][-]{subsection.5.3.4}{Countermeasures against common pitfalls}{section.5.3}% 25
+\BOOKMARK [0][-]{chapter.6}{Results of this Study}{}% 26
+\BOOKMARK [0][-]{chapter.7}{Future Improvements and Work}{}% 27
+\BOOKMARK [0][-]{chapter.8}{Thesis Blocks}{}% 28
+\BOOKMARK [1][-]{section.8.1}{Calculating Hand Strength}{chapter.8}% 29
+\BOOKMARK [2][-]{subsection.8.1.1}{Hand Strength}{section.8.1}% 30
+\BOOKMARK [2][-]{subsection.8.1.2}{Calculating the EHS - Preflop}{section.8.1}% 31
+\BOOKMARK [2][-]{subsection.8.1.3}{Calculating the EHS - Flop}{section.8.1}% 32
+\BOOKMARK [2][-]{subsection.8.1.4}{Calculating the EHS - Turn}{section.8.1}% 33
+\BOOKMARK [2][-]{subsection.8.1.5}{Calculating the EHS - River}{section.8.1}% 34
+\BOOKMARK [2][-]{subsection.8.1.6}{Calculating the EHS - Flop}{section.8.1}% 35
+\BOOKMARK [1][-]{section.8.2}{Betting Decision for Neural Network Agents}{chapter.8}% 36
+\BOOKMARK [1][-]{section.8.3}{Evolving the Neural Network Agents}{chapter.8}% 37
+\BOOKMARK [0][-]{chapter.9}{Open Questions \046 Thoughts}{}% 38
+\BOOKMARK [1][-]{subsection.9.0.1}{Open Bugs and Fixes}{chapter.9}% 39
+\BOOKMARK [2][-]{subsection.9.0.2}{Things To Implement}{subsection.9.0.1}% 40
+\BOOKMARK [2][-]{subsection.9.0.3}{Open Problems}{subsection.9.0.1}% 41

@@ -213,7 +213,87 @@
 \counterwithin{figure}{section}
 \counterwithin{section}{chapter}
 
-%%%%%%%%%%%%%%%%%% What I want to write %%%%%%%%%%%%%%%%%%%%
+%BrainStrom for structure
+\chapter{Structure of the Thesis}
+\begin{itemize}
+\item Abstract
+\item Introduction
+\subitem Objective of thesis
+\subitem Outline of thesis
+\item What is No-Limit Texas Hold'em
+\subitem What is poker
+\subitem Poker language
+\subitem Basic Poker Strategy
+\subitem How will the Neural network try to apply and learn strategies?
+\item Test Environment (How the testbed was constructed and what is it capable off?)
+\item Neural Network Agents trained with EA
+\subitem structure of NN
+\subitem implementation of EA
+\subsubitem improvements (Hall of Fame, varying the fitness function)
+\item results of the experiment
+\item future improvement and work
+\end{itemize}
+
+%%%Chapter INTRODUCTION
+\chapter{Introduction}
+
+%%%Chapter TEXAS NO-LIMIT HOLD'EM Poker
+\chapter{No-Limit Texas Hold'Em Poker}
+\section{What is Poker}
+Talk about what poker is in general and also talk about, why it is a perfect candidate for testing unsupervised machine learning techniques such as evolutionary learning.
+\section{Poker Lingua}
+Is that a scientific work or just call it language?
+\section{Basic profitable Poker Strategy}
+\subsection{Different Types of Poker Players}
+Talk about a general sound poker strategy and shortly describe the game theoretic standpoint and how it compares to more practicable playing strategy
+\subsubsection{LAG}
+\subsubsection{TAG}
+\subsubsection{...}
+Which strategy is known to be the best one against a wide variety of opponents and which strategy outperforms against which? -> \textbf{Keep that as short as possible}
+\section{What does this machine learning program try to learn the agent and what is the desired strategy if there is any.}
+Talk about what the expected behavior of the agents were beforehand and what would be the optimal behavior if that can even be said at this point. Would it be a game theoretic approach or would other strategies work even better for the test environment?
+%%%Chapter TEST ENVIRONMENT
+\chapter{Test Environment}
+\section{What it consists of}
+\section{How it was implemented}
+Why C++ was choosen as the programming language? -> \textbf{because of the speed for calculations}
+\section{What does it provide}
+\section{How it is used to train the agents}
+\section{What are remarkable features of the testbed compared to already existing ones}
+\subsection{Some alternative Testbeds and why they were not used}
+
+%%%Chapter EA and NN agents
+\chapter{Evolution of Neural Network Agents}
+\section{Overview}
+\section{The Neural Network Structure}
+\subsection{The Input \& Hidden Layer}
+\subsubsection{The Winning Chance}
+\subsubsection{Round of The Game (Preflop, Flop, Turn, River}
+\subsubsection{How many Turns have passed}
+\subsubsection{Hero Chip Count}
+\subsubsection{Chips in Pot}
+\subsubsection{Chips to Call}
+\subsubsection{Number of Opponents}
+number of agents currently in the hand, not counting ourself
+\subsubsection{Hero's Position}
+\subsubsection{Chip Count of all Opponents}
+The first one is always the chip count of the first opponent immediately to the left of the current active player.
+For empty seats a value of 0 is assigned to this feature.
+\subsubsection{Opponent model}
+//TODO not yet implemented -> \textbf{optional}
+\subsection{The Output Layer}
+\section{Evolutionary learning}
+\subsection{Evolution Phase}
+\subsection{Evaluating the Fitness}
+\subsection{Pitfalls}
+\subsection{Countermeasures against common pitfalls}
+
+%%%Chapter RESULTS
+\chapter{Results of this Study}
+
+%%%Chapter FUTURE IMPROVEMENTS AND WORK
+\chapter{Future Improvements and Work}
+
 %%%%%%%%%%%%%%%%%% THESIS BLOCKS %%%%%%%%%%%%%%%%%%%%
 \chapter{Thesis Blocks}
 \section{Calculating Hand Strength}
@@ -327,7 +407,7 @@ http://poker-ai.org/archive/www.pokerai.org/pf3/viewtopicfdcf.html?f=3\&t=444\&s
 
 \subsection{Open Problems}
 \begin{itemize}
-When agent decides to raise he will always raise until the other one folds or he is allin! There is no reevaluation after a betting round.
+\item When agent decides to raise he will always raise until the other one folds or he is allin! There is no reevaluation after a betting round.
 \end{itemize}
 
 
