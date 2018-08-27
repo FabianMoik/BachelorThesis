@@ -30,8 +30,10 @@ inline double my_clock(void) {
 // Forward Declaration
 Rules* defineRules();
 
-std::vector<Player*> runOneGeneration(std::vector<Player*> &players, Rules* rules, int numElitePlayersToKeep, int numTourney, std::vector<Player*> &hallOfFame);
-std::vector<Player*> runOneGenerationWithMultiThreading(std::vector<Player*> players, int numElitePlayersToKeep, int numTourney, int numThreads);
+std::vector<Player*> runOneGeneration(std::vector<Player*> &players, Rules* rules, int numElitePlayersToKeep,
+                                      int numTourney, std::vector<Player*> &hallOfFame);
+std::vector<Player*> runOneGenerationWithMultiThreading(std::vector<Player*> players, int numElitePlayersToKeep,
+                                                        int numTourney, int numThreads);
 std::vector<long> startOneGameCicle(Game *game, std::vector<std::vector<long>> &resultVector, int id);
 void evolvePlayers(std::vector<Player*> players, const std::vector<Player*> elitePlayers, double mutationLikelihood);
 bool saveNeuralNetworkWeightsToFile(std::vector<double> weights);

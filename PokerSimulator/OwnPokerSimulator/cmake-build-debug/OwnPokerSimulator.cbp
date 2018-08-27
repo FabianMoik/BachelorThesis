@@ -214,6 +214,9 @@
 		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/hand_eval/pokermath.h">
 			<Option target="OwnPokerSimulator"/>
 		</Unit>
+		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/main.cpp">
+			<Option target="OwnPokerSimulator"/>
+		</Unit>
 		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/random.cpp">
 			<Option target="OwnPokerSimulator"/>
 		</Unit>
@@ -230,9 +233,6 @@
 			<Option target="OwnPokerSimulator"/>
 		</Unit>
 		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/statistics.h">
-			<Option target="OwnPokerSimulator"/>
-		</Unit>
-		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp">
 			<Option target="OwnPokerSimulator"/>
 		</Unit>
 		<Unit filename="/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/util.cpp">

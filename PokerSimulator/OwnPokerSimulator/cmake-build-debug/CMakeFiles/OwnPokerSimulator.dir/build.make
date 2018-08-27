@@ -513,28 +513,28 @@ CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o.provides: CMakeFiles
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o.provides.build: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o
 
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o: ../test_cases/testSingleTableAllAgents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OwnPokerSimulator.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OwnPokerSimulator.dir/main.cpp.o -c /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/main.cpp
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp > CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OwnPokerSimulator.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/main.cpp > CMakeFiles/OwnPokerSimulator.dir/main.cpp.i
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/test_cases/testSingleTableAllAgents.cpp -o CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OwnPokerSimulator.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fabian.moik/Documents/private/Uni/BachelorThesis/PokerSimulator/OwnPokerSimulator/main.cpp -o CMakeFiles/OwnPokerSimulator.dir/main.cpp.s
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.requires:
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.requires
+.PHONY : CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.requires
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.provides: CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.requires
-	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.provides.build
-.PHONY : CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.provides
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.provides: CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.provides
 
-CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.provides.build: CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o
+CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.provides.build: CMakeFiles/OwnPokerSimulator.dir/main.cpp.o
 
 
 CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o: CMakeFiles/OwnPokerSimulator.dir/flags.make
@@ -726,7 +726,7 @@ OwnPokerSimulator_OBJECTS = \
 "CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o" \
 "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o" \
 "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o" \
-"CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o" \
+"CMakeFiles/OwnPokerSimulator.dir/main.cpp.o" \
 "CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o" \
 "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o" \
 "CMakeFiles/OwnPokerSimulator.dir/random.cpp.o" \
@@ -757,7 +757,7 @@ OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/game_assets/player.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o
-OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o
+OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/main.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o
 OwnPokerSimulator: CMakeFiles/OwnPokerSimulator.dir/random.cpp.o
@@ -794,7 +794,7 @@ CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/game
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o.requires
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o.requires
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o.requires
-CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o.requires
+CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/main.cpp.o.requires
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o.requires
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o.requires
 CMakeFiles/OwnPokerSimulator.dir/requires: CMakeFiles/OwnPokerSimulator.dir/random.cpp.o.requires
