@@ -1,0 +1,285 @@
+% **************************************************************************************************
+% ** SPSC Report and Thesis Template
+% **************************************************************************************************
+%
+% ***** Authors *****
+% Daniel Arnitz, Paul Meissner, Stefan Petrik
+% Signal Processing and Speech Communication Laboratory (SPSC)
+% Graz University of Technology (TU Graz), Austria
+%
+% ***** Changelog *****
+% 0.1   2010-01-25   extracted from report template by Daniel Arnitz (not ready yet)
+% 0.2   2010-02-08   added thesis titlepage and modified layout (not ready yet)
+% 0.3   2010-02-18   added TUG logo and statutory declaration
+% 0.4   2010-02-18   moved the information fields below \input{./base/packages} (encoding...)
+% 0.5   2010-03-02   added \ShortTitle to fix problems with long thesis titles
+%                    added \ThesisType (makes the template suitable for MSc, BSc, PhD, ... Thesis)
+% 0.6   2010-06-05   added pagestyle and pagenumbering after frontmatter, packages has now type
+% 0.7   2010-09      \Advisors -> \Assessors, inserted frontmatter for thesis
+% 0.8   2010-11      added examples
+% 0.9   2011-04      \Twosided now {true,false}, scrbook for thesis (\front-, \main-, \backmatter)
+%                    added \SpecialNote for titlepage (funding, etc.), added type "homework"
+% 0.10  2011-10-18   fixed two typos in \bibliographystyle{} (bug reported by Michael Tauch)
+% 0.11  2011-11-09   fixed/modified preamble (bug reported by Michael Tauch)
+% 0.12  2012-07-20   added ./base/opt_macros to deal with optional macros
+% 0.13  2012-07-27   added \PaperSize
+%
+% ***** Todo *****
+% - Introduction/Usage
+% - explain/show preamble (with \thispagestyle, etc)
+% - why doesn't \pagestyle work in preamble while \thispagestyle does? (reported by Markus Fr�hle)
+% **************************************************************************************************
+
+% **************************************************************************************************
+% basic setup
+
+\newcommand{\DocumentType}{homework} % "thesis" / "report" / "homework"
+\newcommand{\DocumentLanguage}{de} % "en" / "de"
+\newcommand{\PaperSize}{a4paper} % "a4paper" / "letterpaper"
+\newcommand{\Twosided}{false} % "true" / "false"
+
+% **************************************************************************************************
+% template setup -- do not change these unless you know what you are doing!
+\input{./base/packages_\DocumentType}
+\input{./base/layout_\DocumentType}
+\input{./base/macros}
+% \graphicspath{{./drawings/}{./plots/}{./images/}}
+% **************************************************************************************************
+% ATTENTION: There is a stylesheet provided for makeindex; set makeindex to -s "./base/index.sty"
+% **************************************************************************************************
+
+% uncomment to get watermarks:
+% \usepackage[first,bottom,light,draft]{draftcopy}
+% \draftcopyName{ENTWURF}{160}
+
+
+% **************************************************************************************************
+% information fields
+
+% general
+\newcommand{\DocumentTitle}{General Information}
+\newcommand{\DocumentSubtitle}{}
+\newcommand{\ShortTitle}{Study Material} % used in headers (keep short!)
+\newcommand{\DocumentAuthor}{Fabian Moik}
+\newcommand{\DocumentDate}{Graz, \today}
+%    for thesis only (will be ignored for reports)
+\newcommand{\ThesisType}{Bachelor Thesis}
+%\newcommand{\Organizations}{Signal Processing and Speech Communications Laboratory \\ Graz University of Technology, Austria \\[1cm] in co-operation with \\ A Nice Company \\ Cartagena, Spain} % SPSC \\ TUG \\[1cm] in cooperation with \\ A Nice Company
+%\newcommand{\Supervisors}{Assoc.Prof. Dipl.-Ing. Dr. Klaus Witrisal \\ Dipl.-Ing. Paul Meissner} % Supervisor 1 \\ Supervisor 2 \\ ...
+%\newcommand{\Assessors}{Univ.-Prof. Dipl.-Ing. Dr.techn. Gernot Kubin \\ Assoc.Prof. Dipl.-Ing. Dr. James J. Tobe Defined}
+%\newcommand{\SpecialNote}{This work was funded by the Austrian Research Promotion Agency (FFG) under grant 123456.}
+%   for report only: revision number
+\newcommand{\RevPrefix}{alpha~}
+\newcommand{\RevLarge}{1}
+\newcommand{\RevSmall}{0}
+
+% confidential? (can of course also be used for other messages/notes)
+\newcommand{\ConfidNote}{\today}
+
+
+% **************************************************************************************************
+% miscellaneous
+
+% correct bad hyphenation
+\hyphenation{}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{float}
+\usepackage{blindtext, graphicx}
+\usepackage[labelfont=bf]{caption}
+\usepackage{chngcntr}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%\lstset{language=[Objective]C, breakindent=40pt, breaklines}
+
+\lstset{ %
+  language=C++,                  % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+% switches
+\newboolean{OptDraftMode}
+\newboolean{DisplayContentBoxes}
+% \setboolean{OptDraftMode}{true} % optional draft mode for pixel graphics (speed up generation; add \OptDraft to options)
+% \setboolean{DisplayContentBoxes}{true} % optional boxes with contents (\ContentBox{Content}{NumPages} can be used as "sticky note" with planned contents)
+%   load
+\input{./base/opt_macros}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\newcommand*{\xchapter}{\setcounter{section}{0}\addchap}
+% **************************************************************************************************
+% **************************************************************************************************
+%
+ %**************************************************************************************************
+\begin{document}
+%%%%%%%%% begin snippet
+%% You need to add the package "tabularx".
+%% Place the snippet right after \begin{document}
+
+% need tabularx
+%\usepackage{tabularx}
+
+\begin{titlepage}
+       \begin{center}
+             \begin{huge}
+				   %% Update assignment number here
+                   \textbf{Bachelor Thesis - Poker Simulator}
+             \end{huge}
+       \end{center}
+       \begin{center}
+             \begin{large}
+		Notes and Todos
+             \end{large}
+       \end{center}
+       \begin{center}
+             \begin{large}
+                 \textbf{Fabian Moik}
+             \end{large}
+       \end{center}
+\end{titlepage}
+
+%%%%%%%%% end snippet
+% **************************************************************************************************
+% titlepage
+%\input{./base/titlepage_\DocumentType}\emptydoublepage
+
+% for thesis: switch to frontmatter
+%\ifthenelse{\equal{\DocumentType}{thesis}}{\pagestyle{empty}\pagenumbering{roman}}{}
+
+
+% **************************************************************************************************
+% **************************************************************************************************
+% user-defined part
+
+% FOR THESIS: ADD THE PREAMBLE (ABSTRACT, KURZFASSUNG, ...) HERE (also add an \emptydoublepage in between), e.g.:
+%    \input{my-abstract}
+%    \emptydoublepage
+%    \input{my-kurzfassung}
+%    \emptydoublepage
+%    ...
+% FEEL FREE TO USE \emptypage AND \emptydoublepage TO ADJUST THE LAYOUT
+% USE \thispagestyle{empty} for abstract, etc.
+
+% for thesis: statutory declaration
+\ifthenelse{\equal{\DocumentType}{thesis}}{\input{./base/declaration}}{}
+
+% TOC
+%\emptydoublepage
+\tableofcontents
+
+% for thesis: make sure we switch back to standard pagestyles/numbering
+\ifthenelse{\equal{\DocumentType}{thesis}}{\emptydoublepage\pagestyle{scrheadings}\pagenumbering{arabic}\mainmatter}
+
+% FOR THESIS: YOU CAN SET THE PAGECOUNTER HERE TO MAKE IT IDENTICAL TO THE PDF PAGE NUMBER
+\ifthenelse{\equal{\DocumentType}{thesis}}{\setcounter{page}{7}}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% **************************************************************************************************
+% mainmatter
+\newpage
+% %%%%%%%%%%%%%%%%%%%%% 	1	 %%%%%%%%%%%%%%%%%%%%%%%%%
+%    \emptydoublepage %FOR THESIS: ALWAYS START CHAPTERS AT RIGHT SIDE
+\counterwithin{figure}{section}
+\counterwithin{section}{chapter}
+
+%%%%%%%%%%%%%%%%%% TODOs %%%%%%%%%%%%%%%%%%%%
+\chapter{TODOs}
+%%% Docs
+\section{Documentation - Todos}
+\begin{itemize}
+\item Use citation of diploma template. Is it okey to use this style of citation, which an abbreviation and the year to reference?
+\item At the beginning of the thesis there should be a section which briefly describes the upcoming chapters (Gliederung).
+\end{itemize}
+%%% Programm
+\section{Program/Code - Todos}
+\begin{itemize}
+\item Get the code to run
+\item check what it still missing
+\subitem basic opponent models. Remember the VPIP and PFR and rank hands accordingly. \textbf{We can do this on only a single table for testing purposes. To show if it increases the results.}
+\item think of a way to show some results
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%% NOTES %%%%%%%%%%%%%%%%%%%%
+\chapter{Notes}
+\section{THESIS STRUCTURE AND ORGANISATION}
+\subsection{INTRODUCTION}
+Introduce the topic of the paper and the goal (what to achieve) and then name the sections/chapters that follow and describe them briefly.
+\subsection{TESTBED}
+\ \\
+\textbf{Things to mention:}\\
+\begin{itemize}
+\item Why own testbed: 
+\subitem better control, easier to test stuff
+\item \textit{Betting System:} faulty implementation (i.e. reraise bet amount when previous all-in < min raise)
+\item most of the testbeds only single table and cash game capability. No real tournament (multi-table) simulator out there. 
+\end{itemize}
+\subsection{FUTURE WORK}
+Hand rank algorithm can be improved by taking into account opponent models (i.e Sklansky groups) ->> don't iterate over every possible hand but rather only over likely groups of hands. Also hand potential can be improved this way.
+%\section{Calculating Hand Strength}
+%How is EHS calculated: \\
+%\href{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}{\textcolor{blue}{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}} \\\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+\bibitem{ehs_calc}
+  Luis Filipe Teofilo,
+  \textit{Estimating the Probability of Winning for Texas Hold'em Poker Agents},
+  Departamento de Engenharia Informatica, Faculdade de Engenharia da Universidade do Porto,
+  Portugal,
+  yeart unknown.
+\bibitem{opp_mod}
+  Darse Billings, Denis Papp, Jonathan Schaeffer, Duane Szafron,
+  \textit{Opponent Modeling in Poker},
+  Department of Computing Science, University of Alberta, 
+ 1998.
+ \bibitem{algo_poker}
+  Darse Billings,
+  \textit{Algorithms and Assesment in ComputerPoker},
+  Department of Computing Science, University of Alberta, 
+ 2006.
+ \bibitem{master_evo}
+  Garret Joseph Nicolai,
+  \textit{Evolutionary Methods for Learning No-Limit Texas Hold'em Poker},
+  Department of Computing Science, University of Reginia, 
+ 2008.
+\end{thebibliography}
+% **************************************************************************************************
+% **************************************************************************************************
+
+% place all floats and create label on last page
+\FloatBarrier\label{end-of-document}
+\end{document}
+
