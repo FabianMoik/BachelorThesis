@@ -91,6 +91,7 @@
 \newcommand{\mycolorlinks}{true}  %% "true" or "false"
 %% Enables or disables colored links (hyperref package).
 
+%\newcommand{\mytitlepage}{template/title_Thesis_TU_Graz}
 \newcommand{\mytitlepage}{template/title_Thesis_TU_Graz}
 %% Your own or one of following pre-defined title pages:
 %% "template/title_plain_maketitle": simple maketitle page
@@ -109,16 +110,20 @@
 %% Options for the todonotes-package. If "disable", all todonotes will
 %% be hidden (including listoftodos).
 
+\newcommand{\insertref}[1]{\todo[color=gray!40]{#1}}
+\newcommand{\explainindetail}[1]{\todo[color=green!40]{#1}}
+\newcommand{\rewrite}[1]{\todo[color=red!40]{#1}}
+
 %% Load main settings for document preamble:
 \input{template/preamble}%% DO NOT REMOVE THIS LINE!
 
-\setboolean{myaddcolophon}{true}  %% "true" or "false"
+\setboolean{myaddcolophon}{false}  %% "true" or "false"
 %% If set to "true": a colophon (with notes about this document
 %% template, LaTeX, ...) is added after the title page.
 %% Please do not set to "false" without a good reason. The colophon
 %% helps your readers to get in touch with LaTeX and to find this template.
 
-\setboolean{myaddlistoftodos}{false}  %% "true" or "false"
+\setboolean{myaddlistoftodos}{true}  %% "true" or "false"
 %% If set to "true": the current list of open todos is added after the
 %% table of contents. If \mytodonotesoptions is set to "disable", no
 %% list of todos is added, independent of this setting here.
@@ -133,8 +138,8 @@
 %% ========================================================================
 
 %% general metadata:
-\newcommand{\myauthor}{AUTHOR}  %% also used for PDF metadata (hyperref)
-\newcommand{\myauthorwithexistingtitles}{\myauthor{}, OLDDEGREE}  %% including
+\newcommand{\myauthor}{FABIAN MOIK}  %% also used for PDF metadata (hyperref)
+\newcommand{\myauthorwithexistingtitles}{\myauthor{}}  %% including
                                 %% university degree already held
                                 %% (BSc, MSc, ...)
 \newcommand{\mytitle}{TITLE}  %% also used for PDF metadata (hyperref)
@@ -143,27 +148,27 @@
 \newcommand{\mykeywords}{KEYWORDS}  %% also used for PDF metadata (hyperref)
 
 %% this information is used only for generating the title page:
-\newcommand{\myworktitle}{Master's Thesis}  %% official type of work like ``Master theses''
-\newcommand{\mygrade}{Master of Science} %% title you are getting with this work like ``Master of ...''
-\newcommand{\mystudy}{Telematik} %% your study like ``Arts''
-\newcommand{\mydegreeprogramme}{Master's degree programme: \mystudy} %% Master's or PhD degree programme
+\newcommand{\myworktitle}{Bachelor's Thesis}  %% official type of work like ``Master theses''
+\newcommand{\mygrade}{Bachelor of Science} %% title you are getting with this work like ``Master of ...''
+\newcommand{\mystudy}{Information and Computer Engineering} %% your study like ``Arts''
+\newcommand{\mydegreeprogramme}{Bachelors's degree programme: \mystudy} %% Master's or PhD degree programme
 \newcommand{\myuniversity}{Graz University of Technology} %% your university/school
 \newcommand{\myfaculty}{ }  %% only used with title_Thesis_TU_Graz_-_kazemakase
-\newcommand{\myinstitute}{Institute for Softwaretechnology} %% affiliation
+\newcommand{\myinstitute}{Institute for Signal Processing and Speech Communication} %% affiliation
 \newcommand{\myinstitutehead}{Univ.-Prof.\,Dipl-Ing.\,Dr.techn.~Some One} %% head of institute
-\newcommand{\mysupervisor}{Dr.~Some Body} %% your supervisor
+\newcommand{\mysupervisor}{Assoc.Prof. Dipl.-Ing. Dr.mont. Pernkopf Franz} %% your supervisor
 \newcommand{\mycosupervisor}{\ }  %% only used with title_Thesis_TU_Graz_-_kazemakase
 \newcommand{\myevaluator}{Prof.~Some Genius} %% your evaluator
-\newcommand{\myhomestreet}{Street~42} %% your home street (with house number)
+\newcommand{\myhomestreet}{Brucknerstra{\ss}e 11} %% your home street (with house number)
 \newcommand{\myhometown}{Graz} %% your home town
 \newcommand{\myhomepostalnumber}{8010} %% your postal number of home town
-\newcommand{\mysubmissionmonth}{November} %% month you are handing in
-\newcommand{\mysubmissionyear}{2013} %% year you are handing in
+\newcommand{\mysubmissionmonth}{Oktober} %% month you are handing in
+\newcommand{\mysubmissionyear}{2018} %% year you are handing in
 \newcommand{\mysubmissiontown}{\myhometown} %% town of handing in (or \myhometown)
 
 
 %% additional information for generic_documentation title page
-\newcommand{\myid}{1234567} %% Matrikelnummer
+\newcommand{\myid}{01430095} %% Matrikelnummer
 \newcommand{\mylecture}{LECTURE} %%
 
 
@@ -260,10 +265,11 @@
 
 
 \input{example-short-chapter}   %% remove this line to get rid of the example chapter
-\input{example-style-chapter}   %% remove this line to get rid of the style chapter
+%%\input{example-style-chapter}   %% remove this line to get rid of the style chapter
+\input{myText/own_text}
 
 %% include tex file chapters:
-% \include{introduction}        %% this is a suggestion: you have to create this file on demand
+\include{introduction}        %% this is a suggestion: you have to create this file on demand
 % \include{problem}             %% this is a suggestion: you have to create this file on demand
 % \include{solution}            %% this is a suggestion: you have to create this file on demand
 % \include{evaluation}          %% this is a suggestion: you have to create this file on demand
@@ -272,7 +278,10 @@
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
 
-\printbibliography              %% remove, if using BibTeX instead of biblatex
+%%\printbibliography              %% remove, if using BibTeX instead of biblatex
+%%\bibliographystyle{thebibliography}
+%%\bibliography{bibliography}
+\input{bibliography}
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
 
 

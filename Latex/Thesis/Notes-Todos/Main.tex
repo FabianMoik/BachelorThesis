@@ -76,6 +76,8 @@
 % confidential? (can of course also be used for other messages/notes)
 \newcommand{\ConfidNote}{\today}
 
+\newcommand{\markred}{\textcolor{red}}
+
 
 % **************************************************************************************************
 % miscellaneous
@@ -229,12 +231,113 @@
 \subitem basic opponent models. Remember the VPIP and PFR and rank hands accordingly. \textbf{We can do this on only a single table for testing purposes. To show if it increases the results.}
 \item think of a way to show some results
 \end{itemize}
-
+%%%%%%%%%%%%%%%%%% OPEN QUESTIONS %%%%%%%%%%%%%%%%%%%%
+\chapter{Open Questions}
+\section{OPEN:}
+\textbf{Where to change the page settings, so that it does not always start on the right and makes blank pages?}\\\\
+\textbf{What should be written in cursive and what should be written in bold?}\\\\
+\textbf{Where should I put the poker lingua definitions?}
+\textbf{What exactly is the appendix used for?}
+\section{CLOSE:}
+\textbf{what are the basic English writing rules to keep in mind?}\\
+\begin{itemize}
+\item never user I we or you. Always write in passive voice
+\item write out don?t doesn?t it?s -> it is, do not, does not
+\item write out e.g (for example) etc?
+\item do not use that. Instead use which
+\item the first time an acronym is used, write it out in full and place the acronym in parentheses -> Graphical User Interface (GUI)
+\end{itemize}
 %%%%%%%%%%%%%%%%%% NOTES %%%%%%%%%%%%%%%%%%%%
 \chapter{Notes}
 \section{THESIS STRUCTURE AND ORGANISATION}
-\subsection{INTRODUCTION}
-Introduce the topic of the paper and the goal (what to achieve) and then name the sections/chapters that follow and describe them briefly.
+\subsection{BASIC STRUCTURE}
+\begin{itemize}
+\item Cover page
+\item Acknowledgements [OPTIONAL]
+\item Abstract (english and german?)
+\item Table of Contents (List of Figures, List of Tables [OPTIONAL], List of Abbreviations)
+\item (1.) Introduction ($\sim$ 2 pages)
+\subitem (1.1) Motivation
+\subitem (1.2) Problem Statement
+\subitem (1.3) Aim of the Work (Goal)
+\subitem (1.4) Structure of the Work
+\item (2.) Introduction to Poker (Poker Basics) ($\sim$ 2 pages)
+\subitem basic concepts of poker
+\subitem \markred{also shortly explain what problems algorithms try to tackle (opponent modeling/player typification, etc...)}
+\item \markred{(3.) State-of-the-art/Analysis of existing approaches ($\sim$ 2 pages)} 
+\subitem Literature Studies
+\subitem Comparison and Summary of Existing Approaches
+\item (4.) Suggested Solution/Implementation (Main Part) ($\sim$ 10 - 14 pages)
+\subitem (4. 1)\markred{Methodology ($\sim$ 3 - 5 page)}
+\subsubitem Used Concepts 
+\subsubitem Methods and/or Models (Testbed stuff, NNs, Evolutionary algos)
+\subsubitem languages (C++, ...)
+\subsubitem \textcolor{red}{design methods, data models, analysis models}
+\subsubitem \textcolor{red}{formalisms}
+\subitem how did I engineer the tool
+\subitem how did I structure the testbed, what are it's capeabilities
+\subitem how did I rank/evaluate hands
+\subitem how did I setup the NN
+\subitem how did I setup the evolutionary algorithm
+\subitem what did I observe (results)
+\subitem what did I learn from that?
+\item (5.) Evaluation/(Results) and Critical Reflection (Conclusion) ($\sim$ 2 - 3 pages)
+\item (6.) Summary and Future Work ($\sim$ 1 page)
+\item (7.) Appendix (Source Code, Data Models,...)
+\item (8.) Bibliography
+\end{itemize}
+\pagebreak
+\subsection{(1.) INTRODUCTION}
+Motivate your topic, clearly say what the problem is and why other related techniques/tools don't solve it. clearly state the goals of your work. Discuss the metrics how you can measure success  (e.g. my new algorithm will be faster, people will be able to perform a certain task more quickly and with fewer errors, better user satisfaction, people will gain new insights, I can do something that has not been possible before but is important, Note: you will have to show later that you actually met the goals you claimed
+here! briefly explain the process of your work and the methods you used (e.g.
+collaborating with domain experts, multiple prototypes, crisply summarize your main contributions at the end of the motivation section
+\subsubsection{(1.1) Motivation}
+\begin{itemize}
+\item poker is a good testbed for AI
+\subitem big search space (many variables, many different player types), hidden information unlike chess
+\item \markred{why exactly ENN? What do evolutionary algorithms provide that makes them interesting for poker bot?}
+\item tournament poker instead of cash game (most research focuses on cash game)
+\subitem other fitness function than in cash game (CG: net winning, T: avg. winning (place) etc.)
+\end{itemize}
+\subsubsection{\markred{(1.2) Problem Statement}}
+\begin{itemize}
+\item 1.) Environment: 
+\subitem mostly not really customizable
+\subitem only cash game or other limitations
+\subitem not standalone or web dependent
+\subitem limited testing opportunities
+\subitem less flexible (with my framework, easy change between tournament structure)
+\item 2.) Autonomous, profitable poker playing agent in tournament environment:
+\subitem  other techniques often focus on cash game and only on heads up play so far, not full table (6 man, 9man).
+\subitem other AI techniques successful but ENN has potential (recent scientific work has shown that)
+\end{itemize}
+\subsection{(1.3) Aim of the Work / Goal}
+\subsection{(1.4) Structure of the Work}
+\begin{itemize}
+\item briefly explain the upcoming chapters
+\end{itemize}
+\subsection{(2.) INTRODUCTION TO POKER \markred{look how people did it}}
+\begin{itemize}
+\item What is Poker in general (few sentences)
+\subitem No Limit Texas Hold'Em specifically
+\item How a hand of poker is played
+\subitem explain action on table briefly (SB, BB, Dealer, flop, turn, river, showdown)
+\subitem betting options (raise, call, check, fold)
+\item Hand rankings
+\item poker lingua , reference to appendix? Or explain while using it?
+\end{itemize}
+\subsection{(3.) RELATED WORK (state-of-the-art/analysis of existing approaches}
+The related work section describes existing work that is conceptually similar to what you are working on. It needs to give a good overview of what others have done to overcome the same problem as you face, or conceptually similar problems.\\\\
+If you are building, for instance, a network visualization tool for a specific target audience, you should describe state-of-the-art in
+network visualization as well as in the target domain.\\\\
+\subsection{(4.) PRACTICAL PART (Suggested Solution/Implementation)} 
+\subsubsection{(4.1) Methodology}
+\begin{itemize}
+\item \markred{Something about the Testbed? (HandRanker, HandEvaluator?, Monte Carlo)}
+\item Neural Network
+\item Evolutionary Algorithm for Training Agents
+\end{itemize}
+\pagebreak
 \subsection{TESTBED}
 \ \\
 \textbf{Things to mention:}\\
@@ -249,33 +352,6 @@ Hand rank algorithm can be improved by taking into account opponent models (i.e 
 %\section{Calculating Hand Strength}
 %How is EHS calculated: \\
 %\href{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}{\textcolor{blue}{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}} \\\\
-
-
-
-%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{thebibliography}{9}
-\bibitem{ehs_calc}
-  Luis Filipe Teofilo,
-  \textit{Estimating the Probability of Winning for Texas Hold'em Poker Agents},
-  Departamento de Engenharia Informatica, Faculdade de Engenharia da Universidade do Porto,
-  Portugal,
-  yeart unknown.
-\bibitem{opp_mod}
-  Darse Billings, Denis Papp, Jonathan Schaeffer, Duane Szafron,
-  \textit{Opponent Modeling in Poker},
-  Department of Computing Science, University of Alberta, 
- 1998.
- \bibitem{algo_poker}
-  Darse Billings,
-  \textit{Algorithms and Assesment in ComputerPoker},
-  Department of Computing Science, University of Alberta, 
- 2006.
- \bibitem{master_evo}
-  Garret Joseph Nicolai,
-  \textit{Evolutionary Methods for Learning No-Limit Texas Hold'em Poker},
-  Department of Computing Science, University of Reginia, 
- 2008.
-\end{thebibliography}
 % **************************************************************************************************
 % **************************************************************************************************
 

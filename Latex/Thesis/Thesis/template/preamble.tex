@@ -546,18 +546,6 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% \end{itemize}
 %doc%
 %doc%
-\usepackage[backend=biber, %% using "biber" to compile references (instead of "biblatex")
-style=\mybiblatexstyle, %% see biblatex documentation
-%style=alphabetic, %% see biblatex documentation
-dashed=\mybiblatexdashed, %% do *not* replace recurring reference authors with a dash
-backref=\mybiblatexbackref, %% create backlings from references to citations
-natbib=true, %% offering natbib-compatible commands
-hyperref=true, %% using hyperref-package references
-]{biblatex}  %% remove, if using BibTeX instead of biblatex
-
-\addbibresource{\mybiblatexfile} %% remove, if using BibTeX instead of biblatex
-
-
 
 %doc%
 %doc% \subsection{Miscellaneous packages} \label{subsec:miscpackages}
@@ -571,13 +559,7 @@ hyperref=true, %% using hyperref-package references
 %doc% graphicx%%
 %doc% }}]
 %doc% The widely used package to use graphical images within a \LaTeX{} document.
-\ifthenelse{\boolean{\mydraft}}{   %% the \mydraft switches between
-                                   %% showing rectangles instead of graphics
-  \usepackage[pdftex,draft]{graphicx}
-}
-{
-  \usepackage[pdftex]{graphicx}
-}
+\usepackage[pdftex]{graphicx}
 
 %doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Other\_symbols}{%%
 %doc% pifont%%
