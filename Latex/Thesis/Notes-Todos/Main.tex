@@ -77,6 +77,8 @@
 \newcommand{\ConfidNote}{\today}
 
 \newcommand{\markred}{\textcolor{red}}
+\newcommand{\markblue}{\textcolor{blue}}
+
 
 
 % **************************************************************************************************
@@ -95,6 +97,7 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{scrextend}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -220,8 +223,8 @@
 %%% Docs
 \section{Documentation - Todos}
 \begin{itemize}
-\item Use citation of diploma template. Is it okey to use this style of citation, which an abbreviation and the year to reference?
-\item At the beginning of the thesis there should be a section which briefly describes the upcoming chapters (Gliederung).
+\item fix the appendix such that it is an own chapter with sections etc.
+\item check if chapters and section should be written like this (Poker Basics of Fundamental Poker).
 \end{itemize}
 %%% Programm
 \section{Program/Code - Todos}
@@ -235,7 +238,10 @@
 \chapter{Open Questions}
 \section{OPEN:}
 \textbf{Where to change the page settings, so that it does not always start on the right and makes blank pages?}\\\\
-\textbf{What should be written in cursive and what should be written in bold?}\\\\
+\textbf{What should be written in cursive and what should be written in bold?}\\
+\begin{addmargin}[1em]{2em}% 1em left, 2em right
+\markblue{Mild emphasis is cursive and stronger emphasis is bold}\\
+\end{addmargin}
 \textbf{Where should I put the poker lingua definitions?}
 \textbf{What exactly is the appendix used for?}
 \section{CLOSE:}
@@ -250,6 +256,7 @@
 %%%%%%%%%%%%%%%%%% NOTES %%%%%%%%%%%%%%%%%%%%
 \chapter{Notes}
 \section{THESIS STRUCTURE AND ORGANISATION}
+Make the structure like in \textit{Master Thesis - Nuno Passos}. He has a nice structure and we can apply it.
 \subsection{BASIC STRUCTURE}
 \begin{itemize}
 \item Cover page
@@ -261,9 +268,14 @@
 \subitem (1.2) Problem Statement
 \subitem (1.3) Aim of the Work (Goal)
 \subitem (1.4) Structure of the Work
-\item (2.) Introduction to Poker (Poker Basics) ($\sim$ 2 pages)
-\subitem basic concepts of poker
-\subitem \markred{also shortly explain what problems algorithms try to tackle (opponent modeling/player typification, etc...)}
+\item (2.) Introduction to Poker (Poker Basics) ($\sim$ 2-3 pages)
+\subitem (2.1) What is poker
+\subitem (2.2) NL Texas Hold'EM
+\subitem (2.3) Betting
+\subitem (2.4) rules and how the rounds are played out
+\subitem (2.5) hand rankings (reference to appendix?) \markblue{How to properly do it?}
+\subsubitem maybe just briefly explain the basics of hand ranks and then reference to an indepth list?
+\subitem (2.6) \markred{also shortly explain what problems algorithms try to tackle (opponent modeling/player typification, etc...), partial information}
 \item \markred{(3.) State-of-the-art/Analysis of existing approaches ($\sim$ 2 pages)} 
 \subitem Literature Studies
 \subitem Comparison and Summary of Existing Approaches
@@ -287,6 +299,7 @@
 \item (8.) Bibliography
 \end{itemize}
 \pagebreak
+%%%%%% INTRODUCTION
 \subsection{(1.) INTRODUCTION}
 Motivate your topic, clearly say what the problem is and why other related techniques/tools don't solve it. clearly state the goals of your work. Discuss the metrics how you can measure success  (e.g. my new algorithm will be faster, people will be able to perform a certain task more quickly and with fewer errors, better user satisfaction, people will gain new insights, I can do something that has not been possible before but is important, Note: you will have to show later that you actually met the goals you claimed
 here! briefly explain the process of your work and the methods you used (e.g.
@@ -311,25 +324,40 @@ collaborating with domain experts, multiple prototypes, crisply summarize your m
 \subitem  other techniques often focus on cash game and only on heads up play so far, not full table (6 man, 9man).
 \subitem other AI techniques successful but ENN has potential (recent scientific work has shown that)
 \end{itemize}
-\subsection{(1.3) Aim of the Work / Goal}
-\subsection{(1.4) Structure of the Work}
+\subsubsection{(1.3) Aim of the Work / Goal}
+\subsubsection{(1.4) Structure of the Work}
 \begin{itemize}
 \item briefly explain the upcoming chapters
+\item After explaining the structure of the work, shortly mention that a review to what poker is follows (Done here: \cite{review}).
 \end{itemize}
-\subsection{(2.) INTRODUCTION TO POKER \markred{look how people did it}}
+\pagebreak
+%%%%%%% INTRO TO POKER
+\subsection{(2.) INTRODUCTION TO POKER}
 \begin{itemize}
-\item What is Poker in general (few sentences)
-\subitem No Limit Texas Hold'Em specifically
-\item How a hand of poker is played
-\subitem explain action on table briefly (SB, BB, Dealer, flop, turn, river, showdown)
-\subitem betting options (raise, call, check, fold)
-\item Hand rankings
-\item poker lingua , reference to appendix? Or explain while using it?
+\item (2.1) What is poker
+\subitem \cite{master_nuno}, \cite{review}
+\item (2.2) NL Texas Hold'EM
+\subitem \cite{master_nuno}, \cite{pena},  \cite{strong_poker}, \cite{review}
+\item (2.3) rules and how the rounds are played out
+\subitem \cite{master_nuno}
+\subitem explain the 4 rounds of a poker hand
+\item (2.4) Betting
+\subitem \cite{master_nuno}
+\item (2.5) hand rankings (reference to appendix?) \markblue{How to properly do it?}
+\subitem \cite{master_nuno}
+\subitem maybe just briefly explain the basics of hand ranks and then reference to an indepth list?
+\item (2.6) What makes a poker player a good poker player?
+\subitem \markred{also shortly explain what problems algorithms try to tackle (opponent modeling/player typification, bluffing, , etc...), partial information} \cite{strong_poker }
+\subitem \cite{master_nuno}
 \end{itemize}
+\pagebreak
+%%%%%%%%%% REALTED WORK
 \subsection{(3.) RELATED WORK (state-of-the-art/analysis of existing approaches}
 The related work section describes existing work that is conceptually similar to what you are working on. It needs to give a good overview of what others have done to overcome the same problem as you face, or conceptually similar problems.\\\\
 If you are building, for instance, a network visualization tool for a specific target audience, you should describe state-of-the-art in
 network visualization as well as in the target domain.\\\\
+\pagebreak
+%%%%%%%%%% PRACTICAL PART (Main Part)
 \subsection{(4.) PRACTICAL PART (Suggested Solution/Implementation)} 
 \subsubsection{(4.1) Methodology}
 \begin{itemize}
@@ -349,6 +377,36 @@ network visualization as well as in the target domain.\\\\
 \end{itemize}
 \subsection{FUTURE WORK}
 Hand rank algorithm can be improved by taking into account opponent models (i.e Sklansky groups) ->> don't iterate over every possible hand but rather only over likely groups of hands. Also hand potential can be improved this way.
+\pagebreak
+\begin{thebibliography}{9}
+  \bibitem{master_nuno}
+  N. Passos.
+  \textit{Poker Learner: Reinforcement Learning Applied to Texas Hold'em Poker},
+  Master's thesis, Faculdade de Engenharia da Universidade do Porto, Portugal, 
+  2011.
+  \href{https://paginas.fe.up.pt/~ei08029/Master\%20Thesis\%20-\%20Nuno\%20Passos.pdf}{\markblue{https://paginas.fe.up.pt/$\sim$ei08029/Master Thesis - Nuno Passos.pdf}}
+  \bibitem{strong_poker}
+   J. Schaeffer, D. Billings, L. Pe$\tilde{n}$a, and D. Szafron.
+  \textit{Learning to Play Strong Poker}.
+  ICML-99, Proceedings of the 16th International Conference on Machine Learning, 
+  1999.
+  \href{http://poker.cs.ualberta.ca/publications/ICML99.pdf}{\markblue{http://poker.cs.ualberta.ca/publications/ICML99.pdf}}
+  \bibitem{pena}
+  L. Pe$\tilde{n}$a.
+  \textit{Probabilities and simulations in poker.}
+  Mather's thesis, Department of Computing Science, University of Alberta,
+  1999.
+  \bibitem{review}
+  J. Rubin, and I. Watson.
+  \textit{Computer poker: A review.}
+   Artificial Intelligence, 175(5-6):958-987,
+  2011.
+  \bibitem{theory_of_poker}
+  D. Sklansky.
+  \textit{The Theory of Poker}
+   Two Plus Two Publishing,
+  2005.
+  \end{thebibliography}
 %\section{Calculating Hand Strength}
 %How is EHS calculated: \\
 %\href{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}{\textcolor{blue}{https://en.wikipedia.org/wiki/Poker\_Effective\_Hand\_Strength\_(EHS)\_algorithm}} \\\\

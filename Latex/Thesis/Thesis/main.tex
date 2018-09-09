@@ -110,10 +110,6 @@
 %% Options for the todonotes-package. If "disable", all todonotes will
 %% be hidden (including listoftodos).
 
-\newcommand{\insertref}[1]{\todo[color=gray!40]{#1}}
-\newcommand{\explainindetail}[1]{\todo[color=green!40]{#1}}
-\newcommand{\rewrite}[1]{\todo[color=red!40]{#1}}
-
 %% Load main settings for document preamble:
 \input{template/preamble}%% DO NOT REMOVE THIS LINE!
 
@@ -171,6 +167,15 @@
 \newcommand{\myid}{01430095} %% Matrikelnummer
 \newcommand{\mylecture}{LECTURE} %%
 
+%%%% TODOs
+
+\newcommand{\TODOinsertref}[1]{\todo[color=gray!40]{#1}}
+\newcommand{\TODOexplainindetail}[1]{\todo[color=green!40]{#1}}
+\newcommand{\TODOrewrite}[1]{\todo[color=red!40]{#1}}
+
+\newcommand{\markred}{\textcolor{red}}
+\newcommand{\markblue}{\textcolor{blue}}
+\newcommand{\pokerterm}[1]{\textbf{\textit{#1}}}
 
 %% ========================================================================
 %%%% MISC command definitions
@@ -265,23 +270,34 @@
 
 
 \input{example-short-chapter}   %% remove this line to get rid of the example chapter
-%%\input{example-style-chapter}   %% remove this line to get rid of the style chapter
-\input{myText/own_text}
+%\input{example-style-chapter}   %% remove this line to get rid of the style chapter
 
 %% include tex file chapters:
-\include{introduction}        %% this is a suggestion: you have to create this file on demand
-% \include{problem}             %% this is a suggestion: you have to create this file on demand
-% \include{solution}            %% this is a suggestion: you have to create this file on demand
-% \include{evaluation}          %% this is a suggestion: you have to create this file on demand
-% \include{outlook}             %% this is a suggestion: you have to create this file on demand
+\include{myText/introduction}     
+\include{myText/PokerBasics}        
+\include{myText/StateOfTheArt}        
+\include{myText/Implementation}        
+\include{myText/Evaluation}
+\include{myText/FutureWork_Summary}        
 
+\input{bibliography}
+
+%%%% Appendix starts here
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
-\addpart*{Appendix}             %% adding Appendix to tableofcontents
-
+%\addpart{Appendix}             %% adding Appendix to tableofcontents
+\section{Glossary of Poker Terms}
+This appendix contains definitions and brief explanations of all used poker terms in this bachelor's thesis. A full glossary can also be found on the web, following the link: \href{https://en.wikipedia.org/wiki/Glossary_of_poker_terms}{https://en.wikipedia.org/wiki/Glossary\_of\_poker\_terms}
+\begin{itemize}
+\item \pokerterm{Flop}: The first three cards dealt face up to the community board. It  is followed by the second betting round.
+\item \pokerterm{Fold}: 
+\item \pokerterm{Hand}:
+\item \pokerterm{Turn}: The fourth card dealt face up to the community board. It  is followed by the third betting round.
+\item \pokerterm{River}: The fifth card dealt face up to the community board. It is followed by the fourth and final betting round.
+ 
+\end{itemize}
 %%\printbibliography              %% remove, if using BibTeX instead of biblatex
 %%\bibliographystyle{thebibliography}
 %%\bibliography{bibliography}
-\input{bibliography}
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
 
 
