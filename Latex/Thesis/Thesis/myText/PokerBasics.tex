@@ -3,35 +3,33 @@
 
 \chapter{Poker Basics}
 \label{cha:pokerBasics}
-
 \section{What is Poker}
 In David Sklansky's \cite{theory_of_poker} poker is being described as a term for a whole family of card games, which can be grouped into different types. In some game variants such as  \textit{Texas Hold'em or Omaha} the player with the highest \pokerterm{hand rank}\TODOrewrite{Rewrite the footnote}\footnote{All poker specific terms mentioned the first time, appear in bold, italics throughout this bachelor's thesis. They are defined and briefly explained in the Appendix.} wins, in others such as \textit{Razz or Badugi} the player with the lowest hand rank wins, and in yet others the \pokerterm{pot} is split between the player with the highest and the player with the lowest hand rank \TODOrewrite{Check if citation is correct}.\par
 Among all poker variants there are different \pokerterm{betting} structures. Many poker formats offer \pokerterm{limit} variants of the game and \pokerterm{no-limit} variants. In limit games the \pokerterm{bet size} has an upper and lower limit, whereas in no-limit games the bet size is just restricted by the amount a player has currently left in his \pokerterm{stack} \cite{theory_of_poker}. While bet sizes may not be restricted in no-limit games there are specific rules (\markred{throughout}) all poker variants that determine the minimum bet size at any given time in the game regardless of the variant of the game itself.
-\section{No-Limit Texas Hold'em}
+\section{No-Limit (NL) Texas Hold'em}
 The focus of this work is drawn to the \pokerterm{no-limit} version of the Texas Hold'em poker variant. Not only is it the most widely played poker variant but also considered to be the most challenging form of poker \cite{strong_poker}. While finding the optimal strategy for Texas Hold'em poker may be complex it has exceptionally simple rules \cite{billings_phd}.
 \subsection{Poker Rules}
 A Texas Hold'em \pokerterm{hand} begins in a stage called \pokerterm{pre-flop}. In this stage every player at the table is dealt two cards. The cards are dealt face down and are exclusive to the player recieving the cards \cite{billings_phd}. Each seat at the table has a special meaning throughout a poker hand. The seat (also called \pokerterm{position}) that (\markred{that or which}) owns the \pokerterm{dealer-button} determines the two positions that have to place  \pokerterm{forced bets} called the \pokerterm{small blind} and the \pokerterm{big blind}. This dealer-button moves clockwise by one position once a whole poker hand is finished. The player directly to the left of the \pokerterm{dealer}, the player currently holding the dealer-button, is forced to bet one small blind and the player two seats to the left of the dealer has to bet one big blind, the equivalent of two small blinds \cite{master_nuno}. These (\markred{these or those?}) bets serve the purpose of preventing players to wait for the best hand without any punishment. \par In case of a Texas Hold'em poker tournament most often another type of forced bet called the \pokerterm{ante} is present in every hand of the tournament \cite{poker_dummies}. It usually is a percentage portion of the current big blind in the range of 10\%-20\% that has to be contributed to the \pokerterm{pot} by each player.
 In poker tournaments the small blind and the big blind are incremented after a fixed time interval to advance the game.  \par
 The pre-flop stage is concluded once each player has acted in the first betting round. The next stage, called the \pokerterm{flop}, is introduced by three face up dealt cards to the \pokerterm{community board} and players once again have the chance to bet in this round. The third stage is called the \pokerterm{turn} and a fourth card is dealt to the community board. After concluding the third round of betting a fifth \pokerterm{community card} is dealt on the \pokerterm{river} and players are allowed to bet one last time. If there is more then one player left after this final round of betting the cards of those (\markred{those or these}) players are revealed in a so-called \pokerterm{showdown}. The best combination of two player's \pokerterm{hole cards} and three community cards decides the winner. If two players have the same hand rank, the pot is split between both of them \cite{billings_phd}.
-\begin{itemize}
-\item preflop
-\subitem blinds, ante (especially in tournaments)
-\subsubitem blinds are a necessaty because poeple would wait for the best hand elsewise (blinded away)
-\subitem position at the table
-\subitem hand dealt
-\subitem first betting round
-\item other strees (flop, turn, river)
-\subitem showdown
-\end{itemize}
 \subsection{Betting}
+Sophisticated betting strategies are the number one key component for succeeding in the game of NL Texas Hold'em poker. Choosing the correct (\markred{There is no -correct- size, rewrite this}) bet size in any given situation allows players to maximize their winnings and at the same time minimize their losses \cite{master_nuno}. \par
+Each betting round is either opened by a bet or a check. In a clockwise manner players may then decide to check or bet if there was no bet placed yet. If a bet has already been placed, the remaining players may either call the bet, raise the bet or fold to that bet. In NL Texas Hold'em the bet or raise amount is only limited by the remaining chips a player has \cite{poker_dummies}. \par
+\subsubsection{Betting Options}
 \begin{itemize}
-\item betting options (check, call, raise, fold, all-in)
-\subitem raising rules
-
+\item \textbf{Check / Call}:
+A check describes the action of staying in the hand without committing any money to the pot. To check a hand there must be no previous bets in the current betting round. By calling someone's bet a player wagers the amount of chips to equalize the amount of chips committed to the pot by each player.\\ \TODOrewrite{This needs to be more clear}
+\item \textbf{Bet / Raise}:
+A bet describes the action of a player being first to put a certain amount of money into the pot. If there already exist a bet a player may still put more money into the pot then the previous bets did. This is referred to as a raise. \\ \TODOrewrite{This needs to be more clear}
+\item \textbf{Fold}:
+Folding a hand means no longer being interest in the hand and not willing to put any more money into the pot. If however no bet has been placed in the current betting round yet, a player may rather check his hand instead of folding it. \TODOrewrite{This needs to be more clear}
 \end{itemize}
-\subsection{Hand Rankings}
+\cite{review, poker_dummies} 
+\subsection{\markred{Hand Rankings}}
+Texas Hold'em poker is a poker variant where the highest ranking 5-card combination wins \cite{poker_dummies}. To decide the winner of a poker hand the best possible 5-card combination of each remaining player is compared against each other \cite{pena}. The ranking system of 5-card combinations can be found in \markred{Table 2.1...}. 
+\TODOrewrite{Breifly explain the main concept of ranking hands and then link to the table.} 
 \section{What Defines a GOOD Poker Player}
-
+\markred{Maybe transition this section to the IMPLEMENTATION, to explain how it was implemented then.}
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
 %% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='

@@ -17,7 +17,7 @@
 %% e.g., "A4", "letter", "legal", "executive", ...
 %% The size of the paper of the resulting PDF file.
 
-\newcommand{\mylaterality}{twoside}
+\newcommand{\mylaterality}{oneside}
 %% "oneside" or "twoside"
 %% Either you are creating a document which is printed on both, left pages
 %% and right pages (twoside) or you create a document which is printed
@@ -45,7 +45,7 @@
 %% e.g., 10pt, 11pt, 12pt
 %% The font size of the main text in pt (points).
 
-\newcommand{\mylinespread}{1.0}
+\newcommand{\mylinespread}{1.5}
 %% e.g., 1.0, 1.5, 2.0
 %% Line spacing in %/100. For example 1.5 means 150% of the usual line
 %% spacing. Please use with caution: 100% ("1.0") is fine because the
@@ -77,7 +77,8 @@
 \newcommand{\mybiblatexfile}{references-biblatex.bib}
 %% Name of the biblatex file that holds the references.
 
-\newcommand{\mydispositioncolor}{30,103,182}
+\newcommand{\mydispositioncolor}{40,40,40}
+%%\newcommand{\mydispositioncolor}{30,103,182}
 %% e.g., "30,103,182" (blue/turquois), "0,0,0" (black), ...
 %% Color of the headings and so forth in RGB (red,green,blue) values.
 %% NOTE: if you are using "0,0,0" for black, printers might still
@@ -269,7 +270,7 @@
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 
-\input{example-short-chapter}   %% remove this line to get rid of the example chapter
+%\input{example-short-chapter}   %% remove this line to get rid of the example chapter
 %\input{example-style-chapter}   %% remove this line to get rid of the style chapter
 
 %% include tex file chapters:

@@ -1,13 +1,74 @@
 %%%% Time-stamp: <2013-02-25 10:31:01 vk>
 
 
-\chapter{Introduction}
-\label{cha:introduction}
-
-
-This is a placeholder for the introduction \cite{ehs_calc}.
-
-
+\chapter{Implementation - Structure of the Bot}
+\label{cha:implementation}
+%%% Introduction
+\markred{Briefly state the properties of a good poker player as in \cite{opp_modeling}. (HS, HP, Betting Str., Bluffing, Unpredictability, Opp Modeling)}
+\section{Architecture \markred{of Testbed}}
+\begin{itemize}
+\item what makes a good poker player
+\end{itemize}
+\section{Neural Network Agents}
+\section{Betting Strategy}
+\begin{itemize}
+\item introduction sentence
+\item say that our system was influenced by paper \cite{opp_modeling}
+\item betting str is based on two metrics, HS and HP, \markred{and later maybe Opp modeling} 
+\item explain hand strength and hand potential
+\end{itemize}
+\subsection{Hand Ranker \& Hand Evaluator}
+\begin{itemize}
+\item explain the necessity of a good and fast Hand evaluator
+\item explain which evaluator/ranker was used and why
+\item explain purpose of it
+\item list Hand Strength and Hand Potential as subsections as in \cite{opp_master}
+\item EHS
+\end{itemize}
+%%%% PREFLOP
+\subsubsection{Preflop Hand Evaluator}
+\begin{itemize}
+\item created pre computed table with all possible hand types 
+\subitem say how many hands there are but that they can be grouped into 169 distinct hand types (give example)
+\subitem 1000000 off-line simulations against 1-8 opponents.
+\subitem explain which evaluator was used and why
+\end{itemize}
+Due to the fact, that there is a limited number of possible preflop states a precalculated table was computed to obtain an approximation on the win percentage of a specific hand against a specific number of opponents. This approach does not take opponent model into consideration an. \par
+For evaluating the effective hand strength of one agent against $N$ opponents a lookup table was created. It consists of 1352 entries. The hand of the agent is index by it's strength, meaning that an index of 0 is the best possible holding ($AA$) and an index of 168 is the weakest possible holding ($72o$). The indexing tough was arbitrarily choosen to be as stated. In total there are 169 * 8 possible preflop situations a player could find himself in. For all those situation a \textit{Monte-Carlo Simulation} (\markred{performed on the TPTEvaluator, which evaluated the simulated 7 card situations}) was performed to get an approximation of the expected win percentage of each possible hand against each possible number of opponents. The values are saved in a lookup table which allows the fastest possible access time without any further need of calculations. \par
+The win percentage represent the chance of a hand beating another hand under the assumption of seeing all 5 community cards and going to showdown.\TODOexplainindetail{Does this represent the HS or the EHS?}
+%%%% POSTFLOP
+\subsubsection{Postflop Hand Evaluator}
+\begin{itemize}
+\item 
+\end{itemize}
+\markred{Guess we did not use hand potential but rather just pure hand strength??? Why? We already have the implementation of EHS in code but just don't use it! why? Maybe it is faster to use 2000 samples on the full runout and it approximates the EHS well enough? $\rightarrow$ TEST THIS}
+For evaluating the strength of a hand after the preflop stage, it is important to not only consider the immediate hand strength but also the positive and negative hand potential. This metrics combined yield the so-called \textbf{Effective Hand Strength (EHS)}. To calculate the EHS of an agent at a given stage after the preflop stage (flop, turn, river), a Monte-Carlo simulation was run 2000 times, simulating possible runouts
+%%%%%%%%%%%%% NN %%%%%%%%%%%%%
+\section{Training the NN-Agents}
+\begin{itemize}
+\item introduction
+\subitem outlook to what follows now
+\subitem mention that limitations were found and that the chapter describes how the limitations are or can be tackled.
+\item Architecture
+\subitem language used and why
+\subitem short testbed description and why others where not used
+\subitem make a graphic which shows how the system is structured and explain the system components
+\subsubitem brief explanation on what the Hand Ranker/Hand Evaluator does $\rightarrow$ reference to the upcoming in depth explaination
+\subsubitem NN agent (brief explanation of basic rule $\rightarrow$ in depth explanation follows)
+\item Neural Network Agent
+\subitem general structure
+\subitem Feature List explained
+\item Betting Strategy
+\subitem Hand ranker and Hand Evaluator (Effective Hand Strength and Hand Potential)
+\subitem preflop and postflop decision making
+\subsubitem Monte Carlo Simulation
+\subitem betting decision made according to the probability triple returned by the NN agents.
+\subsubitem explain how the action is choosen (bet size curves etc.)
+\item Training the Poker Agent
+\subitem Evolutionary algorithm
+\subitem Hall of Fame
+\subitem Co-evolution?
+\end{itemize}
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
 %% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='
