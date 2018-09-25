@@ -4,29 +4,37 @@
 \chapter{Implementation - Structure of the Bot}
 \label{cha:implementation}
 %%% Introduction
-\markred{Briefly state the properties of a good poker player as in \cite{opp_modeling}. (HS, HP, Betting Str., Bluffing, Unpredictability, Opp Modeling)}
+In this chapter the architecture of both the test environment and the poker playing agents is described and the learning process of the poker agents is explained. As mentioned in \markred{chapter X (ref to it)} there are some key components that distinguish a strong poker player from a weak one. A well defined \textit{betting strategy} both attuned to the mathematical principles such as \textit{hand strength} and \textit{hand potential} and to the interpretation of opponent's tendencies decides on the profitability of a poker player over the \pokerterm{long run} \cite{opp_modeling}. This chapter describes a possible way to implement and apply these concepts to create a poker playing agent, capable of understanding the situation on the table and assessing it's hand strength versus it's opponents. \TODOrewrite{should I use it's her for agent? or better his/her?}
+
+%%%%%%%%%%%%%%%%%% ARCHITECTURE %%%%%%%%%%%%%%%%%%
 \section{Architecture \markred{of Testbed}}
 \begin{itemize}
-\item what makes a good poker player
+\item Why C++ and not an existing testbed?
+\subitem name reasons why
+\item briefly explain how the testbed is build up (Main classes and function of an object $\rightarrow$ Dealer -> deals cards and handles gamestate information, reduces players from pool, etc... \markred{have a look into code structure and make diagram}.
 \end{itemize}
+%%%%%%%%%%%%%%%%%% NN AGENTS %%%%%%%%%%%%%%%%%%%%%%
 \section{Neural Network Agents}
+%%%%%%%%%%%%%%%%%% BETTING STRATEGY %%%%%%%%%%%%%%%%%%%%%%
 \section{Betting Strategy}
 \begin{itemize}
 \item introduction sentence
 \item say that our system was influenced by paper \cite{opp_modeling}
-\item betting str is based on two metrics, HS and HP, \markred{and later maybe Opp modeling} 
-\item explain hand strength and hand potential
+\item tell that there are 169 distinct hand types, to find strength of the hands preflop multiple possibilities (Sklansky's group, rollout simulation, or our method) \markred{this is subsection preflop strategy}
+\item postflop strategy:  to assess the strength of a hand, a hand evaluation is needed
+\subitem consists of hand ranker, hand strength and potential estimations, forming EHS
+\subitem hand ranker
+\subitem hand strength
+\subitem hand potential 
+\subitem effective handstrength
+\subsubitem EHS for multiple opponents
+\item betting strategy upon all those factors -> we did probability curves, depending on output of NN agent? To become a little bit more unpredictable 
 \end{itemize}
-\subsection{Hand Ranker \& Hand Evaluator}
-\begin{itemize}
-\item explain the necessity of a good and fast Hand evaluator
-\item explain which evaluator/ranker was used and why
-\item explain purpose of it
-\item list Hand Strength and Hand Potential as subsections as in \cite{opp_master}
-\item EHS
-\end{itemize}
-%%%% PREFLOP
-\subsubsection{Preflop Hand Evaluator}
+%%%% %%%%%%%%% PREFLOP
+\subsection{Preflop Strategy}
+%%%%%%% HAND RANKER
+\subsubsection{Hand Ranker}
+
 \begin{itemize}
 \item created pre computed table with all possible hand types 
 \subitem say how many hands there are but that they can be grouped into 169 distinct hand types (give example)
@@ -37,14 +45,19 @@ Due to the fact, that there is a limited number of possible preflop states a pre
 For evaluating the effective hand strength of one agent against $N$ opponents a lookup table was created. It consists of 1352 entries. The hand of the agent is index by it's strength, meaning that an index of 0 is the best possible holding ($AA$) and an index of 168 is the weakest possible holding ($72o$). The indexing tough was arbitrarily choosen to be as stated. In total there are 169 * 8 possible preflop situations a player could find himself in. For all those situation a \textit{Monte-Carlo Simulation} (\markred{performed on the TPTEvaluator, which evaluated the simulated 7 card situations}) was performed to get an approximation of the expected win percentage of each possible hand against each possible number of opponents. The values are saved in a lookup table which allows the fastest possible access time without any further need of calculations. \par
 The win percentage represent the chance of a hand beating another hand under the assumption of seeing all 5 community cards and going to showdown.\TODOexplainindetail{Does this represent the HS or the EHS?}
 %%%% POSTFLOP
-\subsubsection{Postflop Hand Evaluator}
+\subsection{Postflop Strategy}
 \begin{itemize}
-\item 
+\item introduction sentence that hand evaluation is needed and why it is important to have a fast one, say that 
+\item subsubsection(Hand evaluation): explain which evaluator/ranker was used and why
+\item explain purpose of it
+\item list Hand Strength and Hand Potential as subsections as in \cite{opp_master}
+\item EHS
 \end{itemize}
 \markred{Guess we did not use hand potential but rather just pure hand strength??? Why? We already have the implementation of EHS in code but just don't use it! why? Maybe it is faster to use 2000 samples on the full runout and it approximates the EHS well enough? $\rightarrow$ TEST THIS}
 For evaluating the strength of a hand after the preflop stage, it is important to not only consider the immediate hand strength but also the positive and negative hand potential. This metrics combined yield the so-called \textbf{Effective Hand Strength (EHS)}. To calculate the EHS of an agent at a given stage after the preflop stage (flop, turn, river), a Monte-Carlo simulation was run 2000 times, simulating possible runouts
 %%%%%%%%%%%%% NN %%%%%%%%%%%%%
 \section{Training the NN-Agents}
+\pagebreak
 \begin{itemize}
 \item introduction
 \subitem outlook to what follows now
