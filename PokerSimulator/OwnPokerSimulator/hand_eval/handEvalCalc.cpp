@@ -313,6 +313,7 @@ double getEHSVsNOpponents(const std::vector<Card>& holeCards, const std::vector<
             c[4] = otherCards[2];
             c[5] = otherCards[3];
             c[6] = otherCards[4];
+            // shouldn't be here because we distinguish between preflop and postflop
         }
         if (numRemainingBoardCards == 2) {
             c[5] = otherCards[0];

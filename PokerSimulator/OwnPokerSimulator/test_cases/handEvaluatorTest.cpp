@@ -19,8 +19,8 @@ int main()
     // Setup 2+2 method
     TPTEvaluator::initEvaluator();
 
-    //testHandEvaluationSpeed();
-    testGetHandStrengthVsNOpponents();
+    testHandEvaluationSpeed();
+    //testGetHandStrengthVsNOpponents();
 
     return 0;
 }
@@ -34,6 +34,8 @@ void testHandEvaluationSpeed() {
     int cards4[] = { TPTIndex(Card(8, S_HEARTS)), TPTIndex(Card(9, S_HEARTS)), TPTIndex(Card(10, S_HEARTS)), TPTIndex(Card(11, S_HEARTS)),
                      TPTIndex(Card(12, S_HEARTS)), TPTIndex(Card(2, S_CLUBS)), TPTIndex(Card(14, S_DIAMONDS))}; // Straight Flush
 
+    int cards4_1[] = {TPTIndex(Card(12, S_HEARTS)), TPTIndex(Card(8, S_HEARTS)), TPTIndex(Card(3, S_SPADES)), TPTIndex(Card(12, S_DIAMONDS)), TPTIndex(Card(11, S_HEARTS)),
+                      TPTIndex(Card(2, S_CLUBS)), TPTIndex(Card(2, S_DIAMONDS))}; // Straight Flush
     /*Fast 5,6 or 7-card evaluator using disk cache.
             Input: array of 7 cards (values: 2c = 1 2d = 2 2h = 3 2s = 4 3c = 5 3d = 6 3h = 7 3s = 8 4c = 9 4d = 10 4h = 11 4s = 12
     5c = 13 5d = 14 5h = 15 5s = 16 6c = 17 6d = 18 6h = 19 6s = 20 7c = 21 7d = 22 7h = 23 7s = 24 8c = 25 8d = 26 8h = 27
@@ -75,7 +77,7 @@ void testHandEvaluationSpeed() {
         //TODO returning 0 for some reason... NOT WORKING?...
         //result = PokerEval::GetHandValue(cards1);
         //result = PokerEval::eval_5hand(cards3);
-        result = TPTEvaluator::lookupHandForNCards(cards4, 7);
+        result = TPTEvaluator::lookupHandForNCards(cards4_1, 7);
     }
 
     double time3 = ((double)clock() - start3 ) / CLOCKS_PER_SEC;
