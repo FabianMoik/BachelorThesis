@@ -1,19 +1,18 @@
 %%%% Time-stamp: <2013-02-25 10:31:01 vk>
 
-
 \chapter{Poker Basics}
 \label{cha:pokerBasics}
 \section{What is Poker}
-In David Sklansky's \cite{theory_of_poker} poker is being described as a term for a whole family of card games, which can be grouped into different types. In some game variants such as  \textit{Texas Hold'em or Omaha} the player with the highest \pokerterm{hand rank}\TODOrewrite{Rewrite the footnote}\footnote{All poker specific terms mentioned the first time, appear in bold, italics throughout this bachelor's thesis. They are defined and briefly explained in the Appendix.} wins, in others such as \textit{Razz or Badugi} the player with the lowest hand rank wins, and in yet others the \pokerterm{pot} is split between the player with the highest and the player with the lowest hand rank \TODOrewrite{Check if citation is correct}.\par
-Among all poker variants there are different \pokerterm{betting} structures. Many poker formats offer \pokerterm{limit} variants of the game and \pokerterm{no-limit} variants. In limit games the \pokerterm{bet size} has an upper and lower limit, whereas in no-limit games the bet size is just restricted by the amount a player has currently left in his \pokerterm{stack} \cite{theory_of_poker}. While bet sizes may not be restricted in no-limit games there are specific rules (\markred{throughout}) all poker variants that determine the minimum bet size at any given time in the game regardless of the variant of the game itself.
+In David Sklansky's \cite{theory_of_poker} poker is being described as a term for a whole family of card games, which can be grouped into different types. In some game variants such as  \textit{Texas Hold'em or Omaha} the player with the highest \pokerterm{hand rank} \footnote{All poker specific terms mentioned the first time, appear in bold, italics throughout this bachelor's thesis. They are defined and briefly explained in the Appendix.} wins, in others such as \textit{Razz or Badugi} the player with the lowest hand rank wins, and in yet others the \pokerterm{pot} is split between the player with the highest and the player with the lowest hand rank \cite{theory_of_poker}.\par
+Among all poker variants there are different \pokerterm{betting} structures. Many poker formats offer \pokerterm{limit} variants of the game and \pokerterm{no-limit} variants. In limit games the \pokerterm{bet size} has an upper and lower limit, whereas in no-limit games the bet size is just restricted by the amount a player has currently left in his \pokerterm{stack} \cite{theory_of_poker}. While bet sizes may not be restricted in no-limit games there are specific rules in all poker variants that determine the minimum bet size at any given time in the game regardless of the variant of the game itself.
 \section{No-Limit (NL) Texas Hold'em}
 The focus of this work is drawn to the \pokerterm{no-limit} version of the Texas Hold'em poker variant. Not only is it the most widely played poker variant but also considered to be the most challenging form of poker \cite{strong_poker}. While finding the optimal strategy for Texas Hold'em poker may be complex it has exceptionally simple rules \cite{billings_phd}.
 \subsection{Poker Rules}
-A Texas Hold'em \pokerterm{hand} begins in a stage called \pokerterm{pre-flop}. In this stage every player at the table is dealt two cards. The cards are dealt face down and are exclusive to the player recieving the cards \cite{billings_phd}. Each seat at the table has a special meaning throughout a poker hand. The seat (also called \pokerterm{position}) that (\markred{that or which}) owns the \pokerterm{dealer-button} determines the two positions that have to place  \pokerterm{forced bets} called the \pokerterm{small blind} and the \pokerterm{big blind}. This dealer-button moves clockwise by one position once a whole poker hand is finished. The player directly to the left of the \pokerterm{dealer}, the player currently holding the dealer-button, is forced to bet one small blind and the player two seats to the left of the dealer has to bet one big blind, the equivalent of two small blinds \cite{master_nuno}. These (\markred{these or those?}) bets serve the purpose of preventing players to wait for the best hand without any punishment. \par In case of a Texas Hold'em poker tournament most often another type of forced bet called the \pokerterm{ante} is present in every hand of the tournament \cite{poker_dummies}. It usually is a percentage portion of the current big blind in the range of 10\%-20\% that has to be contributed to the \pokerterm{pot} by each player.
+A Texas Hold'em \pokerterm{hand} begins in a stage called \pokerterm{pre-flop}. In this stage every player at the table is dealt two cards. The cards are dealt face down and are exclusive to the player recieving the cards \cite{billings_phd}. Each seat at the table has a special meaning throughout a poker hand. The seat (also called \pokerterm{position}) which owns the \pokerterm{dealer-button} determines the two positions that have to place  \pokerterm{forced bets} called the \pokerterm{small blind} and the \pokerterm{big blind}. This dealer-button moves clockwise by one position once a whole poker hand is finished. The player directly to the left of the \pokerterm{dealer}, the player currently holding the dealer-button, is forced to bet one small blind and the player two seats to the left of the dealer has to bet one big blind, the equivalent of two small blinds \cite{master_nuno}. These bets serve the purpose of preventing players to wait for the best hand without any punishment. \par In case of a Texas Hold'em poker tournament most often another type of forced bet called the \pokerterm{ante} is present in every hand of the tournament \cite{poker_dummies}. It usually is a percentage portion of the current big blind in the range of 10\%-20\% that has to be contributed to the \pokerterm{pot} by each player.
 In poker tournaments the small blind and the big blind are incremented after a fixed time interval to advance the game.  \par
-The pre-flop stage is concluded once each player has acted in the first betting round. The next stage, called the \pokerterm{flop}, is introduced by three face up dealt cards to the \pokerterm{community board} and players once again have the chance to bet in this round. The third stage is called the \pokerterm{turn} and a fourth card is dealt to the community board. After concluding the third round of betting a fifth \pokerterm{community card} is dealt on the \pokerterm{river} and players are allowed to bet one last time. If there is more then one player left after this final round of betting the cards of those (\markred{those or these}) players are revealed in a so-called \pokerterm{showdown}. The best combination of two player's \pokerterm{hole cards} and three community cards decides the winner. If two players have the same hand rank, the pot is split between both of them \cite{billings_phd}.
+The pre-flop stage is concluded once each player has acted in the first betting round. The next stage, called the \pokerterm{flop}, is introduced by three face up dealt cards to the \pokerterm{community board} and players once again have the chance to bet in this round. The third stage is called the \pokerterm{turn} and a fourth card is dealt to the community board. After concluding the third round of betting a fifth \pokerterm{community card} is dealt on the \pokerterm{river} and players are allowed to bet one last time. If there is more then one player left after this final round of betting the cards of all remaining players are revealed in a so-called \pokerterm{showdown}. The best combination of two player's \pokerterm{hole cards} and three community cards decides the winner. If two players have the same hand rank, the pot is split between both of them \cite{billings_phd}.
 \subsection{Betting}
-Sophisticated betting strategies are the number one key component for succeeding in the game of NL Texas Hold'em poker. Choosing the correct (\markred{There is no -correct- size, rewrite this}) bet size in any given situation allows players to maximize their winnings and at the same time minimize their losses \cite{master_nuno}. \par
+Sophisticated betting strategies are the number one key component for succeeding in the game of NL Texas Hold'em poker. Choosing the optimal bet size in any given situation allows players to maximize their winnings and at the same time minimize their losses \cite{master_nuno}. \par
 Each betting round is either opened by a bet or a check. In a clockwise manner players may then decide to check or bet if there was no bet placed yet. If a bet has already been placed, the remaining players may either call the bet, raise the bet or fold to that bet. In NL Texas Hold'em the bet or raise amount is only limited by the remaining chips a player has \cite{poker_dummies}. \par
 \subsubsection{Betting Options}
 \begin{itemize}
@@ -25,11 +24,47 @@ A bet describes the action of a player being first to put a certain amount of mo
 Folding a hand means no longer being interest in the hand and not willing to put any more money into the pot. If however no bet has been placed in the current betting round yet, a player may rather check his hand instead of folding it. \TODOrewrite{This needs to be more clear}
 \end{itemize}
 \cite{review, poker_dummies} 
-\subsection{\markred{Hand Rankings}}
-Texas Hold'em poker is a poker variant where the highest ranking 5-card combination wins \cite{poker_dummies}. To decide the winner of a poker hand the best possible 5-card combination of each remaining player is compared against each other \cite{pena}. The ranking system of 5-card combinations can be found in \markred{Table 2.1...}. 
-\TODOrewrite{Breifly explain the main concept of ranking hands and then link to the table.} 
-\section{What Defines a GOOD Poker Player}
-\markred{Briefly state the properties of a good poker player as in \cite{opp_modeling}. (HS, HP, Betting Str., Bluffing, Unpredictability, Opp Modeling)}
+\subsection{Hand Rankings}
+Texas Hold'em poker is a poker variant where the highest ranking 5-card combination wins \cite{poker_dummies}. To decide the winner of a poker hand the best possible 5-card combination of each remaining player is compared against each other \cite{pena}.
+The ranking system of 5-card combinations can be found in Table \ref{tab:hand_rank}. 
+\begin{table}[]
+\begin{tabular}{|l||l|}
+\hline
+\multicolumn{1}{|c||}{Hand rank and sample hand} & \multicolumn{1}{c|}{Description} \\ \hhline{=#=}
+Royal Flush                       & Highest ranking Flush plus Straight  \\ 
+\As \Ks \Qs \Js \tens		&\ \\ \hline
+Straight Flush                    & 5 cards of same suit and in sequence, without the Ace                   \\
+\Jc \tenc \ninec \eigc \sevc & \ \\ \hline
+Four of a Kind	                    	& Four matching cards of same rank \\
+\Qc \Qh \Qd \Qs \twos & \\ \hline
+Full House	                    	& Three of a kind and one pair \\
+\Qc \Qh \Qd \twoc \twos & \\ \hline
+Flush	                    	& 5 cards of same suit, not in sequence \\
+\sevc \Qc \ninec \twoc \Kc & \\ \hline
+Straight	                    	& 5 cards in sequence without matching suits \\
+\sevc \eigd \nineh \tenc \Jc & \\ \hline
+Three of a Kind	                    	& Three cards of the same rank, two unmatched cards \\
+\Qc \Qd \Qh \eigh \twoc & \\ \hline
+Two Pair	                    	& Two pairs of two matched cards \\
+\sevc \sevd \nined \eigh \eigc & \\ \hline
+One Pair	                    	& Two cards of the same rank,  three unmatched cards      \\
+\sevc \tend \nined \eigh \eigc & \\ \hline
+High Card		                    & No matches between 5 cards.                   \\
+\sevc \tend \nined \Ah \Qc & The highest card counts.\\ \hline
+\end{tabular}
+\centering
+\caption{Hand rankings for 5-card combinations (strongest to weakest)}
+\label{tab:hand_rank}
+\end{table}
+\section{Key Components to Become a Great Poker Player}
+\begin{itemize}
+\item Hand strength
+\item Hand Potential
+\item Bluffing
+\item Unpredictability
+\item Opponent Modeling
+\end{itemize}
+Maybe I can mention this in the Neural Network agent section and not here? There I can link input features to the key concepts of a great poker player
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
 %% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='

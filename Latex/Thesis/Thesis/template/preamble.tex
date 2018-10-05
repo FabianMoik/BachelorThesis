@@ -359,6 +359,8 @@
 %doc% create a document which is printed on both, left side and right side.
 %doc%
 
+% !TeX program = latex
+
 \documentclass[%
 fontsize=\myfontsize,%% size of the main text
 paper=\mypapersize,  %% paper format
@@ -373,8 +375,9 @@ draft=\mydraft,      %% if true: included graphics are omitted and black boxes
                      %%          mark overfull boxes in margin space
 BCOR=\myBCOR,        %% binding correction (depends on how you bind
                      %% the resulting printout.
-\mylaterality        %% oneside: document is not printed on left and right sides, only right side
+\mylaterality,        %% oneside: document is not printed on left and right sides, only right side
                      %% twoside: document is printed on left and right sides
+pstricks
 ]{scrbook}  %% article class of KOMA: "scrartcl", "scrreprt", or "scrbook".
             %% CAUTION: If documentclass will be changed, *many* other things
             %%          change as well like heading structure, ...
@@ -574,6 +577,9 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% For using if/then/else statements for example in macros
 \usepackage{ifthen}
 
+\usepackage{multicol}
+\usepackage{varwidth}
+
 %% pre-define ifthen-boolean variables:
 \newboolean{myaddcolophon}
 \newboolean{myaddlistoftodos}
@@ -667,7 +673,12 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% }}]
 %doc% For setting correctly typesetted units and nice fractions with \verb+\unit[42]{m}+ and \verb+\unitfrac[100]{km}{h}+.
 \usepackage{units}
+\usepackage{hhline}
 
+\usepackage{auto-pst-pdf}
+\usepackage{pst-poker}
+\psset{inline=symbol}
+\psset{colorset=4c}
 
 %doc% \end{enumerate}
 

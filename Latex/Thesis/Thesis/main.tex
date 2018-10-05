@@ -120,11 +120,6 @@
 %% Please do not set to "false" without a good reason. The colophon
 %% helps your readers to get in touch with LaTeX and to find this template.
 
-\setboolean{myaddlistoftodos}{true}  %% "true" or "false"
-%% If set to "true": the current list of open todos is added after the
-%% table of contents. If \mytodonotesoptions is set to "disable", no
-%% list of todos is added, independent of this setting here.
-
 \setboolean{english_affidavit}{true}  %% "true" or "false"
 %% If set to "true": the language of the statutory declaration text is set to
 %% English, otherwise it is in German.
@@ -261,11 +256,7 @@
 \tableofcontents                %% this produces the table of contents - you might have guessed :-)
 
 \listoffigures
-
-%% if myaddlistoftodos is set to "true", the current list of open todos is added:
-\ifthenelse{\boolean{myaddlistoftodos}}{
-  \newpage\listoftodos          %% handy if you are using todonotes with \todo{}
-}{}                             %% with todonotes-package option "disable" you can get rid of any todo in the output
+\listoftables
 
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
@@ -278,8 +269,8 @@
 \include{myText/PokerBasics}        
 \include{myText/StateOfTheArt}        
 \include{myText/Implementation}        
-\include{myText/Evaluation}
-\include{myText/FutureWork_Summary}        
+\include{myText/results}
+\include{myText/future_work_summary}        
 
 \input{bibliography}
 

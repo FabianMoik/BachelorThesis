@@ -3,7 +3,7 @@
 
 \chapter{State-Of-The-Art}
 \label{cha:State-Of-The-Art}
-\markred{Maybe a short introduction about the road of poker agents of the last 10 years and what they try to achieve and tackle? Also state that most approaches focus on simplified versions of poker and mainly on Heads-up play}
+The game of poker has many interesting properties which proved to offer a challenging test environment for artificial intelligence research. Over the last decade scientists and researchers have studied the game from a game theoretical view to find optimal solutions but also tried a number of machine learning algorithms and artificial intelligence systems on the game \cite{opp_master, challenge_of_poker}. A lot of research though focused on simplified versions of the game because these variants of poker are easier to analyze but still offer demonstrations of game theoretical principles \cite{challenge_of_poker}. Nonetheless over the past few years, abstract versions of poker have been used to first successfully train algorithms on this simple version of the game and then transfer the obtained knowledge to a full version of the game.
 \section{Knowledge-based Poker Agents}
 Knowledge-based systems can be broken into two categories, namely \textbf{rule-based expert systems} and \textbf{formula-based methods}. In general knowledge-based systems require the knowledge of an expert player to design the system \cite{review}. A \textit{rule-based expert system} in its simplest form is a sequence of if-else statements for frequently occurring scenarios of the game which determine the desirable betting action. More advanced human players describe their poker hands in a very similar way when they break them down in a discussion \cite{master_nuno}. \textit{Formula-based methods} on the other hand try to generalize the problem by defining a formula that takes a set of inputs and outputs a so-called \pokerterm{probability triple} upon which a betting decision is made. Inputs to the formula may describe important information about the current game state and can be weighted \cite{review}. \par
 While rule-based expert systems may yield reasonably good results in the first stage of a poker hand (pre-flop), they fail to shine in later stages of the game because they become increasingly difficult to maintain with additional and sometimes even conflicting information added at each stage. Furthermore  static strategies are prone to exploitation and therefore not competitive with other approaches \cite{review}.
@@ -22,8 +22,8 @@ Adaptive strategies try to tackle this problem by quickly adapting to the playin
 A Bayesian network is a probabilistic graphical model. Each node in the directed acyclic graph represents a random variable and edges between nodes represent the conditional dependencies of variables. Nodes are associated with a probability function which returns the conditional probability values based on their parent's values. A probability distribution over the random variables can be retrieved by propagating the probabilities of initialized nodes throughout the network \cite{review}. \par
 Compared to other poker playing agents, bayesian agents performed badly in the AAAI Computer Poker Competitions in the last years. There is still a lot of room for improvement in Bayesian based networks and further research in this field has to be done to stand a chance in upcoming competitions \cite{review}. 
 \subsection{Evolutionary Algorithms}
-\markred{How much do I want to write here, because it is anyway my topic to present.}
-
+\markred{write this after finishing the chapter of EA}
+\markblue{Have a look at \cite[p. 14]{opp_master}}
 
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
