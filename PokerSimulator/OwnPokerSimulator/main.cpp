@@ -104,7 +104,6 @@ int main() {
         // elite players per generation
 
         std::vector<Player*> elite;
-        // Run one Generation
         elite = runOneGeneration(players, rules, numOfElitePlayersToKeep, numOfTournaments, hallOfFame);
 
         // DO THE EVOLUTION
@@ -127,6 +126,41 @@ int main() {
     std::cout << "Full " << numOfGenerations << " generations took: " << totalTime  << "seconds" << std::endl;
 
     return 0;
+}
+
+void RunEvolution(int num_generations, int num_players, int num_elite_player_to_keep, int num_tournaments) {
+
+    std::vector<Player*> players;
+    std::vector<Player*> hall_of_fame;
+
+    // Creating players for the first generation
+
+    for (int i = 0; i < num_players; i++) {
+        Player *player;
+        AIOwn *ai = new AIOwn();
+        player = new Player(ai);
+        player->setID(i);
+        players.push_back(player);
+    }
+
+    // Initializing Hall of Fame
+    InitializeHallOfFameWithOwnAi(players, hall_of_fame);
+
+    for (int i = 0; i < num_generations; i++) {
+
+        // Elite players per generation
+        std::vector<Player*> elite;
+
+        elite = runOneGeneration(players, rules, num_elite_player_to_keep, num_tournaments, hall_of_fame);
+
+        // Evolve agents
+        double mutationLikelihood = 0.10;
+
+        std::vector<Player*> playersToEvolve(players.begin(), players.begin() + num_players);
+        evolvePlayers(playersToEvolve, elite, mutationLikelihood);
+
+        generation++;
+    }
 }
 
 void evolvePlayers(std::vector<Player*> players, const std::vector<Player*> elitePlayers, double mutationLikelihood) {

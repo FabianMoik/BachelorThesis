@@ -8,14 +8,8 @@ In this chapter the architecture of both the test environment and the poker play
 %%%%%%%%%%%%%%%%%% ARCHITECTURE %%%%%%%%%%%%%%%%%%
 \section{Architecture of Testbed and Neural Network Agents}
 \label{sec:architecture}
-\begin{itemize}
-\item Why C++ and not an existing testbed?
-\subitem name reasons why
-\end{itemize}
-\markred{breifly explain why own full testbed and not existing one (many in Java and server backend), limited in modularity (only cash etc...)}\\\\
-
+Although there are a handful open source poker testbeds on the internet, none of them has proven to be suitable to achieve the goal of this thesis. Some of them lack the needed flexibility to extract all necessary information for the bot out of the current game state, others are not designed to run tournament poker simulations but only \pokerterm{cash games} or other poker variants. Therefore in this thesis a testbed was crafted, which can be arbitrarily modified to the needs of the user. However, the main focus of this thesis was on the creation of a test environment that can simulate millions of poker tournaments in as little time as possible. At the same time it should provide our poker agents with all the needed information about the current game state and opponents at the table. The poker testbed was written in \textit{C++} due to little performance overhead at runtime and its speed and efficiency.
 \subsection{Poker Testbed}
-Before running game simulations in the poker testbed it first seeds and initializes a random generator \markred{explain from whome and why it is good (-> in order to achieve reliable results the random generation should be good)} and loads a precalculated table into memory (\markblue{more on the table in section x.x)}. \markred{Further explain what happens in main.cpp. Player initialization, AI init, hall of fame, etc...}.\\\\
 The basic structure of the poker test environment, referred to as \textit{testbed} in this context consists of following components:\\
 \pagebreak
 \begin{multicols}{2}
@@ -161,6 +155,52 @@ Because such a number of calculations is too expensive for our training algorith
 \pagebreak
 %%%%%%%%%%%%% NN %%%%%%%%%%%%%
 \section{Training the NN-Agents}
+Unlike other games such as Chess, Checkers or Go, Poker is a game of imperfect information. This means, that a player can not see all relevant  information at a given game state at all times. Because the game of Poker involves hidden information and deception, players must be willing to take risks based on the information they have at the current state of the game \cite{nn_evolve}. Unlike other methods, which reduce the large decision space of No-Limit Hold'em by transforming the game into a smaller abstract version in which they then approximate the optimal path and execute the result in the original game via a translation method, Nicolai and Hilderman \cite{nn_evolve} introduced a method, in which evolutionary algorithms can be used to train neural network agents to achieve reasonably good results in the game of No-Limit Texas Hold'em poker. The proposed algorithm in their work is used as a guide in this thesis to train neural network agents through iterative play over a large number of generations by mimicking natural evolution \cite{nn_evolve}.
+\subsection{Evolution Phase}
+Evolutionary algorithms try to mimic the evolution process as it is know in biology. Agents in a population are given a task and try to achieve the best results possible. The performance of agents is then evaluated and the best among the population are chosen to reproduce offsprings for the next generation. Offsprings are almost identical to their parents, but with slight changes to their genetic material. These offsprings together with the best agents from the previous generation are then again given the same task and the whole process repeats. \cite{evolutionary_methods, evolutionary_methods}. \par
+In case of our neural network agents, the population of the first generation consists of randomly weighted neural network agents. They are competing in a number of tournaments against each other and some pre-defined benchmark agents. The best agents of the first generation are then chosen to reproduce offsprings. Together with the best agents of the previous generation, all offsprings are then competing in another series of tournaments until after $N$ generations the process is stopped. \par
+Figure \ref{fig:evol_code} shows the implementation of simulating a number of tournaments for each generation and selecting a number of elite players per generation to evolve the neural network agents. 
+\pagebreak
+\begin{figure}
+\begin{lstlisting}
+void RunEvolution(int num_generations, int num_players, int num_elite_kept, int num_tournaments) {
+
+    std::vector<Player*> players;
+    std::vector<Player*> hall_of_fame;
+
+    // Creating players for the first generation
+    for (int i = 0; i < num_players; i++) {
+        Player *player;
+        AIOwn *ai = new AIOwn();
+        player = new Player(ai);
+        player->setID(i);
+        players.push_back(player);
+    }
+
+    // Initializing Hall of Fame
+    InitializeHallOfFameWithOwnAi(players, hall_of_fame);
+
+    for (int i = 0; i < num_generations; i++) {
+        // Elite players per generation
+        std::vector<Player*> elite;
+
+        elite = RunOneGeneration(players, rules, num_elite_kept, num_tournaments, hall_of_fame);
+
+        // Evolve agents
+        std::vector<Player*> players_to_evolve(players.begin(), players.begin() + num_players);
+        EvolvePlayers(players_to_evolve, elite);
+
+        generation++;
+    }
+}
+\end{lstlisting}
+\caption{The evolution process to train poker agents}
+\label{fig:evol_code}
+\end{figure}
+\markred{Briefly explain that the evolutionary algorithm is used to update the weigth of the NN agents after one generation has played X number of tournaments. We don't us the classic back propagation algorithm but rather use the concept of natural selection. Where random mutation guarantees that agents don't get stuck in local optima. ... }
+\markblue{Mention self-play somewhere}
+
+\pagebreak
 \begin{itemize}
 \item introduction
 \item evolution phase
@@ -168,24 +208,15 @@ Because such a number of calculations is too expensive for our training algorith
 \item hall of fame
 \item duplicat tables?
 \end{itemize}
-\pagebreak
+\begin{lstlisting}
+// Place pseudo code here
+\end{lstlisting}
+
 \begin{itemize}
 \item introduction
 \subitem outlook to what follows now
 \subitem mention that limitations were found and that the chapter describes how the limitations are or can be tackled.
-\item Architecture
-\subitem language used and why
-\subitem short testbed description and why others where not used
-\subitem make a graphic which shows how the system is structured and explain the system components
-\subsubitem brief explanation on what the Hand Ranker/Hand Evaluator does $\rightarrow$ reference to the upcoming in depth explaination
-\subsubitem NN agent (brief explanation of basic rule $\rightarrow$ in depth explanation follows)
 \item Neural Network Agent
-\subitem general structure
-\subitem Feature List explained
-\item Betting Strategy
-\subitem Hand ranker and Hand Evaluator (Effective Hand Strength and Hand Potential)
-\subitem preflop and postflop decision making
-\subsubitem Monte Carlo Simulation
 \subitem betting decision made according to the probability triple returned by the NN agents.
 \subsubitem explain how the action is choosen (bet size curves etc.)
 \item Training the Poker Agent
