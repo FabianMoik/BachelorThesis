@@ -1,0 +1,76 @@
+function: RUN_EVOLUTION
+arguments: num_elite: integer value, pop: a vector of player pointers, agents: reference to a vector of player pointers
+			num_tournaments: integer value, hof: reference to a vector of player pointers
+			
+
+define NUM_ELITE_PLAYERS a;
+define NUM_TOURNAMENTS_PER_GEN b;
+define MUTATION_LIKELIHOOD c;
+
+void evolvePlayers(std::vector<Player*> population, std::vector<Player*> players, const std::vector<Player*> hall_of_fame, double mutationLikelihood) {
+	for (int i = 0; i < num_of_generations; i++) {
+
+        /// EVALUATION PHASE
+
+        Rules* rules = defineRules();
+
+        std::vector<Player*> elite;
+        elite = runOneGeneration(population, players, rules, NUM_ELITE_PLAYERS, NUM_TOURNAMENTS_PER_GEN, hall_of_fame);
+        
+        updateHallOfFame(population, elite_players, hall_of_fame);
+
+
+        /// EVOLUTION PHASE
+
+        evolvePlayers(players, elite, MUTATION_LIKELIHOOD);
+
+        saveNeuralNetworkWeightsToFile(dynamic_cast<AIOwn *>(elite.at(0)->getAI())->net_.getOutputWeights());
+
+        delete rules;
+	}
+}
+
+
+---------------------------------------------------------------------------------------------
+
+@players	->	this is a sorted vector such that the elite players are at the beginning
+
+void evolvePlayers(std::vector<Player*> players, const std::vector<Player*> elite_players, double mutation_likelihood) {
+   
+    std::discrete_distribution<int> custom_distribution {4,25,6,1,1,1,1};
+    std::uniform_real_distribution<> uniform_real_distribution(0,1);
+    std::normal_distribution<double> normal_distribution(0, 0.6);
+
+    for (long p = elite_players.size(); p < players.size(); p++) {
+
+        int parent_count = custom_distribution() + 1;
+
+        if (parent_count > elite_players.size()) {
+            parent_count = elite_players.size();
+        }
+
+        std::vector<Player *> parents = chooseParents(parent_count);
+        std::vector<double> parents_evolution_weights = assignParentsWeights(parent_count);
+        
+        std::vector<double> child_weights = dynamic_cast<AIOwn *>(tempPlayers.at(p)->getAI())->net_.getOutputWeights();
+
+        for (int w = 0; w < child_weights.size(); w++) {
+            double new_weight = 0.0;
+
+            for (int par = 0; par < parents.size(); par++) {
+                std::vector<double> parent_weights = dynamic_cast<AIOwn *>(parents.at(
+                        par)->getAI())->net_.getOutputWeights();
+                new_weight += parent_weights[w] * parents_evolution_weights[par];
+            }
+
+            double random_value = uniform_real_distribution();
+            if (random_value < mutation_likelihood) {
+                double noise_value = normal_distribution();
+                new_weight += noiseValue;
+            }
+            child_weights.at(w) = new_weight;
+        }
+
+        dynamic_cast<AIOwn *>(tempPlayers.at(p)->getAI())->net_.setOutputWeights(child_weights);
+    }
+}

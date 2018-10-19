@@ -40,9 +40,9 @@ Figure \ref{fig:highlevelarch} shows the high level architecture of the describe
 %%%%%%%%%%%%%%%%%% NN AGENTS %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Neural Network Agents}
 \label{subsec:nnagent}
-In the conducted test series of simulating hundreds of tournaments in a single population of No-Limit Texas Hold'em poker agents, evolving neural networks were used to train the agents on the game of NL Hold'em poker. An agent in this population is represented by the \textit{player object}, described in \ref{sec:architecture}. The player object holds an \textit{AI object}, that returns the desired action to be taken, given the public information about the current game state. This public game state information is provided by the \textit{dealer object}.
+In the conducted test series of simulating hundreds of tournaments in a single population of poker agents, evolving neural networks were used to train the agents on the game of NL Hold'em poker. An agent in this population is represented by the \textit{player object}, described in \ref{sec:architecture}. The player object holds an \textit{AI object} which implements a neural network and returns the desired action to be taken, given the public information about the current game state. This public game state information is provided by the \textit{dealer object}.
 \subsubsection{Structure of the Neural Network}
-The agents to be examined are implemented as fully connected feed-forward neural networks with a network topology of \markred{16-8-3}, which corresponds to \markred{16} \textit{input neurons} in the input layer, \markred{eight} \textit{hidden neurons} in the hidden layer and \markred{three} \textit{output neurons} in the output layer \cite{ENN_garrett}. For the hidden layer a \textbf{sigmoid} activation function is used and a \textbf{softmax} \TODOrewrite{It is not yet sure if softmax will be used.} activation is performed at the output layer. The three output neurons represent the so called \textbf{probability triple} (f, c, r), which specifies the probability distribution for the actions \textit{fold, check/call} or \textit{bet/raise} at the current state of the game \cite{review}. The full architecture of the neural network with all its input features can be seen in Figure \ref{fig:nn_arch}. The selection of input features was strongly influence by the work of Nicolai in \cite{evolutionary_methods}. 
+The agents to be examined are implemented as fully connected feed-forward neural networks with a network topology of \markred{24-14-3}\TODOrewrite{The final structure has not yet been determined (depends on opponent modeling module)}, which corresponds to \markred{24} \textit{input neurons} in the input layer, \markred{14} \textit{hidden neurons} in the hidden layer and \markred{three} \textit{output neurons} in the output layer \cite{ENN_garrett}. For the hidden layer a \textbf{sigmoid} activation function is used and a \textbf{softmax} activation is performed at the output layer. The three output neurons represent the so called \textbf{probability triple} (f, c, r), which specifies the probability distribution for the actions \textit{fold, check/call} or \textit{bet/raise} at the current state of the game \cite{review}. The full architecture of the neural network with all its input features can be seen in Figure \ref{fig:nn_arch}. The selection of input features was strongly influence by the work of Nicolai in \cite{evolutionary_methods} and are described in the sequel. 
 \myfig{nn_schematics.pdf}%% filename in figures folder
   {width=1.1\textwidth,height=1.1\textheight}%% maximum width/height, aspect ratio will be kept
   {Architecture of the neural network with all the input features}%% caption
@@ -68,7 +68,7 @@ The agents to be examined are implemented as fully connected feed-forward neural
 %\label{table:feature_tab}
 %\end{table}
 \subsubsection{Effective Hand Strength (EHS)}
-The EHS is an indicator for how likely a hand is winning at showdown considering the current hand strength but also the positive and negative hand potential \cite{evolutionary_methods}. In conjunction with other components the EHS should be used to help selecting a suitable betting action. A more detailed description of EHS can be found in subsection \markred{x.x}.
+The EHS is an indicator for how likely a hand is winning at showdown considering the current hand strength but also the positive and negative hand potential \cite{evolutionary_methods}. In conjunction with other components the EHS should be used to help selecting a suitable betting action. A more detailed description of EHS can be found in subsection \ref{subsubsec:ehs}.
 \subsubsection{Betting round}
 The second input for the neural network is the current betting round in the game. This can be PREFLOP, FLOP, TURN or RIVER. The betting round is an important property because a good preflop strategy varies from a good postflop strategy and therefore this property should not be withheld from the neural network.
 \subsubsection{Number of betting turns}
@@ -76,7 +76,7 @@ The next input to the neural network is the current turn of betting. A \pokerter
 \subsubsection{Chip count}
 The fourth feature is the number of chips the acting agent has. This represents the stack of the player. 
 \subsubsection{Chips in pot}
-The fifth feature is the number of chips already in the pot, including all chips of previous betting rounds plus the number of chips betted by other agents in the current betting round. An agent may not be able to win all the chips in the pot if his chip count (stack) is smaller than a bet of his opponents in the current round. Hence the value of this feature is the effective pot size an agent can actually win when his hand is the strongest at showdown \cite{evolutionary_methods}.
+The fifth feature is the number of chips already in the pot, including all chips of previous betting rounds plus the number of chips betted by other agents in the current betting round. An agent may not be able to win all the chips in the pot if his chip count (stack) is smaller than a bet of his opponents in the current round. This means when an opponent makes a bet larger than the remaining chips in the agent's stack, the agent may only win the amount of chips that is covered by his stack. Hence the value of this feature is the effective pot size an agent can actually win when his hand is the strongest at showdown \cite{evolutionary_methods}.
 \subsubsection{Chips to call}
 The sixth feature is the number of chips an agent has to match in order to be allowed to continue in the hand. 
 The ratio between the amount of chips a player has to bet to stay in the hand and the amount of chips in the pot is called \pokerterm{pot odds}. This is a commonly used tool in the poker community to calculate the needed winning percentage of an agent's hand to make the call a profitable play, irrespective of other factors \cite{evolutionary_methods}.
@@ -87,8 +87,9 @@ This feature is the relative position of the agent to the dealer. The dealer pos
 \subsubsection{Chip count of all opponents}
 In a \pokerterm{9-handed} multi table tournament there are at most 9 players on one table. Therefore this feature has 8 input nodes, one for each opponent on the table. The input is the number of chips an opponent has. Late in a tournament it will occur that hands are not always played 9-handed but with less then 9 players per hand. For this case the input for empty seats on the table is set to unknown and will be recognized by the neural network as an empty seat. The first node of this 8 nodes is always the opponent directly to the left of the agent, the second node is the opponent two seats to the left of the agent \cite{evolutionary_methods}. 
 \subsubsection{Opponent model of all opponents}
-\markred{All chip amount values are normalized by the number of BigBlinds in the whole tournament. MENTION THIS SOMEWHERE OR MAYBE EVEN CHANGE IT IN THE NN?}
+%\markred{All chip amount values are normalized by the number of BigBlinds in the whole tournament. MENTION THIS SOMEWHERE OR MAYBE EVEN CHANGE IT IN THE NN?}
 %%% What makes a good poker player
+\markblue{YET TO COME! $\rightarrow$ opponent modeling module needs to be finished first}
 \subsection{Key Components to Achieve High Level Poker Skill}
 Billings et al. \cite{challenge_of_poker} described five main requirements a poker playing agent needs to fulfill in order to be competitive with the best players in the world. All these components depend on each other and need to be adjusted when a certain situation requires it. The five requirements mentioned by Billings are:
 \begin{itemize}
@@ -98,24 +99,24 @@ Billings et al. \cite{challenge_of_poker} described five main requirements a pok
 \item[$\triangleright$] Unpredictability
 \item[$\triangleright$] Opponent Modeling
 \end{itemize}
-\textbf{Hand strength} and \textbf{hand potential} are explained in detail in subsection \ref{subsubsec:hs}. In short HS and HP combined asses the relative hand strength against opponents, ideally considering opponent-specific factors that would influence the probability of winning a hand \cite{challenge_of_poker}. \par
-To achieve this requirement a slightly different approach than recommended in \cite[p. 208]{challenge_of_poker} was implemented in this study. Instead of considering opponent-specific tendencies while calculating the hand strength and hand potential, the effective hand strength was calculated under the assumption of playing against a random player, the reason being that opponent's tendencies are later given as input to the neural network which should be able to convert this information into meaning.\par
+\textbf{Hand strength} and \textbf{hand potential} are explained in detail in subsection \ref{subsubsec:hs}. In short HS and HP combined asseses the relative hand strength against opponents, ideally considering opponent-specific factors that would influence the probability of winning a hand \cite{challenge_of_poker}. \par
+To achieve this requirement a slightly different approach than recommended in \cite[p. 208]{challenge_of_poker} was implemented in this study. Instead of considering opponent-specific tendencies while calculating the hand strength and hand potential, the effective hand strength was calculated under the assumption of playing against a random player, the reason being that opponent's tendencies are later modeled individually and given as input to the neural network which should be able to convert this information into meaning.\par
 \textbf{Opponent modeling} as described by Billings et al. \cite[p. 208]{challenge_of_poker} tries to accumulate information about the playing style of an opponent. Later this information is applied to hand strength calculations and used to create likely probability distributions of opponent's hand ranges. \par
 Again in our study opponent models are not exactly used in the same way as described but rather represent key opponent-specific tendencies which do not directly influence any calculations but rather serve as additional input information for the neural network, to find an optimal betting strategy against different opponent types. \par
-\textbf{Unpredictability} can be achieved by altering our strategy in a given situation. This means that a player should sometimes play differently in a similar situation, to not allow opponents to generate a precise model of our strategy \cite{challenge_of_poker}. \par
-This component is achieved in our study by following certain probability distributions when it comes to bet sizes and betting actions. \markred{maybe explain a little more in detail?} \par
+\textbf{Unpredictability} can be achieved by altering the strategy in a given situation. This means that a player should sometimes play differently in a similar situation, to not allow opponents to generate a precise model of the strategy \cite{challenge_of_poker}. \par
+This component is achieved in this thesis by following certain probability distributions when it comes to bet sizes and betting actions. A detailed description of the betting strategy follows in subsection \ref{subsec:betting}.\par
 \textbf{Bluffing} is the last requirement mentioned by Billings et al. \cite{challenge_of_poker} and serves the purpose of sometimes winning pots with weak hands. By sometimes bluffing with weak hands we make opponents doubt our hand strength and later win more money on our strong hands against them. \par
 The bluffing component was not explicitly design in our study, but ideally the neural network should discover the concept of bluffing on its own, by interpreting the given opponent models and its relative hand strength.
 \section{Betting Strategy}
 %%%%%%%%%%%%%%%%%% BETTING STRATEGY %%%%%%%%%%%%%%%%%%%%%%
-Billings \textit{et al.} \cite[p.~210]{challenge_of_poker} emphasis that betting strategies for pre-flop play and post-flop play are considerably different and that \enquote{a relatively simple expert system is sufficient for competent play} pre-flop. Nonetheless for the conducted study no expert system for pre-flop betting decisions was used but an evolving neural network was provided with public game state information for all betting rounds. While sharing the same neural network for both pre-flop and post-flop play there is one significant difference in calculating the HS for pre-flop decisions compared to post-flop calculations.
+Billings \textit{et al.} \cite[p.~210]{challenge_of_poker} emphasis that betting strategies for pre-flop play and post-flop play are considerably different and that \enquote{a relatively simple expert system is sufficient for competent play} in the pre-flop phase. Nonetheless for the conducted study no expert system for pre-flop betting decisions was used but an evolving neural network was provided with public game state information for all betting rounds. While sharing the same neural network for both pre-flop and post-flop play there is one significant difference in calculating the HS for pre-flop decisions compared to post-flop calculations.
 %%%% %%%%%%%%% PREFLOP
 \subsection{Preflop Strategy}
 The state space in the pre-flop stage of a poker hand is relatively small compared to the post-flop state space. In total there are ${52\choose 2} = 1352$ initial hole card combinations pre-flop, but this translates to only 169 distinct hand types because some hands have the same strength pre-flop but not post-flop. For example \Ah\Kh and \Ad\Kd have the same strength pre-flop and therefore are categorized into one distinct hand type, namely Ace King \pokerterm{suited} (AKs) \cite{opp_master}. \par
 For evaluating the hand strength of one agent against $N$ opponents a lookup table was created. It consists of $169 * 8 = 1352$ entries, 169 distinct hand types played against one to eight opponents. A \textit{Monte-Carlo Simulation} of one million poker hands was performed for each distinct hand type against each possible number of opponents. During those one million hands the agent's hole cards were ranked against all opponents ' hole cards and all wins, ties and losses for the agent were counted. An approximation of the expected win percentage was calculated with following formula:
 \begin{equation}
 \label{eq:hs}
-HS =  \frac{(WINS + \frac{TIES}{2})}{WINS + TIES + LOSSES}
+HS =  \frac{(\#WINS + \frac{\#TIES}{2})}{\#WINS + \#TIES + \#LOSSES} \hspace{1cm} .
 \end{equation}
 The hand strength (HS in the formula) represents the chance of a hand beating a random hand under the assumption of seeing all 5 community cards and going to showdown. This approach does not take opponent models into consideration \cite{opp_master}. \par
 %%%%%%% HAND RANKER
@@ -123,20 +124,21 @@ The hand strength (HS in the formula) represents the chance of a hand beating a 
 A hand ranker as the name suggest, ranks a given poker hand based on its relative value by taking 5 to 7 cards as input and returning a number. The higher the number returned by the hand ranker, the better the hand \cite{hand_eval}. There exists a variety of open source hand ranking algorithms on the internet but only a few of them were able to hold their own against the competition over the years. The reason why only a hand full of poker hand ranking algorithms are used nowadays is the need for speed. Writing a simple hand ranker is rather easy, but writing an efficient one that is able to rank millions of hands every second is not so trivial. Among the most famous hand ranking algorithms one especially excelled due to its speed. It was created by the \textit{TwoPlusTwo (TPT)} community and uses a look up table with 32487834 entries which translates to a file size of approximately 250MB \cite{hand_eval}. The TwoPlusTwo poker hand ranker is one of the fastest of its kind to date. Not only is it extremely fast but also able to rank 5-card, 6-card and 7-card poker hands. This becomes very handy when evaluating hands pre-flop, on the flop and on the turn. For this reason the TPT hand ranker was used in multiple hand strength calculations throughout this study to determine if a given hand beats an other hand. 
 \subsubsection{Hand Strength}
 \label{subsubsec:hs}
-While a hand ranker assigns a value to a given hand, it can only tell if a certain hand is better than other hands, and not how likely this hand currently is to win against a random hand. This is where the hand strength calculation comes into play. A simple approach of achieving this is to enumerate all possible remaining hand combinations an opponent could hold and count the number of wins, ties and losses versus the agent's hand. Following \markred{Formula \ref{eq:hs} - does this have to be in capitel letter?} one gets the probability that the current hand beats a random opponent's hand at the current round of the poker game. This value is also called the \textit{raw hand strength (RHS)}. While this approximation in combination with Monte-Carlo simulations might be sufficiently accurate for pre-flop hand strength assessment it is certainly insufficient for post-flop situations, when viewed in a vacuum. Raw hand strength calculations disregard the future potential of a hand and only represent the probability of a hand beating a random hand if there were no cards to come \cite{opp_master}. To overcome this obstacle the \textit{Effective Hand Strength} algorithm was conceived by Billings et al. and first published in \cite{opp_modeling}.
+While a hand ranker assigns a value to a given hand, it can only tell if a certain hand is better than other hands, and not how likely this hand currently is to win against a random hand. This is where the hand strength calculation comes into play. A simple approach of achieving this is to enumerate all possible remaining hand combinations an opponent could hold and count the number of wins, ties and losses versus the agent's hand. Using Formula \ref{eq:hs} one gets the probability that the current hand beats a random opponent's hand at the current round of the poker game. This value is also called the \textit{raw hand strength (RHS)}. While this approximation in combination with Monte-Carlo simulations might be sufficiently accurate for pre-flop hand strength assessment it is certainly insufficient for post-flop situations, when viewed in a vacuum. Raw hand strength calculations disregard the future potential of a hand and only represent the probability of a hand beating a random hand if there were no cards to come \cite{opp_master}. To overcome this obstacle the \textit{Effective Hand Strength} algorithm was conceived by Billings et al. and first published in \cite{opp_modeling}.
 %%%% POSTFLOP
 \subsection{Postflop Strategy}
 For evaluating the strength of a hand after the pre-flop stage, it is important to not only consider the raw hand strength but also the positive and negative hand potential. Both metrics combined form the so-called \textit{effective hand strength} \cite{pena}.
 \subsubsection{Effective Hand Strength}
-The raw hand strength combined with the positive and negative hand potentials yield a measurement for the relative hand strength against an opponent competing in the poker hand. In general the effective hand strength can be represented by following formula, as Billings et al. described it in \cite[p. 216]{challenge_of_poker}:
+\label{subsubsec:ehs}
+The raw hand strength combined with the positive and negative hand potentials yield a measurement for the relative hand strength against an opponent competing in the poker hand. In general the effective hand strength can be represented by the following formula, as Billings et al. described it in \cite[p. 216]{challenge_of_poker}:
 \begin{equation}
 \label{eq:ehs}
-EHS = HS \times (1 - NPot) + (1-HS) \times PPot
+EHS = HS \times (1 - NPot) + (1-HS) \times PPot \hspace{1cm},
 \end{equation}
-$NPot$ represents the negative pot potential, which stands for the probability of falling behind opponents when we currently have the best hand. Conversely $PPot$ stands for the positive hand potential, the probability of improving the hand when currently behind versus opponents. The EHS calculation can be generalized for $n$ opponents by simply raising the HS to the power of \textit{number of opponents} \cite{opp_modeling}. This yields:
+where $NPot$ represents the negative pot potential, which stands for the probability of falling behind opponents when we currently have the best hand. Conversely $PPot$ stands for the positive hand potential, the probability of improving the hand when currently being behind the opponents. The EHS calculation can be generalized for $n$ opponents by simply raising the HS to the power of \textit{number of opponents} \cite{opp_modeling}. This yields:
 \begin{equation}
 \label{eq:ehs_n_opp}
-EHS = HS^{n} \times (1 - NPot) + (1-HS^{n}) \times PPot
+EHS = HS^{n} \times (1 - NPot) + (1-HS^{n}) \times PPot \hspace{1cm}.
 \end{equation}
 Although Billings et al. do not recommend to generalize the EHS calculation we decided to do so in our study because the accumulated information about tendencies of opponents was not directly used to influence hand strength calculations but rather serve as additional input to the neural network which in turn should learn to apply these models on its own.
 
@@ -146,20 +148,24 @@ Hand potential calculations are used to account for future cards to come in a po
 Assuming the current poker hand is in the flop-stage, with three cards already dealt to the community board, then there are ${45\choose 2} = 990$ possible combinations of future turn and river cards for every possible hand an opponent might hold. That means if one would like to calculate the hand potential of a current hand against a random opponent that would equate to ${47\choose 2} \times {45\choose 2} = 1081 \times 990 = 1070190$ calculations for this situation. \par
 Because such a number of calculations is too expensive for our training algorithm, the effective hand strength calculation was modified to approximate the EHS.
 \subsubsection{Effective Hand Strength Approximation}
-\markblue{ Implementation: sample all possible two-card combinations of our opponents and only simulate the next round. Meaning on the flop simulate the Turn card (45 possible cards over a sample of possible opponent holdings. On the turn simulate the 44 possible cards vs samples of oppenent holdings.}
+\markblue{YET TO COME! $\rightarrow$ the approximation algorithm is implemented but not yet described.}
+%\markblue{ Implementation: sample all possible two-card combinations of our opponents and only simulate the next round. Meaning on the flop simulate the Turn card (45 possible cards over a sample of possible opponent holdings. On the turn simulate the 44 possible cards vs samples of oppenent holdings.}
 \pagebreak
 \subsection{Betting Strategy}
-\begin{itemize}
-\item betting strategy upon all those factors -> we did probability curves, depending on output of NN agent? To become a little bit more unpredictable
-\end{itemize}
+\label{subsec:betting}
+\markblue{YET TO COME! $\rightarrow$ the betting strategy is adopted from \cite[p. 53 - p. 57]{evolutionary_methods}. It is fully implemented but some parameters are still varied, so the description follows when final results are ready.}
+%\begin{itemize}
+%\item betting strategy upon all those factors -> we did probability curves, depending on output of NN agent? To become a little bit more unpredictable
+%\end{itemize}
 \pagebreak
 %%%%%%%%%%%%% NN %%%%%%%%%%%%%
 \section{Training the NN-Agents}
 Unlike other games such as Chess, Checkers or Go, Poker is a game of imperfect information. This means, that a player can not see all relevant  information at a given game state at all times. Because the game of Poker involves hidden information and deception, players must be willing to take risks based on the information they have at the current state of the game \cite{nn_evolve}. Unlike other methods, which reduce the large decision space of No-Limit Hold'em by transforming the game into a smaller abstract version in which they then approximate the optimal path and execute the result in the original game via a translation method, Nicolai and Hilderman \cite{nn_evolve} introduced a method, in which evolutionary algorithms can be used to train neural network agents to achieve reasonably good results in the game of No-Limit Texas Hold'em poker. The proposed algorithm in their work is used as a guide in this thesis to train neural network agents through iterative play over a large number of generations by mimicking natural evolution \cite{nn_evolve}.
 \subsection{Evolution Phase}
-Evolutionary algorithms try to mimic the evolution process as it is know in biology. Agents in a population are given a task and try to achieve the best results possible. The performance of agents is then evaluated and the best among the population are chosen to reproduce offsprings for the next generation. Offsprings are almost identical to their parents, but with slight changes to their genetic material. These offsprings together with the best agents from the previous generation are then again given the same task and the whole process repeats. \cite{evolutionary_methods, evolutionary_methods}. \par
+Evolutionary algorithms try to mimic the evolution process as it is know in biology. Agents in a population are given a task and try to achieve the best results possible. The performance of agents is then evaluated and the best among the population are chosen to reproduce offsprings for the next generation. Offsprings are almost identical to their parents, but with slight changes to their genetic material. These offsprings together with the best agents from the previous generation are then again given the same task and the whole process repeats. \cite{evolutionary_methods, nn_evolve}. \par
 In case of our neural network agents, the population of the first generation consists of randomly weighted neural network agents. They are competing in a number of tournaments against each other and some pre-defined benchmark agents. The best agents of the first generation are then chosen to reproduce offsprings. Together with the best agents of the previous generation, all offsprings are then competing in another series of tournaments until after $N$ generations the process is stopped. \par
-Figure \ref{fig:evol_code} shows the implementation of simulating a number of tournaments for each generation and selecting a number of elite players per generation to evolve the neural network agents. 
+Figure \ref{fig:evol_code} shows the implementation of simulating a number of tournaments for each generation and selecting a number of elite players per generation to evolve the neural network agents. \par
+\markblue{This section is still in work. Figure \ref{fig:evol_code} will be explained in more detail. Additionally a code listing of \textit{evolving agents} will follow. The method of combining two parents to form offsprings will be explained. The evaluation of agents in a generation by using a certain fitness function will also be explained in a subsection, once the implementation has produced the final results. Furthermore the concept of a \textbf{Hall of Fame} will be explained and how it serves as a genetic memory for an evolutionary system.}
 \pagebreak
 \begin{figure}
 \begin{lstlisting}
@@ -197,33 +203,39 @@ void RunEvolution(int num_generations, int num_players, int num_elite_kept, int 
 \caption{The evolution process to train poker agents}
 \label{fig:evol_code}
 \end{figure}
-\markred{Briefly explain that the evolutionary algorithm is used to update the weigth of the NN agents after one generation has played X number of tournaments. We don't us the classic back propagation algorithm but rather use the concept of natural selection. Where random mutation guarantees that agents don't get stuck in local optima. ... }
-\markblue{Mention self-play somewhere}
-
+%\markred{Briefly explain that the evolutionary algorithm is used to update the weigth of the NN agents after one generation has played X number of tournaments. We don't us the classic back propagation algorithm but rather use the concept of natural selection. Where random mutation guarantees that agents don't get stuck in local optima. ... }
+%\markblue{Mention self-play somewhere}
+\subsection{Selecting a Fitness Function}
+The \textit{plain fitness function} as described in  \cite{evolutionary_methods} uses the averaged ranking over many tournaments to evaluate the fitness of an agent. A mixed fitness function uses the \textit{handsWonScore} and the \textit{plainScore} in conjunction as a weighted fitness function. The procedure is explained in \cite[p.65]{evolutionary_methods}. One could also use an alternative fitness function, namely the \textit{MeanMoney} fitness function.\par
+In our implementation a mixes fitness function of the average placement in a tournament combined with the handsWon fitness was chosen. \markblue{The exact weights for the fitness function are: }
+\subsection{Hall of Fame}
+\markred{Talk about non transitive nature of poker and about \textit{Evolutionary Forgetting}. \cite[chapter 4.2]{evolutionary_methods}}
+If the best strategies from a generation are merely exploitative, the best non-exploitive strategies can be lost. The current strategy will consistently defeat any strategies that are only slightly differ- ent, and the system will never progress  \cite{evolutionary_methods}.
 \pagebreak
-\begin{itemize}
-\item introduction
-\item evolution phase
-\item selecting a fitness function
-\item hall of fame
-\item duplicat tables?
-\end{itemize}
-\begin{lstlisting}
-// Place pseudo code here
-\end{lstlisting}
 
-\begin{itemize}
-\item introduction
-\subitem outlook to what follows now
-\subitem mention that limitations were found and that the chapter describes how the limitations are or can be tackled.
-\item Neural Network Agent
-\subitem betting decision made according to the probability triple returned by the NN agents.
-\subsubitem explain how the action is choosen (bet size curves etc.)
-\item Training the Poker Agent
-\subitem Evolutionary algorithm
-\subitem Hall of Fame
-\subitem Co-evolution?
-\end{itemize}
+%\begin{itemize}
+%\item introduction
+%\item evolution phase
+%\item selecting a fitness function
+%\item hall of fame
+%\item duplicat tables?
+%\end{itemize}
+%\begin{lstlisting}
+%// Place pseudo code here
+%\end{lstlisting}
+%
+%\begin{itemize}
+%\item introduction
+%\subitem outlook to what follows now
+%\subitem mention that limitations were found and that the chapter describes how the limitations are or can be tackled.
+%\item Neural Network Agent
+%\subitem betting decision made according to the probability triple returned by the NN agents.
+%\subsubitem explain how the action is choosen (bet size curves etc.)
+%\item Training the Poker Agent
+%\subitem Evolutionary algorithm
+%\subitem Hall of Fame
+%\subitem Co-evolution?
+%\end{itemize}
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
 %% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='
