@@ -16,7 +16,7 @@ public:
     //      -   for now just test it with some basic input value and generate a softmax output
     //      -   the output represents (fold, check/call, bet/raise)
     //          -   the raise output could be split into 3 parts (small r, medium r, large r) -> resulting in 5 output N.
-    std::vector<unsigned> topology_ = {16, 8, 3};
+    std::vector<unsigned> topology_ = {NUM_NEURONS_L1, NUM_NEURONS_L2, NUM_NEURONS_L3};
     std::vector<double> inputValues_;
     std::vector<double> resultValues_;
 

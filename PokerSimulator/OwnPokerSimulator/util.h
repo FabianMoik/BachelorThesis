@@ -29,8 +29,9 @@ along with OOPoker.  If not, see <http://www.gnu.org/licenses/>.
 #include <iostream>
 #include <fstream>
 
-#define DEBUG 1
+#define DEBUG 0
 #define DEBUGRAISEONLY 1
+#define TRAINMODE 1
 
 extern std::map<int, std::string> bettingActionsAsString;
 extern std::map<int, std::string> tableRoundsAsString;
@@ -42,14 +43,16 @@ extern int globalGameCounter;
 
 /// GAME SPECIFIC DEFINES
 
-#define GLOBAL_NUM_PLAYERS 9
-#define NUM_OF_NN_WEIGHTS 163
+#define NUM_NEURONS_L1 40   //40,28,3 and try 16,12,3 for the other one
+#define NUM_NEURONS_L2 28
+#define NUM_NEURONS_L3 3
+
+#define GLOBAL_NUM_PLAYERS 45
 
 /// TRAINING PARAMS
-#define FITNESS_WEIGHT_1 0.7
-#define FITNESS_WEIGHT_2 0
-#define FITNESS_WEIGHT_3 0.3
-
+#define FITNESS_WEIGHT_1 0.8
+#define FITNESS_WEIGHT_2 0.02
+#define FITNESS_WEIGHT_3 0.18
 
 // Error Handling
 enum Error

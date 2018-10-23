@@ -10,13 +10,17 @@
 #include <random>
 
 Player::Player() : id_(-1), stack_(0), wager_(0), folded_(false), showdown_(false), tableID_(-1),
-                   handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false), overallRanking_(-1)
+                   handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false),
+                   overallFitness_(-1), NUM_FOLDS(0), NUM_CHECKS(0), NUM_CALLS(0), NUM_RAISES(0),
+                   NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false)
 {
 
 }
 
 Player::Player(AI *ai) : id_(-1), ai_(ai), stack_(0), wager_(0), folded_(false), showdown_(false), tableID_(-1),
-                         handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false), overallRanking_(-1)
+                         handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false),
+                         overallFitness_(-1), NUM_FOLDS(0), NUM_CHECKS(0), NUM_CALLS(0), NUM_RAISES(0),
+                         NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false)
 {
 
 }
@@ -37,7 +41,15 @@ Player::Player(const Player& player)
     chipsWonTotal_ = 0;
     chipsLostTotal_ = 0;
     hallOfFameMember_ = 0;
-    overallRanking_ = -1;
+    overallFitness_ = -1;
+    NUM_FOLDS = 0;
+    NUM_CHECKS = 0;
+    NUM_CALLS = 0;
+    NUM_RAISES = 0;
+    NUM_CALLS_PREFLOP = 0;
+    NUM_RAISES_PREFLOP = 0;
+    NUM_HANDS_PREFLOP = 0;
+    preflop_action_was_counted = false;
 
     ai_ = new AIOwn(*dynamic_cast<AIOwn*>(player.ai_));
 }
@@ -175,4 +187,27 @@ long Player::getBetAmount(int betType, long maxBet, long minBet) {
 
 void Player::setUpAI(std::vector<double> &input) const {
     ai_->fillInputValues(input);
+}
+
+// STATISTICS
+
+double Player::VPIP() {
+    if (NUM_HANDS_PREFLOP == 0) {
+        return -1;
+    }
+    return (NUM_CALLS_PREFLOP + NUM_RAISES_PREFLOP) * 100.0 / NUM_HANDS_PREFLOP ;
+}
+
+double Player::PFR() {
+    if (NUM_HANDS_PREFLOP == 0) {
+        return -1;
+    }
+    return NUM_RAISES_PREFLOP * 100.0 / NUM_HANDS_PREFLOP;
+}
+
+double Player::AFQ() {
+    if ((NUM_RAISES + NUM_CALLS + NUM_FOLDS) == 0) {
+        return -1;
+    }
+    return NUM_RAISES * 100.0 / (NUM_RAISES + NUM_CALLS + NUM_FOLDS);
 }

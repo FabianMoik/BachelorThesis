@@ -346,6 +346,17 @@ double getEHSVsNOpponents(const std::vector<Card>& holeCards, const std::vector<
     // Get the hand strength
     double HS = (wins + ties/double(2)) / (wins + ties + losses);
 
+    /*
+    std::cout << "Your hand: " << holeCards.at(0).getShortName() << ", " << holeCards.at(1).getShortName() << std::endl;
+    std::cout << "Board: ";
+    for (auto &card: boardCards) {
+        std::cout << card.getShortName() << ", ";
+    }
+    std::cout << std::endl;
+    std::cout << "Num opp: " << numOpponents << std::endl;
+    std::cout << "Hand stregth: " << HS << std::endl;
+    */
+
     return HS;
 }
 

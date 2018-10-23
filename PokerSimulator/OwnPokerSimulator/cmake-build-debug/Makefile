@@ -717,33 +717,6 @@ hand_eval/pokermath.cpp.s:
 	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.s
 .PHONY : hand_eval/pokermath.cpp.s
 
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 random.o: random.cpp.o
 
 .PHONY : random.o
@@ -824,6 +797,33 @@ statistics.s: statistics.cpp.s
 statistics.cpp.s:
 	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/statistics.cpp.s
 .PHONY : statistics.cpp.s
+
+test_cases/testSingleTableAllAgents.o: test_cases/testSingleTableAllAgents.cpp.o
+
+.PHONY : test_cases/testSingleTableAllAgents.o
+
+# target to build an object file
+test_cases/testSingleTableAllAgents.cpp.o:
+	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o
+.PHONY : test_cases/testSingleTableAllAgents.cpp.o
+
+test_cases/testSingleTableAllAgents.i: test_cases/testSingleTableAllAgents.cpp.i
+
+.PHONY : test_cases/testSingleTableAllAgents.i
+
+# target to preprocess a source file
+test_cases/testSingleTableAllAgents.cpp.i:
+	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.i
+.PHONY : test_cases/testSingleTableAllAgents.cpp.i
+
+test_cases/testSingleTableAllAgents.s: test_cases/testSingleTableAllAgents.cpp.s
+
+.PHONY : test_cases/testSingleTableAllAgents.s
+
+# target to generate assembly for a file
+test_cases/testSingleTableAllAgents.cpp.s:
+	$(MAKE) -f CMakeFiles/OwnPokerSimulator.dir/build.make CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.s
+.PHONY : test_cases/testSingleTableAllAgents.cpp.s
 
 util.o: util.cpp.o
 
@@ -927,9 +927,6 @@ help:
 	@echo "... hand_eval/pokermath.o"
 	@echo "... hand_eval/pokermath.i"
 	@echo "... hand_eval/pokermath.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... random.o"
 	@echo "... random.i"
 	@echo "... random.s"
@@ -939,6 +936,9 @@ help:
 	@echo "... statistics.o"
 	@echo "... statistics.i"
 	@echo "... statistics.s"
+	@echo "... test_cases/testSingleTableAllAgents.o"
+	@echo "... test_cases/testSingleTableAllAgents.i"
+	@echo "... test_cases/testSingleTableAllAgents.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"

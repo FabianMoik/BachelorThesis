@@ -31,14 +31,25 @@ public:
     bool folded_;
     bool showdown_; //this player (has to or wants to) show their cards
     Action lastAction_;
+
+    // STATISTICS
+
     long handsWon_;
     long handsLost_;
-    long chipsWonTotal_;
-    long chipsLostTotal_;
+    long long chipsWonTotal_;
+    long long chipsLostTotal_;
+
+    long NUM_FOLDS;
+    long NUM_CHECKS;
+    long NUM_CALLS;
+    long NUM_RAISES;
+    long NUM_CALLS_PREFLOP;
+    long NUM_RAISES_PREFLOP;
+    long NUM_HANDS_PREFLOP;
+    bool preflop_action_was_counted;
 
     bool hallOfFameMember_;
-    int overallRanking_;
-
+    double overallFitness_;
     //public Information for other players
     int getID()const;
     AI* getAI();
@@ -60,6 +71,11 @@ public:
     Action doTurn();
     long getBetAmount(int betType, long maxBet, long minBet);
     void setUpAI(std::vector<double> &input) const;
+
+    // Statistics
+    double VPIP();
+    double PFR();
+    double AFQ();
 };
 
 #endif //OWNPOKERSIMULATOR_PLAYER_H

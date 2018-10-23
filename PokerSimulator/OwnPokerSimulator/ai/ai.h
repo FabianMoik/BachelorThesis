@@ -8,7 +8,7 @@
 #pragma once
 
 #include "../game_assets/action.h"
-
+#include "../rules.h"
 class AI //interface class, used for bots
 {
 public:

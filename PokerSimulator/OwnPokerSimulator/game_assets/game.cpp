@@ -58,23 +58,32 @@ void Game::playGame()
     runTables();
 
     // CREATE STATISTICS FOR FITNESS FUNCTION
+    // TODO check why I use this evaluation of hand won and lost
 
     int place = GLOBAL_NUM_PLAYERS;
     for (auto &player : playersOut_) {
-        //std::cout << place << ".) player - " << player->getID() << std::endl;
         gameResults_.at(player->getID()) += place;
+        //std::cout << "Player " << player->getID() << " with score: " << gameResults_.at(player->getID()) << std::endl;
         place--;
     }
 
     for (auto &player : players_) {
         //std::cout << place << ".) player - " << player->getID() << std::endl;
         handsWonResults_.at(player->getID()) = player->handsWon_;
-        if (player->handsWon_ != 0) {
+        if (player->handsWon_ != 0 && player->handsWon_ != 0) {
             meanMoneyWonResults_.at(player->getID()) = player->chipsWonTotal_ * 1.0 / player->handsWon_ - player->chipsLostTotal_ * 1.0 / player->handsLost_;
         } else {
-            meanMoneyWonResults_.at(player->getID()) = 0;
+            if (player->handsWon_ == 0 && player->handsLost_ == 0) {
+                meanMoneyWonResults_.at(player->getID()) = 0;
+
+            } else if (player->handsWon_ == 0) {
+                meanMoneyWonResults_.at(player->getID()) = - player->chipsLostTotal_ * 1.0 / player->handsLost_;
+            } else {
+                meanMoneyWonResults_.at(player->getID()) = player->chipsWonTotal_ * 1.0 / player->handsWon_;
+            }
         }
     }
+
     globalGameCounter++;
     outputFile.close();
 }
@@ -103,9 +112,9 @@ void Game::runTables() {
 #endif
 
         // Increase blinds and antes every 12 hands (~ 5min in real life)
-        if (handCount % 12 == 0) {
-            if (handCount / 12 < rules_->blindLevels_.size()) {
-                rules_->blindLevel_ = rules_->blindLevels_.at(handCount/12);
+        if (handCount % 6 == 0) {
+            if (handCount / 6 < rules_->blindLevels_.size()) {
+                rules_->blindLevel_ = rules_->blindLevels_.at(handCount/6);
 #ifdef DEBUG
                 outputFile << "///////////////////// BlindLevel (" << rules_->blindLevel_.smallBlind_ << " , "
                           << rules_->blindLevel_.bigBlind_ << " , "<< rules_->blindLevel_.ante_ <<
@@ -119,9 +128,10 @@ void Game::runTables() {
 
         isRunning_ = false;
         for (auto &table : tables_) {
+            table->numTotalPlayers = players_.size();
+            table->numPlayersLeftInTournament = players_.size() - playersOut_.size();
             if (table->isRunning_) {
                 playOneHand(table);
-
                 isRunning_ = true;
             }
         }
@@ -417,7 +427,15 @@ void Game::resetStatistics() {
         player->chipsLostTotal_ = 0;
         player->chipsWonTotal_ = 0;
         player->handsLost_ = 0;
-        player->overallRanking_ = -1;
+        player->overallFitness_ = -1;
+        player->NUM_FOLDS = 0;
+        player->NUM_CHECKS = 0;
+        player->NUM_CALLS = 0;
+        player->NUM_RAISES = 0;
+        player->NUM_CALLS_PREFLOP = 0;
+        player->NUM_RAISES_PREFLOP = 0;
+        player->NUM_HANDS_PREFLOP = 0;
+        player->preflop_action_was_counted = false;
     }
 }
 

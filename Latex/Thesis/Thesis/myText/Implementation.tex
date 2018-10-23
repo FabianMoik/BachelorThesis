@@ -68,7 +68,7 @@ The agents to be examined are implemented as fully connected feed-forward neural
 %\label{table:feature_tab}
 %\end{table}
 \subsubsection{Effective Hand Strength (EHS)}
-The EHS is an indicator for how likely a hand is winning at showdown considering the current hand strength but also the positive and negative hand potential \cite{evolutionary_methods}. In conjunction with other components the EHS should be used to help selecting a suitable betting action. A more detailed description of EHS can be found in subsection \ref{subsubsec:ehs}.
+The EHS is an indicator for how likely a hand is winning at showdown considering the current hand strength but also the positive and negative hand potential \cite{evolutionary_methods}. In conjunction with other components the EHS should be used to help selecting a suitable betting action. A more detailed description of EHS can be found in Subsection \ref{subsubsec:ehs}.
 \subsubsection{Betting round}
 The second input for the neural network is the current betting round in the game. This can be PREFLOP, FLOP, TURN or RIVER. The betting round is an important property because a good preflop strategy varies from a good postflop strategy and therefore this property should not be withheld from the neural network.
 \subsubsection{Number of betting turns}
@@ -89,7 +89,8 @@ In a \pokerterm{9-handed} multi table tournament there are at most 9 players on 
 \subsubsection{Opponent model of all opponents}
 %\markred{All chip amount values are normalized by the number of BigBlinds in the whole tournament. MENTION THIS SOMEWHERE OR MAYBE EVEN CHANGE IT IN THE NN?}
 %%% What makes a good poker player
-\markblue{YET TO COME! $\rightarrow$ opponent modeling module needs to be finished first}
+\markblue{YET TO COME! $\rightarrow$ opponent modeling module needs to be finished first}\\\\
+Here we mention the VPIP, PFR and AFq calculations and how they are set in the NN. We also show the calculations of them here.s
 \subsection{Key Components to Achieve High Level Poker Skill}
 Billings et al. \cite{challenge_of_poker} described five main requirements a poker playing agent needs to fulfill in order to be competitive with the best players in the world. All these components depend on each other and need to be adjusted when a certain situation requires it. The five requirements mentioned by Billings are:
 \begin{itemize}
@@ -99,7 +100,7 @@ Billings et al. \cite{challenge_of_poker} described five main requirements a pok
 \item[$\triangleright$] Unpredictability
 \item[$\triangleright$] Opponent Modeling
 \end{itemize}
-\textbf{Hand strength} and \textbf{hand potential} are explained in detail in subsection \ref{subsubsec:hs}. In short HS and HP combined asseses the relative hand strength against opponents, ideally considering opponent-specific factors that would influence the probability of winning a hand \cite{challenge_of_poker}. \par
+\textbf{Hand strength} and \textbf{hand potential} are explained in detail in subsection \ref{subsubsec:hs}. In short HS and HP combined assesses the relative hand strength against opponents, ideally considering opponent-specific factors that would influence the probability of winning a hand \cite{challenge_of_poker}. \par
 To achieve this requirement a slightly different approach than recommended in \cite[p. 208]{challenge_of_poker} was implemented in this study. Instead of considering opponent-specific tendencies while calculating the hand strength and hand potential, the effective hand strength was calculated under the assumption of playing against a random player, the reason being that opponent's tendencies are later modeled individually and given as input to the neural network which should be able to convert this information into meaning.\par
 \textbf{Opponent modeling} as described by Billings et al. \cite[p. 208]{challenge_of_poker} tries to accumulate information about the playing style of an opponent. Later this information is applied to hand strength calculations and used to create likely probability distributions of opponent's hand ranges. \par
 Again in our study opponent models are not exactly used in the same way as described but rather represent key opponent-specific tendencies which do not directly influence any calculations but rather serve as additional input information for the neural network, to find an optimal betting strategy against different opponent types. \par
@@ -148,7 +149,8 @@ Hand potential calculations are used to account for future cards to come in a po
 Assuming the current poker hand is in the flop-stage, with three cards already dealt to the community board, then there are ${45\choose 2} = 990$ possible combinations of future turn and river cards for every possible hand an opponent might hold. That means if one would like to calculate the hand potential of a current hand against a random opponent that would equate to ${47\choose 2} \times {45\choose 2} = 1081 \times 990 = 1070190$ calculations for this situation. \par
 Because such a number of calculations is too expensive for our training algorithm, the effective hand strength calculation was modified to approximate the EHS.
 \subsubsection{Effective Hand Strength Approximation}
-\markblue{YET TO COME! $\rightarrow$ the approximation algorithm is implemented but not yet described.}
+Instead of calculating the \textit{NPOT} and \textit{PPOT} explicitly, the EHS approximation contains the \textit{NPOT} and \textit{PPOT} implicitly. A Monte-Carlos simulation similar to the one explained in Subsection \ref{subsubsec:hs} was used to determine a sufficient approximation of the EHS. Given an agent is currently one the Flop, Turn or River a simulation of 1000 games versus $n$ active opponents is executed. If the agent is on the Flop, two cards are randomly drawn to simulate a possible Turn and River outcome, if he is on the Turn only one card is drawn and if he is on the River no additional cards are drawn. All $n$ opponents, which have not yet folded their cards and are therefore still in the current poker hand, are assigned 2 random cards and then the number of ties, wins and losses of the agent vs all opponents are counted. This process is repeated a 1000 times before the counting results are evaluated with Formula \ref{eq:hs}.\par
+This simulation yields an approximated error of $\pm4\%$ of the real hand strength at a given moment. This approximation is good enough for training the agents because an exact hand strength turned out to be not the single most important feature in order to develop a strategy.  
 %\markblue{ Implementation: sample all possible two-card combinations of our opponents and only simulate the next round. Meaning on the flop simulate the Turn card (45 possible cards over a sample of possible opponent holdings. On the turn simulate the 44 possible cards vs samples of oppenent holdings.}
 \pagebreak
 \subsection{Betting Strategy}

@@ -33,4 +33,5 @@ class AIFold : public AI
     virtual Action doTurn();
 
     virtual std::string getAIName();
+
 };

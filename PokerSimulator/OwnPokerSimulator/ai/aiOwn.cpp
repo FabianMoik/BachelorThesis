@@ -52,6 +52,13 @@ Action AIOwn::doTurn() {
     }
     */
 
+    /*
+    if (name_ == "6" && rand() % 100 == 0) {
+        std::cout << "Result values for NN agent " << name_ << ": FOLD(" << resultValues_[0] << "), CHECK/CALL(" <<
+                  resultValues_[1] << "), BET/RAISE(" << resultValues_[2] << ")" << std::endl;
+    }
+    */
+
     // Choose highest value
     if (resultValues_[0] > resultValues_[1] && resultValues_[0] > resultValues_[2]) {
         actionCommand = 0;
@@ -78,8 +85,6 @@ Action AIOwn::doTurn() {
             action.betType_ = B_LARGE_BET;
         }
     }
-    //Debug purpose
-    int a = 0;
     return action;
 }
 

@@ -20,6 +20,8 @@ public:
     std::vector<Player*> players_;
     std::vector<Player*> playersOut_;
     CardDealer* cardDealer_;
+    int numPlayersLeftInTournament;
+    int numTotalPlayers;
 
     int dealer_; //index of the dealer in the players vector
     int current_; //index of the current player making a decision

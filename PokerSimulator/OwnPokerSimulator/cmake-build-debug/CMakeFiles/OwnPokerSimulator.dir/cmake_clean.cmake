@@ -18,7 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OwnPokerSimulator.dir/game_assets/table.cpp.o"
   "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval.cpp.o"
   "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokereval2.cpp.o"
-  "CMakeFiles/OwnPokerSimulator.dir/main.cpp.o"
+  "CMakeFiles/OwnPokerSimulator.dir/test_cases/testSingleTableAllAgents.cpp.o"
   "CMakeFiles/OwnPokerSimulator.dir/hand_eval/2+2/2P2Evaluator.cpp.o"
   "CMakeFiles/OwnPokerSimulator.dir/hand_eval/pokermath.cpp.o"
   "CMakeFiles/OwnPokerSimulator.dir/random.cpp.o"

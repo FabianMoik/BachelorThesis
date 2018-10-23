@@ -202,9 +202,14 @@ void CardDealer::settleBets()
     {
         if(betsSettled(prev_current))
         {
+            //TODO Additionally check if the extra amount of an all-in not full raise was called by all remaining players
+            for (auto &player: table_->players_) {
+                //CHECK this here
+            }
 #ifdef DEBUG
             outputFile << "     ===> CardDealer: settleBets(): - BETS SETTLED"  << std::endl;
 #endif
+
             break;
         }
 
@@ -219,6 +224,7 @@ void CardDealer::settleBets()
             }
             provideInputForAI();
         }
+
         Action action = player->doTurn();
 
         //TRIGGER BETTING STRATEGY
@@ -255,7 +261,10 @@ void CardDealer::settleBets()
 
         //****************************************************************
 #ifdef DEBUG
-        outputFile << "          --> Player " << player->getID() << ": " << bettingActionsAsString.at(action.command_) << " - " << action.amount_ << std::endl;
+        outputFile << "          --> Player " << player->getID() << ": " << bettingActionsAsString.at(action.command_) << " - " << action.amount_ <<
+                   "    CPre(" << player->NUM_CALLS_PREFLOP << ") RPre(" << player->NUM_RAISES_PREFLOP << ") TPre(" << player->NUM_HANDS_PREFLOP << ")"
+                   " --- TOTAL  ->  F: " << player->NUM_FOLDS << "  CH: " << player->NUM_CHECKS << "  CA: " << player->NUM_CALLS << "  R: " << player->NUM_RAISES <<
+                   " --- VPIP: " << player->VPIP() << " PFR: " << player->PFR() << " AFQ: " << player->AFQ() << std::endl;
 #endif
         //std::cout << "Player " << player->getID() << " wants to " << action.command_ << " for c: " << action.amount_ << std::endl;
 
@@ -267,7 +276,41 @@ void CardDealer::settleBets()
             action = Action(A_FOLD);
         }
 
-        //player.lastAction = action; // -> for information purpose?
+        // Write the action to the players statistics and check if the action was a preflop action or postflop
+        if (table_->round_ == R_PRE_FLOP) {
+            if (!player->preflop_action_was_counted) {
+                player->preflop_action_was_counted = true;
+                switch (action.command_) {
+                    case A_FOLD:
+                        break;
+                    case A_CHECK:
+                        break;
+                    case A_CALL:
+                        player->NUM_CALLS_PREFLOP += 1;
+                        break;
+                    case A_RAISE:
+                        player->NUM_RAISES_PREFLOP += 1;
+                        break;
+                }
+                player->NUM_HANDS_PREFLOP += 1;
+            }
+        }
+
+        switch (action.command_) {
+            case A_FOLD:
+                player->NUM_FOLDS += 1;
+                break;
+            case A_CHECK:
+                player->NUM_CHECKS += 1;
+                break;
+            case A_CALL:
+                player->NUM_CALLS += 1;
+                break;
+            case A_RAISE:
+                player->NUM_RAISES += 1;
+                break;
+        }
+
 
         long callAmount = table_->getCallAmount();   // returns the call amount specific to the current player
 
@@ -311,7 +354,7 @@ void CardDealer::settleBets()
                     table_->extra_ = raiseAmount;               // only set if it is not a real full raise
 #ifdef DEBUG
                     if (table_->lastRaiser_ != -1) {
-                        outputFile << "(LR: " << table_->players_.at(table_->lastRaiser_) << " A: " << table_->lastRaiseAmount_
+                        outputFile << "(LR: " << table_->players_.at(table_->lastRaiser_)->getID() << " A: " << table_->lastRaiseAmount_
                                   << " E: " << table_->extra_ << ") - no full raise (extra)" << std::endl;
                     } else {
                         outputFile << "(LR: " << "NONE" << " A: " << table_->lastRaiseAmount_
@@ -339,6 +382,11 @@ void CardDealer::settleBets()
         table_->current_ = getNextActivePlayer(table_->current_);
         table_->turn_++;
     } //while bets running
+
+    for (auto &player : table_->players_) {  // reset the statistics flag
+        player->preflop_action_was_counted = false;
+    }
+
 #ifdef DEBUG
     outputFile << "//////////////// STACK ///// WAGER ///// CARDS  ///// TABLE-ID ////////////// " << std::endl;
     for (auto &player : table_->players_) {  // Print player ids, cards and stacks
@@ -427,7 +475,7 @@ void CardDealer::provideInputForAI() {
     // On the other hand if we take the getNumActivePlayers we would consider early all-ins as active...
     // But this more pesimistic approach is better for now
     int numOpponents = getNumActivePlayers() - 1; // because we are active aswell
-    int numSamples = 2000;
+    int numSamples = 1000;
     double winChange;
     if (table_->round_ == R_PRE_FLOP) {
         winChange = getEHSVsNOpponentsPreflop(holeCards, numOpponents);
@@ -445,7 +493,7 @@ void CardDealer::provideInputForAI() {
 
     // Betting turns (how many turns of betting for the current round -> max rounds is hard to tell, but probably
     // never more than 20)
-    input.push_back(table_->turn_ / 20.0);
+    //input.push_back(table_->turn_ / 20.0);
 
     // Chip count in BB / numBBInGame
     input.push_back(player->stack_ / bigBlind / numBBInGame);
@@ -487,11 +535,36 @@ void CardDealer::provideInputForAI() {
         input.push_back(0);
     }
 
-    // Previous action on the table
-    // TODO IMPLEMENT?
+    // Number of players left in the tournament
+    input.push_back(table_->numPlayersLeftInTournament / table_->numTotalPlayers);
 
     // Opponent model
-    // TODO IMPLEMENT
+    // we norm it with / 100.0 because the properties are in %
+    int oppStartingIndex = table_->current_;
+    for (int i = 1; i < table_->players_.size(); i++) {
+        int playerIndex = table_->wrap(oppStartingIndex + i);
+
+        double vpip = table_->players_.at(playerIndex)->VPIP();
+        double pfr = table_->players_.at(playerIndex)->PFR();
+        double afq = table_->players_.at(playerIndex)->AFQ();
+
+        if (vpip == -1) { vpip = -100; }
+        if (pfr == -1) { pfr = -100; }
+        if (afq == -1) { afq = -100; }
+
+        input.push_back(vpip / 100.0);
+        input.push_back(pfr / 100.0);
+        input.push_back(afq / 100.0);
+        //std::cout << "OPP-M.:   P.-ID: " << table_->players_.at(playerIndex)->getID() << " - VPIP: " << vpip / 100.0
+          //        << " - PFR: " << pfr / 100.0 << " - AFQ: " << afq / 100.0 << std::endl;
+    }
+
+    // Fill the rest with 0 for empty seats on the table
+    for (long i = table_->players_.size(); i < rules_->maxNumPlayersPerTable_; i++) {
+        input.push_back(-1);
+        input.push_back(-1);
+        input.push_back(-1);
+    }
 
     player->setUpAI(input);
 }
@@ -585,6 +658,9 @@ void CardDealer::determineWinnerAndSplitPot()
         {
             if(table_->players_.at(i)->hasFolded()) {
                 chipsWon += table_->players_.at(i)->wager_;
+                table_->players_[i]->handsLost_++;
+                table_->players_[i]->chipsLostTotal_ += table_->players_[i]->wager_;
+
             } else {
                 chipsWon += table_->players_.at(i)->wager_;
                 winningPlayerIndex = i;

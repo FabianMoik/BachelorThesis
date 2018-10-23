@@ -48,10 +48,10 @@ set(SOURCE_FILES
         #test_cases/createPreflopTableFile.cpp
         #test_cases/testGettingWinChancePreflop.cpp
         #test_cases/testDifferentAIsForCorrectness.cpp
-        #test_cases/testSingleTableAllAgents.cpp
-        #test_cases/testAiVsAi.cpp
-        #test_cases/testNNAgent.cpp
-        main.cpp
+        test_cases/testSingleTableAllAgents.cpp
+        #test_cases/testAgentsAgainstAgents.cpp
+        #test_cases/normal_distribution_test.cpp
+        #main.cpp
         hand_eval/2+2/2P2Evaluator.cpp
         hand_eval/2+2/2P2Evaluator.h
         hand_eval/pokermath.h

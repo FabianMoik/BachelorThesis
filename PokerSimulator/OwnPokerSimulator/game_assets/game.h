@@ -61,7 +61,6 @@ public:
 
     void cleanUpGame();
 
-
     std::vector<long> getOverallGameResults();
 
     std::vector<long> getOverallHandsWonResults();
