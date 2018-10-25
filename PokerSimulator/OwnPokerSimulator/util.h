@@ -44,7 +44,7 @@ extern int globalGameCounter;
 /// GAME SPECIFIC DEFINES
 
 #define NUM_NEURONS_L1 40   //40,28,3 and try 16,12,3 for the other one
-#define NUM_NEURONS_L2 28
+#define NUM_NEURONS_L2 22
 #define NUM_NEURONS_L3 3
 
 #define GLOBAL_NUM_PLAYERS 45

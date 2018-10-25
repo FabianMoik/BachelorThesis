@@ -71,8 +71,8 @@ int NUM_AI_AGENTS = 32;
 int NUM_HALL_OF_FAME = GLOBAL_NUM_PLAYERS - NUM_AI_AGENTS;
 // The number of elite player needs to be smaller than the hall of fame size
 int NUM_ELITE_PLAYERS = int(ceil(GLOBAL_NUM_PLAYERS * 0.1));  //TODO Some calculations in the evolve methode use hardcoded values so change it
-float MUTATION_SDV = 0.15;
-float MUTATION_LIKELIHOOD = 0.12;
+float MUTATION_SDV = 0.5;
+float MUTATION_LIKELIHOOD = 0.1;
 
 int numOfGenerations = 2000;
 int numOfTournaments = 200;
@@ -134,8 +134,8 @@ int main() {
     double start_time, end_time;
     start_time = my_clock();
 
-    generation = 1400;
-    for (int i = 1400; i < numOfGenerations; i++) {
+    generation = 0;
+    for (int i = 0; i < numOfGenerations; i++) {
 
         /// EVALUATION PHASE
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -710,7 +710,7 @@ bool saveNeuralNetworkWeightsOfAllAgentsToFile(std::vector<double> weights, int 
 void loadWeightsForAllAgents(std::vector<Player*> &population) {
     printf("Loading nn_weights.DAT file...");
     for (auto &agent: population) {
-        std::string path = "../NN_weights/Snapshot/nn_weightsGen1350-" + std::to_string(agent->getID()) + ".dat";
+        std::string path = "../NN_weights/Snapshot/nn_weightsGen350-" + std::to_string(agent->getID()) + ".dat";
         memset(weightsLoaded, 0, sizeof(weightsLoaded));
         FILE * fin = fopen(path.c_str(), "rb");
         if (!fin)

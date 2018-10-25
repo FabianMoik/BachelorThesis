@@ -71,26 +71,40 @@ The agents to be examined are implemented as fully connected feed-forward neural
 The EHS is an indicator for how likely a hand is winning at showdown considering the current hand strength but also the positive and negative hand potential \cite{evolutionary_methods}. In conjunction with other components the EHS should be used to help selecting a suitable betting action. A more detailed description of EHS can be found in Subsection \ref{subsubsec:ehs}.
 \subsubsection{Betting round}
 The second input for the neural network is the current betting round in the game. This can be PREFLOP, FLOP, TURN or RIVER. The betting round is an important property because a good preflop strategy varies from a good postflop strategy and therefore this property should not be withheld from the neural network.
-\subsubsection{Number of betting turns}
-The next input to the neural network is the current turn of betting. A \pokerterm{betting turn} starts with the first player betting chips into the pot and is concluded once the action returns to this exact player. There can be multiple betting turns in each round of the game. 
 \subsubsection{Chip count}
-The fourth feature is the number of chips the acting agent has. This represents the stack of the player. 
+The next feature is the number of chips the acting agent has. This represents the stack of the player. 
 \subsubsection{Chips in pot}
-The fifth feature is the number of chips already in the pot, including all chips of previous betting rounds plus the number of chips betted by other agents in the current betting round. An agent may not be able to win all the chips in the pot if his chip count (stack) is smaller than a bet of his opponents in the current round. This means when an opponent makes a bet larger than the remaining chips in the agent's stack, the agent may only win the amount of chips that is covered by his stack. Hence the value of this feature is the effective pot size an agent can actually win when his hand is the strongest at showdown \cite{evolutionary_methods}.
+The fourth feature is the number of chips already in the pot, including all chips of previous betting rounds plus the number of chips betted by other agents in the current betting round. An agent may not be able to win all the chips in the pot if his chip count (stack) is smaller than a bet of his opponents in the current round. This means when an opponent makes a bet larger than the remaining chips in the agent's stack, the agent may only win the amount of chips that is covered by his stack. Hence the value of this feature is the effective pot size an agent can actually win when his hand is the strongest at showdown \cite{evolutionary_methods}.
 \subsubsection{Chips to call}
-The sixth feature is the number of chips an agent has to match in order to be allowed to continue in the hand. 
+The fifth feature is the number of chips an agent has to match in order to be allowed to continue in the hand. 
 The ratio between the amount of chips a player has to bet to stay in the hand and the amount of chips in the pot is called \pokerterm{pot odds}. This is a commonly used tool in the poker community to calculate the needed winning percentage of an agent's hand to make the call a profitable play, irrespective of other factors \cite{evolutionary_methods}.
 \subsubsection{Number of opponents}
 This feature represents the number of opponents still involved in the hand.
+\subsubsection{Number of players left in tournament}
+The seventh feature represents the total number of players, which are still left in the tournament. This feature is important because a strong poker player changes his strategy slightly when there are less players in the tournament. The reason being, that it is more profitable to play a tighter style once approaching the money ranks of a tournament.
 \subsubsection{Position of hero}
 This feature is the relative position of the agent to the dealer. The dealer position is the most valuable position in poker because the action of only two more players will follow in an unopened pot. In general it is desirable to be in a \pokerterm{late position} because many players have already acted before you and hence more information is available for the agent in late position \cite{evolutionary_methods}.
 \subsubsection{Chip count of all opponents}
 In a \pokerterm{9-handed} multi table tournament there are at most 9 players on one table. Therefore this feature has 8 input nodes, one for each opponent on the table. The input is the number of chips an opponent has. Late in a tournament it will occur that hands are not always played 9-handed but with less then 9 players per hand. For this case the input for empty seats on the table is set to unknown and will be recognized by the neural network as an empty seat. The first node of this 8 nodes is always the opponent directly to the left of the agent, the second node is the opponent two seats to the left of the agent \cite{evolutionary_methods}. 
-\subsubsection{Opponent model of all opponents}
-%\markred{All chip amount values are normalized by the number of BigBlinds in the whole tournament. MENTION THIS SOMEWHERE OR MAYBE EVEN CHANGE IT IN THE NN?}
-%%% What makes a good poker player
-\markblue{YET TO COME! $\rightarrow$ opponent modeling module needs to be finished first}\\\\
-Here we mention the VPIP, PFR and AFq calculations and how they are set in the NN. We also show the calculations of them here.s
+\subsubsection{Opponent model for all opponents}
+The final 24 features are used to model opponent's playing tendencies. Opponent modeling is important in the game of poker, because once a player has observed some information about the playing style of his opponents, he can adapt his own playing style to this new information. While playing against opponents in a series of tournaments there is a lot of information that can be gained about opponents. In this thesis the process of modeling tendencies of opponents focused on three fundamental statistical values. The first value describes the frequency of voluntarily putting money in the pot \textbf{(VPIP)} (also known as VP\$IP). It can be calculated according to Equation \ref{eq:vpip}.
+\begin{equation}
+\label{eq:vpip}
+VPIP_{\%} = \frac{\#CALLS_{P} + \#RAISES_{P}}{\#HANDS_{P}} \cdot 100\%
+\end{equation}
+$\#CALLS_{P}$ represents the number of hands a player has called with pre-flop, $\#RAISES_{P}$ represents the number of hands a player has raised with pre-flop and $\#HANDS_{P}$ is the total number of hands a player has played pre-flop.\par
+Similar to the \textit{VPIP} value the second statistical value, namely \textbf{Preflop Raise (PFR)}, shows the frequency of a player raising with a hand pre-flop instead of calling, checking or folding with it and can be calculated with Equation \ref{eq:pfr}.
+\begin{equation}
+\label{eq:pfr}
+PFR_{\%} = \frac{\#RAISES_{P}}{\#HANDS_{P}}  \cdot 100\%
+\end{equation}
+The third statistical value used for opponent modeling is called \textbf{Aggression Frequency (AFq)} and can be used as an indicator for the overall aggression of an opponent. 
+\begin{equation}
+\label{eq:afq}
+AFq_{\%} = \frac{\#RAISES}{\#RAISES + \#CALLS + \#FOLDS}  \cdot 100\%
+\end{equation}
+$\#RAISES$ represent the total number of hands a player has raised with, $\#CALLS$ and $\#FOLDS$ represent the number of hands a player has called with or folded, respectively. \par
+If those three values are considered individually, they offer little information for a poker player, but if they are seen as a whole they give a good indication about the playing style of an opponent. As a rule of thumb, the higher the gap between \textit{VPIP} and \textit{PFR} is the more passive a player is. A deeper look into the interpretation of these statistical values is provided in Section \markred{x.x} \cite{playing_style}. 
 \subsection{Key Components to Achieve High Level Poker Skill}
 Billings et al. \cite{challenge_of_poker} described five main requirements a poker playing agent needs to fulfill in order to be competitive with the best players in the world. All these components depend on each other and need to be adjusted when a certain situation requires it. The five requirements mentioned by Billings are:
 \begin{itemize}
@@ -155,10 +169,8 @@ This simulation yields an approximated error of $\pm4\%$ of the real hand streng
 \pagebreak
 \subsection{Betting Strategy}
 \label{subsec:betting}
-\markblue{YET TO COME! $\rightarrow$ the betting strategy is adopted from \cite[p. 53 - p. 57]{evolutionary_methods}. It is fully implemented but some parameters are still varied, so the description follows when final results are ready.}
-%\begin{itemize}
-%\item betting strategy upon all those factors -> we did probability curves, depending on output of NN agent? To become a little bit more unpredictable
-%\end{itemize}
+When a neural network agent is prompted to execute an action he feeds the provided game information through his neural network and generates a \textit{probability triple} at the output layer. The three output neurons represent the three possible moves (fold, check/call, bet/raise) an agent can execute. If an agents wants to \textit{bet} or \textit{raise} his hand he also needs to provide a betting amount in order for the move to be valid. This is realized by specifying two threshold values which decide the betting amount. Once an agent decides to bet or raise his hand, the value at the output of the third neuron (which corresponds to the \textit{raise} action) is checked against the two thresholds ($t_1$ and $t_2$). An output value of less than $t_1$ results in a \textit{small} bet amount, a value between $t_1$ and $t_2$ results in a \textit{medium} bet amount and a value greater than $t_2$ results in a \textit{large} bet amount.\par
+	In modern NL Texas Hold'em the main decider of a \textit{small, medium} and \textit{large} bet amount is the player's chip count (CC) \cite{evolutionary_methods}. In this thesis a \textit{small} bet follows a normal distribution with a mean of $0.3 \cdot CC$ and a standard deviation of $0.05 \cdot CC$, while a \textit{medium} bet follows a normal distribution with a mean of $0.45 \cdot CC$ and a standard deviation of $0.1 \cdot CC$. A \textit{large} bet is normally distributed with a mean of $0.8 \cdot CC$ and a standard deviation of $0.05 \cdot CC$.
 \pagebreak
 %%%%%%%%%%%%% NN %%%%%%%%%%%%%
 \section{Training the NN-Agents}
@@ -207,9 +219,22 @@ void RunEvolution(int num_generations, int num_players, int num_elite_kept, int 
 \end{figure}
 %\markred{Briefly explain that the evolutionary algorithm is used to update the weigth of the NN agents after one generation has played X number of tournaments. We don't us the classic back propagation algorithm but rather use the concept of natural selection. Where random mutation guarantees that agents don't get stuck in local optima. ... }
 %\markblue{Mention self-play somewhere}
-\subsection{Selecting a Fitness Function}
-The \textit{plain fitness function} as described in  \cite{evolutionary_methods} uses the averaged ranking over many tournaments to evaluate the fitness of an agent. A mixed fitness function uses the \textit{handsWonScore} and the \textit{plainScore} in conjunction as a weighted fitness function. The procedure is explained in \cite[p.65]{evolutionary_methods}. One could also use an alternative fitness function, namely the \textit{MeanMoney} fitness function.\par
-In our implementation a mixes fitness function of the average placement in a tournament combined with the handsWon fitness was chosen. \markblue{The exact weights for the fitness function are: }
+\subsection{Fitness Function}
+A mixed fitness function, consisting of three components is used in this thesis to evaluate the performance of evolved neural network agents. The choice of the three components was greatly influenced by the work of Nicolai in \cite{evolutionary_methods}. The first component is the \textit{average ranking} in a tournament and can be obtained by ranking agents after each tournament, accumulating the results and then averaging them after a set of tournaments was played. The second component represents the \textit{average number of hands won per tournament}. The third component of the mixed fitness function represents the \textit{mean money won per tournament}. The mean money won can be calculated with Equation \ref{eq:meanmoney}.
+\begin{equation}
+MeanMoney = \frac{MoneyWon}{HandsWon} - \frac{MoneyLost}{HandsLost}
+\label{eq:meanmoney}
+\end{equation}\\
+$MoneyWon$ represents the amount of chips a player has won over a set of tournaments, likewise $MoneyLost$ represents the amount of chips a player has lost. $HandsWon$ and $HandsLost$ are the number of hands a player has won and lost in this set of tournaments, respectively \cite{evolutionary_methods}. 
+While this fitness function is used to evaluate and train agents in a given generation, another fitness function is later used to further benchmark the performance of the best agents per generation. The mixed fitness function is designed in a way that it rewards aggressive play more than passive play, because in real life poker aggressive strategies have shown to be superior to passive strategies. However just based on the average ranking in a tournament one can not conclude that a lower average ranking also means that the strategy is more profitable. Profitability in a poker tournament is measured by the so-called \textit{Return of Investment (ROI)}. To calculate the ROI of poker tournaments the accumulated winnings of all tournaments minus the accumulated cost of all tournaments is divided by the cost of all tournaments \cite{roi}.
+\begin{equation}
+ROI_{\%} = \frac{Acc. Winnings - Acc. Cost}{Acc. Cost} \cdot 100
+\end{equation}\par
+The overall fitness of an agent can be calculated as a weighted sum of all three components:
+\begin{equation}
+OverallFitness = w_1 \times Ranking_{avg} + w_2 \times HandsWon_{avg} + w_3 \times MeanMoney \hspace{1cm} .
+\end{equation}
+All three components are first linearly mapped to a range between 0 and 1 so that the weights $w_1,w_2$ and $w_3$ represent a percentage importance. Furthermore while an increase of $HandsWon$ and $MeanMoney$ indicate an improvement, it does not for the $Ranking$ component. Therefore the linearly mapping was reversed for this component. 
 \subsection{Hall of Fame}
 \markred{Talk about non transitive nature of poker and about \textit{Evolutionary Forgetting}. \cite[chapter 4.2]{evolutionary_methods}}
 If the best strategies from a generation are merely exploitative, the best non-exploitive strategies can be lost. The current strategy will consistently defeat any strategies that are only slightly differ- ent, and the system will never progress  \cite{evolutionary_methods}.

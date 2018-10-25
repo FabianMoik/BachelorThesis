@@ -1,12 +1,20 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
 {\fonttbl\f0\fnil\fcharset0 AppleSymbols;\f1\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
 {\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww14400\viewh8400\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww12600\viewh12600\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
 	RESULT INTERPRETATION:\
+\
+	\uc0\u10799 	Without HOF, csv100 -> with dollar\
+	\uc0\u10799 	With HOF, csv100 -> with dollar\
+	\uc0\u10799 	Wit HOF + OPM, csv100 -> with dollar\
+	\uc0\u10799 	get best agent of all 3 and create histogram for them\
+	\uc0\u10799 	results of opm indicate that the agents try a wider variety of strategies but take longer to converge to a \'84good\'93 		strategy. Presumption is that it might take more generations but that the results would be more stable vs wider 		variety of opponents.\
+\
+	\
 	\
 	\uc0\u10799 	test 9 agents (gen1, gen20, gen40, \'85) and compare results\
 \
@@ -26,8 +34,36 @@
 	\uc0\u10799 	sort the results by overall fitness in python\
 \
 	DOKU:\
-	\uc0\u10799 	rework the NN image (delete the betting round), also delete it from thesis\
-	\uc0\u10799 	also make sure that we use the right numeration in the listing of input features (i.e.: the the sixth input feature is\'85)\
+	2h			\uc0\u10799 	ABSTRACT \
+	2h			\uc0\u10799 	INTRODUCTION\
+				\uc0\u10799 	STATE-OF-THE-ART\
+	1h				*	Evolutionary Algorithms\
+				\uc0\u10799 	IMPLEMENTATION\
+D	1h				*	Structure of NN and existing feature cleaning\
+						-	also make sure that we use the right numeration in the listing of input \
+D	1h 20min			*	Opponent model feature description\
+D	1h 30min			*	Betting Strategy\
+	2h 30min			*	Evolution phase (2x pseudo code explanation)\
+D	1h 20min			*	Selecting fitness function\
+						-	explain the 3 fitness functions used to train the agents\
+						-	also maybe mention that another fitness function was later used to evaluate the best 							agents?\
+							->	$ won \
+	2h				*	Hall of fame\
+				\uc0\u10799 	EXPERIMENTAL RESULTS\
+	1h 20min			*	Static opponents\
+	2h 30min			*	Evolution without HOF\
+	1h 30min			*	Evolution with HOF\
+	1h 30min			*	Evolution with HOF and OPM\
+				\uc0\u10799 	CONCLUSION & FUTUR WORK\
+	3h				* Conclusion\
+	1h 30min			* Futur work\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+SUM: 	26 Studen\
+	-> Donnerstag:	8 Stunden\
+	-> Freitag:		8 Stunden\
+	-> Samstag:	10 Stunden\
+	-> Montag:		6 Stunden\
 \
 \
 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
