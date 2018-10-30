@@ -12,7 +12,8 @@
 Player::Player() : id_(-1), stack_(0), wager_(0), folded_(false), showdown_(false), tableID_(-1),
                    handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false),
                    overallFitness_(-1), NUM_FOLDS(0), NUM_CHECKS(0), NUM_CALLS(0), NUM_RAISES(0),
-                   NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false)
+                   NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false), tournament_1st(0),
+                   tournament_2nd(0), tournament_3rd(0), tournament_4th(0), tournament_5th(0), tournament_6th(0), tournament_7th(0)
 {
 
 }
@@ -20,7 +21,8 @@ Player::Player() : id_(-1), stack_(0), wager_(0), folded_(false), showdown_(fals
 Player::Player(AI *ai) : id_(-1), ai_(ai), stack_(0), wager_(0), folded_(false), showdown_(false), tableID_(-1),
                          handsWon_(0), handsLost_(0), chipsWonTotal_(0), chipsLostTotal_(0), hallOfFameMember_(false),
                          overallFitness_(-1), NUM_FOLDS(0), NUM_CHECKS(0), NUM_CALLS(0), NUM_RAISES(0),
-                         NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false)
+                         NUM_CALLS_PREFLOP(0), NUM_RAISES_PREFLOP(0), NUM_HANDS_PREFLOP(0), preflop_action_was_counted(false), tournament_1st(0),
+                         tournament_2nd(0), tournament_3rd(0), tournament_4th(0), tournament_5th(0), tournament_6th(0), tournament_7th(0)
 {
 
 }
@@ -40,6 +42,14 @@ Player::Player(const Player& player)
     handsLost_ = 0;
     chipsWonTotal_ = 0;
     chipsLostTotal_ = 0;
+    tournament_1st = 0;
+    tournament_2nd = 0;
+    tournament_3rd = 0;
+    tournament_4th = 0;
+    tournament_5th = 0;
+    tournament_6th = 0;
+    tournament_7th = 0;
+
     hallOfFameMember_ = 0;
     overallFitness_ = -1;
     NUM_FOLDS = 0;

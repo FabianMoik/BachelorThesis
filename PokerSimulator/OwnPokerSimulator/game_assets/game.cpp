@@ -63,7 +63,22 @@ void Game::playGame()
     int place = GLOBAL_NUM_PLAYERS;
     for (auto &player : playersOut_) {
         gameResults_.at(player->getID()) += place;
-        //std::cout << "Player " << player->getID() << " with score: " << gameResults_.at(player->getID()) << std::endl;
+
+        if (place == 7) {
+            player->tournament_7th += 1;
+        } else if (place == 6) {
+            player->tournament_6th += 1;
+        } else if (place == 5) {
+            player->tournament_5th += 1;
+        } else if (place == 4) {
+            player->tournament_4th += 1;
+        } else if (place == 3) {
+            player->tournament_3rd += 1;
+        } else if (place == 2) {
+            player->tournament_2nd += 1;
+        } else if (place == 1) {
+            player->tournament_1st += 1;
+        }
         place--;
     }
 
@@ -427,6 +442,14 @@ void Game::resetStatistics() {
         player->chipsLostTotal_ = 0;
         player->chipsWonTotal_ = 0;
         player->handsLost_ = 0;
+        player->tournament_1st = 0;
+        player->tournament_2nd = 0;
+        player->tournament_3rd = 0;
+        player->tournament_4th = 0;
+        player->tournament_5th = 0;
+        player->tournament_6th = 0;
+        player->tournament_7th = 0;
+
         player->overallFitness_ = -1;
         player->NUM_FOLDS = 0;
         player->NUM_CHECKS = 0;

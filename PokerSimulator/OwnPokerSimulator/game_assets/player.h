@@ -38,6 +38,13 @@ public:
     long handsLost_;
     long long chipsWonTotal_;
     long long chipsLostTotal_;
+    long tournament_1st;
+    long tournament_2nd;
+    long tournament_3rd;
+    long tournament_4th;
+    long tournament_5th;
+    long tournament_6th;
+    long tournament_7th;
 
     long NUM_FOLDS;
     long NUM_CHECKS;

@@ -8,15 +8,18 @@
 
 \section{Benchmark Opponents}
 % Shortly explain here that we benchmarked against static opponents.
-To test the skill of evolved neural network agents, they played in a number of tournaments against predefined static opponents. In a series of tournaments all players in are ranked by the fitness function described in Subsection \markred{x.x}. For all benchmark test the same weight distribution was used to make the results of different evolution methods comparable to each other. While the \textit{average placement} in a tournament might be a strong indicator for the level of skill of a poker player, it certainly should not be used as a benchmark value on its own. In this thesis a combination of three benchmark values was used to assess the skill of an agent. 
+To test the skill of evolved neural network agents, they played in a number of tournaments against predefined static opponents. In a series of tournaments all players are ranked by the fitness function described in Subsection \markred{x.x}. For all benchmark tests the same weight distribution for the fitness function was used to make the results of different evolution methods comparable to each other. While the \textit{average placement} in a tournament might be a strong indicator for the level of skill of a poker player, it certainly should not be used as a benchmark value on its own. In this thesis a combination of three benchmark values was used to assess the skill of an agent. Furthermore another fitness function is later used to determine the profitability of a poker agent by calculating the \textit{return of investment} over a series of tournaments. This fitness function is often used in real live poker because success of tournament players is measured by the amount of money they won in their poker career.
 % Talk about the weights for each single value and that they were found to be well suiting and were used throughout the testing of all agents
 
 %In a static environment where all players are following a static rule set and do not exploit the weaknesses of their opponents, a \textit{folding strategy} is really strong.
 \subsection{Always Fold}
-An \textit{Always Fold} agent does exactly what his name suggests, he always folds his two hole cards when it is his turn to bet. The only exception to this rule is when the action allows to check instead of folding. A folding strategy is very effective in a static poker environment, where agents follow static rules and do not exploit weaknesses of their opponents. While a folding strategy can never win against a betting strategy in tournaments, it might frequently reach a low rank because \markred{the blinds are eating it over time and more aggressive strategies bust each other out of the tournament}.
+An \textit{Always Fold} agent does exactly what his name suggests, he always folds his two hole cards when it is his turn to bet. The only exception to this rule is when the action allows to check instead of folding. A folding strategy is very effective in a static poker environment, where agents follow static rules and do not exploit weaknesses of their opponents. While a folding strategy can never win against a betting strategy in tournaments, it might frequently reach high ranks in tournaments. This is because a folding strategy can never lose more chips than the \textit{big blind} in a single hand, while more aggressive strategies frequently bust out of a tournament earlier due to the active betting against opponents.
 \subsection{Always Call}
+An \textit{Always Call} strategy calls any bet made at the table at any time. If however there is the chance to check, it will do so. 
 \subsection{Always Raise}
+\textit{Always Raise} agents on the other hand raise a previous bet whenever there is the chance to due so or bet themselves if no previous bet was made yet. 
 \subsection{Random}
+The \textit{Random} agents implemented in this thesis have a $25\%$ chance of folding or check a hands, $30\%$ chance of raising with a hand, $44\%$ chance of calling with a hand and a $1\%$ chance of going all-in with a hand. The percentage values for each action were arbitrarily chosen to represent a pseudo random behavior.
 
 \section{Evolution without HOF}
 %use the highest ranked agent of the last generation? 
@@ -24,6 +27,26 @@ An \textit{Always Fold} agent does exactly what his name suggests, he always fol
 %	->	show the overall fitness
 %		-	explain why it does not improve with each generation
 % ->	show histogram
+\myfig{Results/withoutHOF/stats.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
+  {fig:player_stats_withoutHOF}%% label
+\myfig{Results/withoutHOF/overallfitness.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Overall fitness over 1000 generations.}%% caption
+  {Overall fitness over 1000 generations}%% optional (short) caption for table of figures
+  {fig:overallfitness_withoutHOF}%% label
+\myfig{Results/withoutHOF/progression.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Evolutionary progress over 1000 generations.}%% caption
+  {Evolutionary progress over 1000 generations}%% optional (short) caption for table of figures
+  {fig:progression_withoutHOF}%% label
+\myfig{Results/withoutHOF/dollar.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Mean dollar won over 1000 generations.}%% caption
+  {Mean dollar won over 1000 generations.}%% optional (short) caption for table of figures
+  {fig:dollar_withoutHOF}%% label
 \section{Evolution with HOF}
 \section{Evolution with HOF \& Opponent Modeling}
 \section{Result Interpretation with Dollar Won Benchmark}

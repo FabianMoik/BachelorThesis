@@ -538,6 +538,7 @@ void CardDealer::provideInputForAI() {
     // Number of players left in the tournament
     input.push_back(table_->numPlayersLeftInTournament / table_->numTotalPlayers);
 
+
     // Opponent model
     // we norm it with / 100.0 because the properties are in %
     int oppStartingIndex = table_->current_;
