@@ -5,7 +5,9 @@
 \label{cha:results}
 
 %%%% INTRODUCTION
-
+In this chapter, the results of three different methods for training an evolutionary neural network poker agent are presented. In the first experiment a baseline control agent was created using an evolutionary neural network without any countermeasures accounting for problems with evolutionary algorithms. In the second and third experiment a hall of fame was introduced to keep strategies, which have proven to be strong in previous generations, in the playing population. Additionally, in the third experiment playing tendencies of opponents were modeled and given as input to the neural network, with the goal to further improve the ability to adjust to certain playing styles. \par
+The skill of the best agent after a number of generations was then evaluated with two different metrics against a set of static opponents for each experiment. \markred{Something else to mention here?}
+%%TODO write like in ENN_Read.pdf
 \section{Benchmark Opponents}
 % Shortly explain here that we benchmarked against static opponents.
 To test the skill of evolved neural network agents, they played in a number of tournaments against predefined static opponents. In a series of tournaments all players are ranked by the fitness function described in Subsection \markred{x.x}. For all benchmark tests the same weight distribution for the fitness function was used to make the results of different evolution methods comparable to each other. While the \textit{average placement} in a tournament might be a strong indicator for the level of skill of a poker player, it certainly should not be used as a benchmark value on its own. In this thesis a combination of three benchmark values was used to assess the skill of an agent. Furthermore another fitness function is later used to determine the profitability of a poker agent by calculating the \textit{return of investment} over a series of tournaments. This fitness function is often used in real live poker because success of tournament players is measured by the amount of money they won in their poker career.
@@ -22,36 +24,110 @@ An \textit{Always Call} strategy calls any bet made at the table at any time. If
 The \textit{Random} agents implemented in this thesis have a $25\%$ chance of folding or check a hands, $30\%$ chance of raising with a hand, $44\%$ chance of calling with a hand and a $1\%$ chance of going all-in with a hand. The percentage values for each action were arbitrarily chosen to represent a pseudo random behavior.
 
 \section{Evolution without HOF}
-%use the highest ranked agent of the last generation? 
-% -> show the fitness over time
-%	->	show the overall fitness
-%		-	explain why it does not improve with each generation
-% ->	show histogram
-\myfig{Results/withoutHOF/stats.pdf}%% filename in figures folder
-  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
-  {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
-  {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
-  {fig:player_stats_withoutHOF}%% label
+In the first conducted experiment 45 randomly created neural network agents played for 200 tournaments per generation. A network topology of \textbf{$16-12-3$} was used for all participating agents. After each generation agents were ranked according to Formula \ref{eq:overall_fitness}, with a weight distribution of $w_1 = 0.8, w_2 = 0.02, w_3 = 0.18$. As indicated by the weights the main focus for agents was to achieve a low \textit{average ranking}, while at the same time maximize the \textit{mean money} won in tournaments. The weight for the \textit{hands won} component of the overall fitness function was considered as being not so important for overall success in tournaments. The \markred{stated} weights for training the neural network agents were established by trial and error and the most fitting set was chosen for all experiments.\par
+The best performing 10\% of agents were then selected as possible parents for the evolution phase. This equated to 5 possible parents for 40 newly created offsprings. This new population consisting of the 5 best agents of the previous generation and the 40 new agents then played for another 200 tournaments. This process was repeated for 1000 generations after which the best performing agent was selected to represent a \textit{baseline Control agent}. \par
+\subsection{Skill Progression}
+Figure \ref{fig:overallfitness_withoutHOF} shows a \textit{moving average} of the progression of skill in the playing population over all 1000 generations. The vertical axis corresponds to the overall fitness of the best performing agent in a given generation. The subset size for the moving average was set to 50 data samples, which yields a smooth representation of the fitness progression.\par
+A more detailed view of the individual components of the overall fitness function can be seen in Figure \ref{fig:progression_withoutHOF}, where the fitness is split up into all three components. Each factor is represented as a moving average of size 50 over all generations.\par
+\markred{somewhere say that the results were created by simulating 1000 tournaments.}
+The \textit{Control} agent was then evaluated versus 44 evenly distributed static opponents. To establish a baseline ranking for all player types, the population consisting of 11 agents for each static opponent type (\textit{Always Fold, Always Call, Always Raise, Random}) and one \textit{Control} agent competed in 100,000 tournaments and were again ranked by their overall fitness as described in Subsection \ref{subsec:fitness}. The results of this baseline evaluation are shown in the histogram in Figure \ref{fig:histo_withoutHOF}. \par
 \myfig{Results/withoutHOF/overallfitness.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
-  {Overall fitness over 1000 generations.}%% caption
-  {Overall fitness over 1000 generations}%% optional (short) caption for table of figures
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% caption
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% optional (short) caption for table of figures
   {fig:overallfitness_withoutHOF}%% label
 \myfig{Results/withoutHOF/progression.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
-  {Evolutionary progress over 1000 generations.}%% caption
-  {Evolutionary progress over 1000 generations}%% optional (short) caption for table of figures
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% caption
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% optional (short) caption for table of figures
   {fig:progression_withoutHOF}%% label
+\myfig{Results/withoutHOF/histogram.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% caption
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% optional (short) caption for table of figures
+  {fig:histo_withoutHOF}%% label
+%%%TODO now discuss observed results. The histogram should be discussed and maybe two sentences about the skill progression in the split fitness figure.
+Figure \ref{fig:overallfitness_withoutHOF} clearly indicates an overall skill progression over generations. The non-steady increase in skill can be explained by the non-transitive nature of poker, as described in Subsection \ref{subsec:hof}, and by an inherent problem of evolutionary algorithms known as \textit{Evolutionary Forgetting}. In short this phenomenon can be defined as \enquote{the tendency for a population to lose good strategies as they are replaced by seemingly better ones.} \cite[p.63]{evolutionary_methods}. This means that the overall skill level of a generation might decrease due to loosing some strategies, which have proven to be strong. Nonetheless the baseline \textit{Control} agent did beat his competition over 100,000 tournaments, as shown in Figure \ref{fig:histo_withoutHOF}.\par
+The best overall fitness of 0.6578 was achieved by the Control agent, closely followed by the static \textit{Always Fold} opponents.\markred{It should be mentioned that the results of the static opponents were averaged}. The \textit{Always Raise} agents performed poorest, with a fitness score of only 0.2467. \textit{Always Call} and \textit{Random} agents also did not perform well, receiving a fitness score of only 0.3124 and 0.3595, respectively. One could think, based on this results, that a folding strategy might be a good choice, which indeed holds true in general, however an \textit{Always Fold} agent will never win a tournament but at best reach second place \cite{evolutionary_methods}.
+\subsubsection{Alternative Fitness Evaluation}
+ In addition to the \textit{weighted overall fitness} function, which was also used for training the agents, another independent fitness function was evaluated to compare the overall profitability of playing styles. In Figure \ref{fig:roi_withoutHOF} the vertical axis corresponds to the percentage \textit{ROI} for each of the playing styles listed on the horizontal axis.\par
+ To calculate the ROI of all agents, the tournament buy-in was set to $1\$$ and a progressive \markred{\pokerterm{payout structure}} shown in Table \ref{tab:payout_structure} was used to reward the seven best ranked players. While \textit{Always Fold} agents achieved an almost equal \textit{overall fitness}, the \textit{Control} agent won far more money over 100,000 tournaments than the second best competitor. With a ROI of $80.27\%$ the \textit{Control} agent's strategy looks far superior compared to a ROI of only $20.52\%$ for the \textit{Always Fold} strategy. However a ROI greater than zero indicates a profitable strategy, which means that only the \textit{Control}, the \textit{Always Fold} and \textit{Always Call} agents were profitable players in the conducted experiment. With a negative ROI of $-73.31\%$ the \textit{Random} strategy performed worst, followed by an almost break even ROI of $-0.9\%$ for the \textit{Always Raise} agent. 
+ \begin{table}[]
+\begin{tabular}{|l||l|}
+\hline
+\multicolumn{1}{|c||}{Rank in tournament} & \multicolumn{1}{c|}{Price money (\% of buy-in)} \\ \hhline{=#=}
+1 & 31 \% \ \\ \hline
+2 & 21.5 \% \ \\ \hline
+3 & 16.5 \% \ \\ \hline
+4 & 12.5 \% \ \\ \hline
+5 & 9 \% \ \\ \hline
+6 & 6 \% \ \\ \hline
+7 & 3.5 \% \ \\ \hline
+\end{tabular}
+\centering
+\caption{Progressive payout structure for a tournament with 45 players.}
+\label{tab:payout_structure}
+\end{table} \ \\
+Figure \ref{fig:dollar_withoutHOF} shows the profitability of the \textit{Control} agent over 1000 generations. The data was smoothed by a moving average with a subset size of 50. As discussed earlier this graph again shows a non-steady progression of skill over generations. A lot of ups and downs indicate, that good strategies were lost in the phase of evolution. In the end however an overall increase in performance over the span of 1000 generations can be observed. Both fitness evaluations therefore have shown, that the skill of the \textit{Control} agent did progress in this experiment.
+\myfig{Results/withoutHOF/dollar_roi.pdf}%% filename in figures folder
+  {width=0.7\textwidth,height=0.7\textheight}%% maximum width/height, aspect ratio will be kept
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% caption
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% optional (short) caption for table of figures
+  {fig:roi_withoutHOF}%% label
 \myfig{Results/withoutHOF/dollar.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
   {Mean dollar won over 1000 generations.}%% caption
   {Mean dollar won over 1000 generations.}%% optional (short) caption for table of figures
   {fig:dollar_withoutHOF}%% label
+  \pagebreak
+    %%%
+  %%%
+  %%%%%%%%%%%%%%%% WITH HOF
 \section{Evolution with HOF}
+\myfig{Results/withHOF/overallfitness.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% caption
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% optional (short) caption for table of figures
+  {fig:overallfitness_withHOF}%% label
+\myfig{Results/withHOF/progression.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% caption
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% optional (short) caption for table of figures
+  {fig:progression_withHOF}%% label
+\myfig{Results/withHOF/histogram.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% caption
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% optional (short) caption for table of figures
+  {fig:histo_withoutHOF}%% label
+\myfig{Results/withHOF/dollar_roi.pdf}%% filename in figures folder
+  {width=0.7\textwidth,height=0.7\textheight}%% maximum width/height, aspect ratio will be kept
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% caption
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% optional (short) caption for table of figures
+  {fig:roi_withoutHOF}%% label
+\myfig{Results/withHOF/dollar.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Mean dollar won over 1000 generations.}%% caption
+  {Mean dollar won over 1000 generations.}%% optional (short) caption for table of figures
+  {fig:dollar_withHOF}%% label
+%%%%%%%%%%%%%%%% WITH HOF AND OPM
 \section{Evolution with HOF \& Opponent Modeling}
-\section{Result Interpretation with Dollar Won Benchmark}
 
-
+%%&TODO Here we compare the playing styles for all free experiments and draw some conclusions out of them. Also we point out the main differences for each method of evolution.
+% We also need a nice transition from the HOFAndOPM discussion which leads us here.
+ %	-	discuss the results 
+\section{Playing Style Evolution \markred{Different title - progression... (weiterentwicklung)}}
+Over the curse of 1000 generations the playing style of the neural network agents varied a lot. Figure \ref{fig:player_stats_withoutHOF} shows the evolution of an agent's strategy over all generations. The graph consists of three statistical values used to describe the playing style of a poker player. As described in detail in Subsection \ref{subsec:nnagent} under \textit{Opponent model for all opponents}, the \textit{VPIP}, \textit{PFR} and \textit{AFq} are the three basic statistical values used to  describe tendencies of poker players. \markred{TODO: start describing in little detail how the combination of these three values can be interpreted. Use a reference for that. Then analyze the graph briefly and say how the style of play progressed over time.}
+\myfig{Results/withoutHOF/stats.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
+  {fig:player_stats_withoutHOF}%% label
+  \myfig{Results/withHOF/stats.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
+  {fig:player_stats_withHOF}%% label
+  
 
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
