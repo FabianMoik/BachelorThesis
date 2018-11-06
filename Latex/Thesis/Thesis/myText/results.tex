@@ -6,7 +6,7 @@
 
 %%%% INTRODUCTION
 In this chapter, the results of three different methods for training an evolutionary neural network poker agent are presented. In the first experiment a baseline control agent was created using an evolutionary neural network without any countermeasures accounting for problems with evolutionary algorithms. In the second and third experiment a hall of fame was introduced to keep strategies, which have proven to be strong in previous generations, in the playing population. Additionally, in the third experiment playing tendencies of opponents were modeled and given as input to the neural network, with the goal to further improve the ability to adjust to certain playing styles. \par
-The skill of the best agent after a number of generations was then evaluated with two different metrics against a set of static opponents for each experiment. \markred{Something else to mention here?}
+The skill of the best agent after a number of generations was then evaluated with two different metrics against a set of static opponents for each experiment. 
 %%TODO write like in ENN_Read.pdf
 \section{Benchmark Opponents}
 % Shortly explain here that we benchmarked against static opponents.
@@ -19,7 +19,7 @@ An \textit{Always Fold} agent does exactly what his name suggests, he always fol
 \subsection{Always Call}
 An \textit{Always Call} strategy calls any bet made at the table at any time. If however there is the chance to check, it will do so. 
 \subsection{Always Raise}
-\textit{Always Raise} agents on the other hand raise a previous bet whenever there is the chance to due so or bet themselves if no previous bet was made yet. 
+\textit{Always Raise} agents on the other hand raise a previous bet whenever there is the chance to do so or bet themselves if no previous bet was made yet. 
 \subsection{Random}
 The \textit{Random} agents implemented in this thesis have a $25\%$ chance of folding or check a hands, $30\%$ chance of raising with a hand, $44\%$ chance of calling with a hand and a $1\%$ chance of going all-in with a hand. The percentage values for each action were arbitrarily chosen to represent a pseudo random behavior.
 
@@ -30,7 +30,7 @@ The best performing 10\% of agents were then selected as possible parents for th
 Figure \ref{fig:overallfitness_withoutHOF} shows a \textit{moving average} of the progression of skill in the playing population over all 1000 generations. The vertical axis corresponds to the overall fitness of the best performing agent in a given generation. The subset size for the moving average was set to 50 data samples, which yields a smooth representation of the fitness progression.\par
 A more detailed view of the individual components of the overall fitness function can be seen in Figure \ref{fig:progression_withoutHOF}, where the fitness is split up into all three components. Each factor is represented as a moving average of size 50 over all generations.\par
 \markred{somewhere say that the results were created by simulating 1000 tournaments.}
-The \textit{Control} agent was then evaluated versus 44 evenly distributed static opponents. To establish a baseline ranking for all player types, the population consisting of 11 agents for each static opponent type (\textit{Always Fold, Always Call, Always Raise, Random}) and one \textit{Control} agent competed in 100,000 tournaments and were again ranked by their overall fitness as described in Subsection \ref{subsec:fitness}. The results of this baseline evaluation are shown in the histogram in Figure \ref{fig:histo_withoutHOF}. \par
+The performance of the \textit{Control} agent was then evaluated against 44 evenly distributed static opponents. To establish a baseline ranking for all player types, the population consisting of 11 agents for each static opponent type (\textit{Always Fold, Always Call, Always Raise, Random}) and one \textit{Control} agent competed in 100,000 tournaments and were again ranked by their overall fitness as described in Subsection \ref{subsec:fitness}. The results of this baseline evaluation are shown in the histogram in Figure \ref{fig:histo_withoutHOF}. \par
 \myfig{Results/withoutHOF/overallfitness.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
   {Overall fitness of \textit{Control} agent over 1000 generations.}%% caption
@@ -84,6 +84,10 @@ Figure \ref{fig:dollar_withoutHOF} shows the profitability of the \textit{Contro
   %%%
   %%%%%%%%%%%%%%%% WITH HOF
 \section{Evolution with HOF}
+\markred{Is the network topology needed here? Or should be talk about the network topology in the introduction paragraph?}
+In this experiment the effect of introducing a hall of fame to the playing population was evaluated. Once again a starting population of 45 randomly created neural network agents played in 200 tournaments in the first generation. This time however the playing population was split into two groups. The first group was represented by the members of the hall of fame (later referred to as \textit{HOF-group}), which were not part of the evolution process, and the second group was formed by the remaining agents, which were possible candidates for reproduction (later referred to as \textit{evolution group}). In this experiment the \textit{HOF-group} consisted of 13 agents, while the \textit{evolution group} consisted of the remaining 32 agents. After the completion of the last tournament of each generation a procedure, which is explained in detail in Subsection \ref{subsec:hof}, ranked all agents according to their fitness, updated the hall of fame and selected the best performing 10\% of agents as parents for the evolution phase. Newly created agents together with all current hall of fame members then competed in another 200 tournaments. After 1000 generations the best performing agent of the \textit{evolution group} was chosen to represent the \textit{HOF Control} agent.
+\subsection{Skill Progression}
+Similar to the first experiment Figure \ref{fig:overallfitness_withHOF} shows the progression of skill in the \textit{evolution group}. \markblue{All data sets in this experiment were smoothed by a \textit{moving average} of size 50 --- maybe put this in the introduction and say it was used for all experiments?}. The individual components of the overall fitness function can be seen in Figure \ref{fig:progression_withHOF}. The performance of the \textit{HOF Control} agent was measured over a set of 100,000 tournaments against the same benchmark agents, which were used in the first experiment. Figure \ref{fig:histo_withoutHOF} shows the final results for each group of benchmark agents and for the \textit{HOF Control} agent.\par
 \myfig{Results/withHOF/overallfitness.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
   {Overall fitness of \textit{Control} agent over 1000 generations.}%% caption
@@ -99,6 +103,9 @@ Figure \ref{fig:dollar_withoutHOF} shows the profitability of the \textit{Contro
   {Baseline fitness of all playing styles including the \textit{Control} agent.}%% caption
   {Baseline fitness of all playing styles including the \textit{Control} agent.}%% optional (short) caption for table of figures
   {fig:histo_withoutHOF}%% label
+The curve of the overall fitness of the \textit{HOF Control} agent shows much less variance over the generations compared to the overall fitness of the \textit{baseline Control} agent. Also the fitness trend is much more recognizable in the hall of fame experiment. Figure \ref{fig:progression_withHOF} furthermore confirms this observation and shows a much more steady trend of all fitness components. After generation 200 a steady trend is present for all three individual components of the fitness function, and the overall fitness therefore looks much smoother compared to the first experiment. The reason for a less deviant progression in skill lies in the use of a hall of fame. By keeping strategies in the playing population, which have proven to be able to beat the majority of the current population, it is less likely that a seemingly good strategy is chosen for reproduction. Only strategies that can beat the current \textit{evolution group} and also members of the hall of fame are chosen for reproduction. This yields a much more steady progression in skill but not necessarily a faster one. The results shown in Figure \ref{fig:histo_withoutHOF} indicate that the fitness of the \textit{HOF Control} agent is only slightly better than the fitness of the \textit{baseline Control} agent after 1000 generations. The overall fitness of the \textit{HOF Control} agent improved by only 1\% from 0.6578 to 0.6603, the overall fitness of the benchmark agents also did not change significantly.\par
+The biggest difference between the \textit{HOF Control} agent and the \textit{baseline Control} agent is the profitability of their playing styles. In Figure \ref{fig:roi_withoutHOF} a clear increase in the percentage ROI can be observed. The \textit{HOF Control} agent achieved a respectable 93.35 \% ROI over 100,000 tournaments, which is an increase of 16.3\% over the \textit{baseline Control} agent, while all other benchmark agents experienced a deterioration in their ROI.\par 
+Figure \ref{fig:dollar_withHOF} once again proves the point, that the agents evolved in the hall of fame experiment show a much more stable improvement over generations. Even though the individual results of the best agent after 1000 generations is very similar to the results of the \textit{baseline Control} agent, there are a lot of indications that the \textit{HOF Control} agent is a much stronger opponent over increasing generations. \markred{Maybe mention something else here, that supports this claim?}.
 \myfig{Results/withHOF/dollar_roi.pdf}%% filename in figures folder
   {width=0.7\textwidth,height=0.7\textheight}%% maximum width/height, aspect ratio will be kept
   {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% caption
@@ -109,15 +116,49 @@ Figure \ref{fig:dollar_withoutHOF} shows the profitability of the \textit{Contro
   {Mean dollar won over 1000 generations.}%% caption
   {Mean dollar won over 1000 generations.}%% optional (short) caption for table of figures
   {fig:dollar_withHOF}%% label
+  %%%
+  %%%
 %%%%%%%%%%%%%%%% WITH HOF AND OPM
+\pagebreak
 \section{Evolution with HOF \& Opponent Modeling}
-
-%%&TODO Here we compare the playing styles for all free experiments and draw some conclusions out of them. Also we point out the main differences for each method of evolution.
-% We also need a nice transition from the HOFAndOPM discussion which leads us here.
- %	-	discuss the results 
-\section{Playing Style Evolution \markred{Different title - progression... (weiterentwicklung)}}
-Over the curse of 1000 generations the playing style of the neural network agents varied a lot. Figure \ref{fig:player_stats_withoutHOF} shows the evolution of an agent's strategy over all generations. The graph consists of three statistical values used to describe the playing style of a poker player. As described in detail in Subsection \ref{subsec:nnagent} under \textit{Opponent model for all opponents}, the \textit{VPIP}, \textit{PFR} and \textit{AFq} are the three basic statistical values used to  describe tendencies of poker players. \markred{TODO: start describing in little detail how the combination of these three values can be interpreted. Use a reference for that. Then analyze the graph briefly and say how the style of play progressed over time.}
-\myfig{Results/withoutHOF/stats.pdf}%% filename in figures folder
+The objective of the third and final experiment is to investigate the influence of opponent modeling on the results of the playing population described in the second experiment. While agents of the first and second experiment had a neural network topology of $16-12-3$, agents in this experiment were trained with a network topology of $40-22-3$. The additional 24 inputs to the neural network are used to model playing tendencies of opponents, as it is described in detail in Subsection \ref{subsec:nnagent}. The number of neurons for the hidden layer of the neural network was chosen arbitrarily and turned out to be a suitable amount for the conducted experiment. \par
+In this experiment the playing population was again split into two groups. As described in the second experiment the \textit{HOF-group} and the \textit{evolution group}, consisting of 13 players and 32 players, respectively, competed in 200 tournaments over 1000 generations. The procedure of ranking players and updating the hall of fame stayed the same in this experiment. After the completion of the last tournament in the 1000th generation the best performing agent of the \textit{evolution group} was chosen to represent the \textit{HOF\_OPM Control} agent. \textit{HOF\_OPM} in this case stands for \textit{Hall of fame with opponent modeling}.
+\subsection{Skill Progression}
+Figure \ref{fig:overallfitness_withHOFandOPM} shows the overall fitness of the \textit{evolution group} over 1000 generations and Figure \ref{fig:progression_withHOFandOPM} shows the progression of the individual fitness components over time. To test the performance of the \textit{HOF\_OPM Control} agent a set of 100,000 tournaments was played against the same benchmark agents from the first two experiments. The results of this evaluation can be seen in the histogram in Figure \ref{fig:histo_withoutHOFandOPM}. \par
+\myfig{Results/withHOFandOPM/overallfitness.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% caption
+  {Overall fitness of \textit{Control} agent over 1000 generations.}%% optional (short) caption for table of figures
+  {fig:overallfitness_withHOFandOPM}%% label
+\myfig{Results/withHOFandOPM/progression.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% caption
+  {Evolutionary progress for all three individual fitness components over 1000 generations}%% optional (short) caption for table of figures
+  {fig:progression_withHOFandOPM}%% label
+\myfig{Results/withHOFandOPM/histogram.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% caption
+  {Baseline fitness of all playing styles including the \textit{Control} agent.}%% optional (short) caption for table of figures
+  {fig:histo_withoutHOFandOPM}%% label
+The overall fitness curve in Figure \ref{fig:overallfitness_withHOFandOPM} shows even less variance over the generation than it did in the second experiment. While the fitness curve in Figure \ref{fig:overallfitness_withHOF} shows an upward trend over 1000 generations, the fitness curve in this experiment starts flattening out from generation 300 onwards. The same effect can be seen in Figure \ref{fig:progression_withHOFandOPM}, where all three fitness components do not change very much from generation 300 onwards. This might indicate that the neural network got stuck in a local minimum and was not able to escape from it due to too little mutation applied in the evolution phase. While this is one possible explanation to the observed effect, another reason could be a non optimal number of neurons for the hidden layer. A set of different network topologies was tested throughout this experiment, but all variations yielded similar results. Compared to both other control agents from the first and second experiment, the profitability of the \textit{HOF\_OPM Control} agent, seen in Figure \ref{fig:roi_withoutHOFandOPM}, shows a fast rise between generation 150 and 400, but levels off from there on. While the averaged \textit{ROI} never exceeds the 90\% mark, it also does not show much variance, which is a good sign and might indicate that good strategies are not as easily lost as in the other experiments. With a \textit{ROI} of 82.94\% against the static competition, the \textit{HOF\_OPM Control} agent performed worse than the \textit{HOF Control} agent but better than the \textit{baseline Control} agent. All static agents performed similar to the first two experiments, reaching \textit{ROI} values of 21.95\% (\textit{Always Fold} agent), 14.34\% (\textit{Always Call} agent), -1.01\% (\textit{Always Raise} agent) and -74.02\% (\textit{Random} agent), shown in Figure \ref{fig:dollar_withHOFandOPM}.\par
+\myfig{Results/withHOFandOPM/dollar_roi.pdf}%% filename in figures folder
+  {width=0.7\textwidth,height=0.7\textheight}%% maximum width/height, aspect ratio will be kept
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% caption
+  {Profitability of different playing styles measured by the percentage \textit{ROI}.}%% optional (short) caption for table of figures
+  {fig:roi_withoutHOFandOPM}%% label
+\myfig{Results/withHOFandOPM/dollar.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Mean dollar won over 1000 generations.}%% caption
+  {Mean dollar won over 1000 generations.}%% optional (short) caption for table of figures
+  {fig:dollar_withHOFandOPM}%% label  
+ To better understand the obtained results, the playing styles of all three neural network populations in the three different experiments were compared to each other. 
+\subsection{Playing Style Development}
+Figures \ref{fig:player_stats_withoutHOF}, \ref{fig:player_stats_withHOF} and \ref{fig:player_stats_withHOFandOPM} show the playing style progression of the trained population for the first, second and third experiment, respectively. The graph consists of three statistical values used to describe the playing style of a poker player. The three vertical axes correspond to the \textit{VPIP}, \textit{PFR} and \textit{AFq}, three basic statistical values used to describe tendencies of poker players, which are explained in detail in Subsection \ref{subsec:nnagent} under \textit{Opponent model for all opponents}.\par
+The \textit{VPIP} combined with the \textit{PFR} gives a good estimation of how opponents are playing and how they can be exploited. The \textit{VPIP} value of a player will always be higher than the \textit{PFR} value, this is because the \textit{PFR} is increased with every raise action before the flop, while the \textit{VPIP} value is increased with every call or raise action before the flop. In general a higher \textit{PFR} value indicates a more aggressive playing style, and a big gap between the \textit{VPIP} value and the \textit{PFR} value indicates a more passive style. But there is more room of interpretation when comparing these two values \cite{playing_style}.\par
+A very high \textit{VPIP} paired with a low \textit{PFR} (i.e vpip: 70, pfr: 6) indicates a very weak player who plays too many hands pre-flop and only raises, when he has a very strong hand. Having this type of player on the table can be very profitable, because they usually play very passive and give away money too easily. A low \textit{VPIP} paired with a low \textit{PFR} (i.e vpip: 10, pfr: 8) on the other hand indicates a very tight range of hands and means that these players usually play very aggressive when they opt to play. Very good players have a small gap between \textit{VPIP} and \textit{PFR}. Their values range between 15 to 28 for the \textit{VPIP} and 14 to 23 for the \textit{PFR}. For example a good player might have a \textit{VPIP} of 22 and a \textit{PFR} of 18 but could easily also have values like (vpip: 19, pfr:17) or (vpip: 25, pfr: 23) \cite{playing_style}.\par
+Figure \ref{fig:player_stats_withoutHOF} shows that agents in the first experiment, where no hall of fame members competed in tournaments, started off with a high \textit{VPIP} value ranging from 34 to almost 40 and a low \textit{PFR} value of around 10. After 100 generations however, the gap between these two values started to shrink, which is a clear sign of improvement. Agents in the second experiment showed the same behavior but succeeded a little bit early in recognizing the importance of keeping the \textit{VPIP} value close to the \textit{PFR} value. This can be seen in Figure \ref{fig:player_stats_withHOF}. In both experiments agents kept a small gap between these two values throughout the rest of all generations. The main difference between this two experiments is that agents competing against hall of fame members performed consistently well with a very low \textit{VPIP} and \textit{PFR} in the range of 2 to 3, while agents without a hall of fame competition frequently switched between \textit{VPIP} and \textit{PFR} values in the range of 5 to 25. \par
+A big difference in an agent's playing style can be observed in Figure \ref{fig:player_stats_withHOFandOPM}, which shows the results for the third experiment. The introduction of an opponent model as input to the neural network led to a very different playing style progression over generations. Similar to the first two experiments, agents in this third population also recognized the importance of a small gap between \textit{VPIP} and \textit{PFR}, at least until generation 70, from where on the \textit{VPIP} value starts to diverge from the \textit{PFR} value significantly. From generation 500 onwards the \textit{VPIP} value started to level off at a value of around 22, while the \textit{PFR} value stayed low at around 2. The playing style associated with these values indicates a very tight player, who patiently waits for the best hands and only raises with them. However this kind of player might also trap other players with some tricky plays or might develop a call/re-raise strategy \cite{playing_style}. While this kind of playing style is not considered to be the best, it is by far not the worst strategy. When playing against very static opponents, this strategy might even be advantageous over other tight strategies.
+   \myfig{Results/withoutHOF/stats.pdf}%% filename in figures folder
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
   {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
   {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
@@ -126,8 +167,13 @@ Over the curse of 1000 generations the playing style of the neural network agent
   {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
   {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
   {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
-  {fig:player_stats_withHOF}%% label
-  
+  {fig:player_stats_withHOF}%% label 
+\myfig{Results/withHOFandOPM/stats.pdf}%% filename in figures folder
+  {width=1\textwidth,height=1\textheight}%% maximum width/height, aspect ratio will be kept
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations.}%% caption
+  {Player statistics (VPIP, PFR, AFq) over 1000 generations}%% optional (short) caption for table of figures
+  {fig:player_stats_withHOFandOPM}%% label
+
 
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
