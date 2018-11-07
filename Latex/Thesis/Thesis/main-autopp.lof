@@ -9,24 +9,24 @@
 \contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces The creation of offsprings by evolving elite players of a generation.}}{39}{figure.4.4}
 \contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Example of Hall of Fame member replacement.}}{44}{figure.4.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Overall fitness of \textit {Control} agent over 1000 generations.}}{50}{figure.5.1}
-\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Evolutionary progress for all three individual fitness components over 1000 generations}}{51}{figure.5.2}
+\contentsline {figure}{\numberline {\relax 5.1}{\ignorespaces Overall fitness of best agent in playing population over 1000 generations. (First experiment)}}{50}{figure.5.1}
+\contentsline {figure}{\numberline {\relax 5.2}{\ignorespaces Evolutionary progress in the first experiment for all three individual fitness components over 1000 generations}}{51}{figure.5.2}
 \contentsline {figure}{\numberline {\relax 5.3}{\ignorespaces Baseline fitness of all playing styles including the \textit {Control} agent.}}{51}{figure.5.3}
-\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Profitability of different playing styles measured by the percentage \textit {ROI}.}}{54}{figure.5.4}
-\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Mean dollar won over 1000 generations.}}{54}{figure.5.5}
-\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Overall fitness of \textit {Control} agent over 1000 generations.}}{56}{figure.5.6}
-\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Evolutionary progress for all three individual fitness components over 1000 generations}}{57}{figure.5.7}
-\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Baseline fitness of all playing styles including the \textit {Control} agent.}}{57}{figure.5.8}
-\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Profitability of different playing styles measured by the percentage \textit {ROI}.}}{59}{figure.5.9}
-\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Mean dollar won over 1000 generations.}}{60}{figure.5.10}
-\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Overall fitness of \textit {Control} agent over 1000 generations.}}{62}{figure.5.11}
-\contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces Evolutionary progress for all three individual fitness components over 1000 generations}}{63}{figure.5.12}
-\contentsline {figure}{\numberline {\relax 5.13}{\ignorespaces Baseline fitness of all playing styles including the \textit {Control} agent.}}{63}{figure.5.13}
-\contentsline {figure}{\numberline {\relax 5.14}{\ignorespaces Profitability of different playing styles measured by the percentage \textit {ROI}.}}{64}{figure.5.14}
-\contentsline {figure}{\numberline {\relax 5.15}{\ignorespaces Mean dollar won over 1000 generations.}}{65}{figure.5.15}
-\contentsline {figure}{\numberline {\relax 5.16}{\ignorespaces Player statistics (VPIP, PFR, AFq) over 1000 generations}}{68}{figure.5.16}
-\contentsline {figure}{\numberline {\relax 5.17}{\ignorespaces Player statistics (VPIP, PFR, AFq) over 1000 generations}}{68}{figure.5.17}
-\contentsline {figure}{\numberline {\relax 5.18}{\ignorespaces Player statistics (VPIP, PFR, AFq) over 1000 generations}}{69}{figure.5.18}
+\contentsline {figure}{\numberline {\relax 5.4}{\ignorespaces Profitability of different playing styles in the first experiment, measured by the percentage \textit {ROI}.}}{54}{figure.5.4}
+\contentsline {figure}{\numberline {\relax 5.5}{\ignorespaces Mean dollar won over 1000 generations in the first experiment.}}{54}{figure.5.5}
+\contentsline {figure}{\numberline {\relax 5.6}{\ignorespaces Overall fitness of best agent in playing population over 1000 generations. (Second experiment)}}{56}{figure.5.6}
+\contentsline {figure}{\numberline {\relax 5.7}{\ignorespaces Evolutionary progress in the second experiment for all three individual fitness components over 1000 generations}}{57}{figure.5.7}
+\contentsline {figure}{\numberline {\relax 5.8}{\ignorespaces Fitness of all playing styles including the \textit {HOF Control} agent.}}{57}{figure.5.8}
+\contentsline {figure}{\numberline {\relax 5.9}{\ignorespaces Profitability of different playing styles in the second experiment, measured by the percentage \textit {ROI}.}}{59}{figure.5.9}
+\contentsline {figure}{\numberline {\relax 5.10}{\ignorespaces Mean dollar won over 1000 generations in the second experiment.}}{59}{figure.5.10}
+\contentsline {figure}{\numberline {\relax 5.11}{\ignorespaces Overall fitness of best agent in playing population over 1000 generations. (Third experiment)}}{61}{figure.5.11}
+\contentsline {figure}{\numberline {\relax 5.12}{\ignorespaces Evolutionary progress in the third experiment for all three individual fitness components over 1000 generations}}{62}{figure.5.12}
+\contentsline {figure}{\numberline {\relax 5.13}{\ignorespaces Fitness of all playing styles including the \textit {HOF\_OPM Control} agent.}}{62}{figure.5.13}
+\contentsline {figure}{\numberline {\relax 5.14}{\ignorespaces Profitability of different playing styles in the third experiment, measured by the percentage \textit {ROI}.}}{64}{figure.5.14}
+\contentsline {figure}{\numberline {\relax 5.15}{\ignorespaces Mean dollar won over 1000 generations in the third experiment.}}{64}{figure.5.15}
+\contentsline {figure}{\numberline {\relax 5.16}{\ignorespaces Player statistics (VPIP, PFR, AFq) of best agent in first experiment over 1000 generations}}{67}{figure.5.16}
+\contentsline {figure}{\numberline {\relax 5.17}{\ignorespaces Player statistics (VPIP, PFR, AFq) of best agent in second experiment over 1000 generations}}{68}{figure.5.17}
+\contentsline {figure}{\numberline {\relax 5.18}{\ignorespaces Player statistics (VPIP, PFR, AFq) of best agent in third experiment over 1000 generations}}{68}{figure.5.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

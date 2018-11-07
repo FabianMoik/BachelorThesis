@@ -4,10 +4,9 @@
 \chapter*{Abstract}
 \label{cha:abstract}
 
-
-This is a placeholder for the abstract.
-
-
+Poker is a card game with imperfect information where players have to deal with randomness, hidden information, opponent modeling, risk management and deception. These properties turn the game into a very interesting test-bed for artificial intelligence research. Evolutionary algorithms have been used in many fields of machine learning to find solutions to problems in a large decision space, while neural networks nowadays are widely used to find solutions in non-linear decision spaces \cite{challenge_of_poker, evolutionary_methods}.\par
+A combined version of these two models is used in this thesis to create No-Limit Texas Hold'em poker agents capable of developing a profitable playing style and learning the fundamental principles of a successful poker strategy. To counter some problems inherent in evolutionary algorithms, such as \textit{Evolutionary Forgetting} a concept called \textit{Hall of Fame} is used to improve the performance of the evolved agents. 
+\textit{Opponent modeling} is an essential part of the decision-making process of a poker player and is imperative to achieve a high skill in the game. The results of the conducted experiments show that a hall of fame greatly increases the overall performance of agents, while opponent modeling allowed to develop a versatile strategy that works especially well against static opponent types. The resulting program successfully understood the most important principles for playing profitable poker but there remains further research to be done to achieve the skill of professional tournament poker players.
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
 %% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='

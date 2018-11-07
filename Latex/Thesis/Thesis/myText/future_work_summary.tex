@@ -3,10 +3,10 @@
 
 \chapter{Conclusion and Future Work }
 \label{cha:conclusion}
-
-
-This is a placeholder for the conclusion and future work.
-
+The goal of the theses was to develop a NL Texas Hold'em poker agent using evolutionary neural networks, that is capable of understanding fundamental concepts of the game to establish a profitable strategy. To tackle problems inherent in evolutionary algorithms a hall of fame was used as a countermeasure in two of three experiments. In another experiment the effect of additional information about opponents on the playing style progression of the population was investigated.\par
+The use of a hall of fame for storing successful strategies of previous generations showed a significant increase in steady skill progression. Not only did the population show a much smoother skill progression but also developed a more profitable strategy against static opponents. Adding models of opponent's playing tendencies as input to the neural network, agents developed a more passive strategy compared to the other two experiments. The profitability however did not suffer too much from this different playing style. 
+\section{Future Work}
+The developed system in this theses gives room to some improvements. Instead of selecting the best agent of a generation by running 1000 tournaments, a better approach would be to run duplicate table tournaments to reduce the variance that comes with the game of poker. Duplicate table tournaments alter the position of all players on the table while dealing the same set of shuffled cards for each tournament. This way the variance can be reduced significantly. Another possible improvement for the system could be achieved by using the hall of fame not only for competition but also let it influence the evolution progress in some way. This could potentially reduce the loss of good strategies over time. Furthermore the structure of the neural network could be improved by altering the number of neurons in the hidden layer. Little effort was made in this thesis to find the optimal number of neurons for the given problem. Further improvement could be achieved by considering a different fitness function or by changing the weights of the fitness components. 
 
 %\glsresetall %% all glossary entries should be used in long form (again)
 %% vim:foldmethod=expr
